@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrayuktiLight"
+    tools:context="mytwistedidea.wordpress.com.prayukti.Registration">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/eTname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="26"
+        android:hint="Full Name"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrayuktiDark"
+        android:textColorHint="@color/colorPrayuktiMid"
+        android:inputType="textPersonName|textCapSentences"
+        android:layout_marginBottom="2sp"/>
+
+    <EditText
+        android:id="@+id/eTemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="20"
+        android:textSize="20sp"
+        android:hint="Your Email"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrayuktiDark"
+        android:textColorHint="@color/colorPrayuktiMid"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="2sp" />
+
+    <EditText
+        android:id="@+id/eTphoneno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Mobile no"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrayuktiDark"
+        android:textColorHint="@color/colorPrayuktiMid"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:layout_marginBottom="2sp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="3">
+    <RadioGroup
+        android:id="@+id/radioSex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_weight="1"
+        android:layout_marginBottom="2sp">
+
+        <RadioButton
+            android:id="@+id/radioFemale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrayuktiDark"
+            android:text="@string/radio_female" />
+
+        <RadioButton
+            android:id="@+id/radioMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:textColor="@color/colorPrayuktiDark"
+            android:text="@string/radio_male" />
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spinner_tsize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrayuktiMid"
+        android:layout_marginTop="5dp"/>
+    <EditText
+        android:id="@+id/eTpass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Create Password"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrayuktiDark"
+        android:textColorHint="@color/colorPrayuktiMid"
+        android:inputType="textPassword"
+        android:minEms="5"
+        android:maxLength="15"
+        android:layout_marginTop="1sp"
+        android:layout_marginBottom="2sp" />
+
+    <EditText
+        android:id="@+id/eTpasschk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="15"
+        android:hint="Retype Password"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrayuktiDark"
+        android:textColorHint="@color/colorPrayuktiMid"
+        android:inputType="textPassword"
+        android:layout_marginBottom="2sp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="5">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+    <Spinner
+        android:id="@+id/spinner_batch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
+    <Spinner
+        android:id="@+id/spinner_department"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown" />
+    </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/eTroll"
+        android:hint=" Roll no"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrayuktiDark"
+        android:textColorHint="@color/colorPrayuktiMid"
+        android:textSize="20sp"
+        android:inputType="phone"
+        android:maxLength="3"
+        android:background="@color/colorPrayuktiLight"/>
+</LinearLayout>
+
+    <Button
+        android:id="@+id/btSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrayuktiLight"
+        android:background="@color/colorPrayuktiDark"
+        android:text="Submit" />
+</LinearLayout>
+</ScrollView>

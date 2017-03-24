@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0B1926</color>
+    <color name="colorPrimaryDark">#0B1926</color>
+    <color name="colorAccent">#0B1926</color>
+    <color name="colorPrayuktiDark">#0B1926</color>
+    <color name="colorPrayuktiLight">#EAF7FC</color>
+    <color name="colorPrayuktiMid">#6CABFF</color>
+</resources>

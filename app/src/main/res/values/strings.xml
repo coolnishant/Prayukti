@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Prayukti \'17</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="eventnames">
+        <item>Tete-A-Tete</item>
+        <item>Ranbhoomi</item>
+        <item>R U Sherlocked</item>
+        <item>Saudagar</item>
+        <item>Circuitrix</item>
+        <item>Yantriki</item>
+        <item>Innovacion</item>
+        <item>Frame To Frame</item>
+        <item>Requizzit</item>
+        <item>Mania C</item>
+        <item>Jugaad Technology</item>
+        <item>Circuitrix</item>
+        <item>Pradarshan</item>
+    </string-array>
+
+
+    <string name="home_content">PRAYUKTI 2K17
+
+The annual techno management festival of Haldia Institute of Technology. Celebrating its 7th anniversary, it is getting bigger and better. It boasts of various events ranging from robotics to movie making and from junkyard arts to business strategies. Scheduled from 24th to 26th of April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</string>
+
+
+
+</resources>
+
