@@ -12,7 +12,6 @@
         <item>Ranbhoomi</item>
         <item>R U Sherlocked</item>
         <item>Saudagar</item>
-        <item>Circuitrix</item>
         <item>Yantriki</item>
         <item>Innovacion</item>
         <item>Frame To Frame</item>
@@ -24,10 +23,37 @@
     </string-array>
 
 
+    <string-array name="tete_a_tete">
+        <item>Motivation is what drives us and words are there to inspire.\n    You won\'t get very far using what you know but using what you learn. Knowing is not enough neither are the life hacks that get us through our moments. Experience is what matters, not just your own but also what you see, hear and learn. Let the words move you, inspire and make you want to be more that what you are.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+
+    <string-array name="ranbhoomi">
+        <item>When the reality gets mundane, the daydreamers shine. Virtual reality takes overules and playgrounds morph into battlefields. Designed for the warriors of virtual reality who thrive under pressure and live for the adrenaline rush, finding their fix in speed, sport and combat.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
+
+    <string-array name="r_u_sherlocked">
+        <item>There is story behind everything, a mystery in those stories and a clue in each word. Watson and Sherlock worked hand in hand and so can you and your half. In a pair of perfect twos, unearth each clue, uncover each mystery and tell the untold tale like Dr Watson and the ingenious Sherlock.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+
     <string name="home_content">PRAYUKTI 2K17
 
 The annual techno management festival of Haldia Institute of Technology. Celebrating its 7th anniversary, it is getting bigger and better. It boasts of various events ranging from robotics to movie making and from junkyard arts to business strategies. Scheduled from 24th to 26th of April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</string>
-
+    <string name="title_activity_event_data">EventData</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 
 </resources>

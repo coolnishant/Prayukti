@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="mytwistedidea.wordpress.com.prayukti">
+    package="mytwistedidea.wordpress.com.prayukti"
+    android:versionCode="1"
+    android:versionName="1.0">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- <uses-permission android:name="android.permission.RECORD_AUDIO"/> -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -23,7 +26,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WebViewing"></activity>
+        <activity android:name=".WebViewing" />
+        <activity
+            android:name=".EventData"
+            android:label="@string/title_activity_event_data"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".EventDescription" />
+        <activity android:name=".SendJasonRegister"></activity>
     </application>
 
 </manifest>

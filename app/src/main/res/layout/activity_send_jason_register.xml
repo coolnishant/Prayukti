@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:orientation="vertical"
+    android:padding="4dp"
+    android:background="@color/colorPrayuktiLight"
+    tools:context="mytwistedidea.wordpress.com.prayukti.SendJasonRegister">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="text"
+        android:layout_weight="1"
+        android:textColor="@color/colorPrimaryDark"
+        android:id="@+id/tvLastCheck"
+        android:textSize="20dp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="9"
+    android:weightSum="2">
+
+    <Button
+        android:id="@+id/bSendFinal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textColor="@color/colorPrayuktiLight"
+        android:background="@color/colorPrayuktiDark"
+        android:text="Submit!"
+        android:layout_marginRight="1dp"
+        android:textAlignment="center"/>
+    <Button
+        android:id="@+id/bCancel"
+        android:layout_marginLeft="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:background="@color/colorPrayuktiDark"
+        android:textColor="@color/colorPrayuktiLight"
+        android:text="Cancel!"/>
+    </LinearLayout>
+</LinearLayout>

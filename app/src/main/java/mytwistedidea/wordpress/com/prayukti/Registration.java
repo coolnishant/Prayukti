@@ -1,6 +1,7 @@
 package mytwistedidea.wordpress.com.prayukti;
 
 import android.content.Context;
+import android.content.Intent;
 import android.icu.text.UnicodeSetSpanner;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -37,13 +38,14 @@ import static android.R.attr.reversible;
 
 public class Registration extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     TextView tvName, tvEmail, tvPhone,tvPass,tvPasschk,tvRoll;
-    String name = null, email = null, phone = null,pass = null,passchk = null,
-            roll = null,batch=null,tsize=null,dept=null,uniqid=null,gender=null;
+    String name = "nishant", email = "nis@gmdafd.com", phone = "4563623478",pass = "hellohai",passchk = "hellohai",
+            roll = "32",batch = "14", tsize = "L", dept="CSE",uniqid=null,gender="Male";
     Button bSubmit;
     RadioGroup radioSexGroup;
     RadioButton radioSexButton;
     Spinner spBatch, spDept, spTsize;
     View viewof = null;
+    int selectedid;
     JSONObject jsonObject;
 
     Context context;
@@ -150,38 +152,6 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
         spTsize.setAdapter(dataAdapter);
     }
 
-
-    private void jsonBuilderIsHere() {
-        jsonObject = new JSONObject();
-        try {
-            uniqid = reversePhone();
-            jsonObject.accumulate("ID", uniqid);
-            jsonObject.accumulate("name", name);
-            jsonObject.accumulate("email", email);
-            jsonObject.accumulate("phone", phone);
-            jsonObject.accumulate("gender", gender);
-            jsonObject.accumulate("tsize", tsize);
-            jsonObject.accumulate("password", pass);
-            jsonObject.accumulate("batch", batch);
-            jsonObject.accumulate("department", dept);
-            jsonObject.accumulate("roll", roll);
-//            jsonObject.accumulate("ID", uniqid);
-//            jsonObject.accumulate("ID", uniqid);
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        Log.e("a",jsonObject.toString());
-    }
-
-    private String reversePhone() {
-        String str = null;
-        for(int i=phone.length()-1;i>=0;i--){
-            str += phone.charAt(i);
-        }
-        return str;
-    }
-
     private void initialize(View view) {
         tvName = (TextView) view.findViewById(R.id.eTname);
         tvEmail = (TextView) view.findViewById(R.id.eTemail);
@@ -194,9 +164,6 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
         bSubmit = (Button) view.findViewById(R.id.btSubmit);
         tvRoll = (TextView) view.findViewById(R.id.eTroll);
         radioSexGroup = (RadioGroup) view.findViewById(R.id.radioSex);
-
-        int selectedId=radioSexGroup.getCheckedRadioButtonId();
-        radioSexButton=(RadioButton)view.findViewById(selectedId);
         context = this.getActivity();
 //        Toast.makeText(context," id= "+selectedId,Toast.LENGTH_SHORT).show();
 
@@ -247,24 +214,40 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
         switch (id){
             case R.id.btSubmit:
                 //TODO send data function
-                boolean flag = validateInputedData();
+                //boolean flag = validateInputedData();
+                boolean flag = true;
                 if(flag){
-                    jsonBuilderIsHere();
+
+                    int selectedId=radioSexGroup.getCheckedRadioButtonId();
+                    radioSexButton= (RadioButton)viewof.findViewById(selectedId);
+                    gender=radioSexButton.getText().toString();
+                    Intent intent = new Intent(getActivity(),SendJasonRegister.class);
+                    intent.putExtra("name",name);
+                    intent.putExtra("email",email);
+                    intent.putExtra("phone",phone);
+                    intent.putExtra("gender",gender);
+                    intent.putExtra("password",pass);
+                    intent.putExtra("roll",roll);
+                    intent.putExtra("batch",batch);
+                    intent.putExtra("tsize",tsize);
+                    intent.putExtra("dept",dept);
+//                    intent.putExtra("",);
+                    getActivity().startActivity(intent);
                 }
                 break;
         }
     }
 
     private boolean validateInputedData() {
-        if(validateName() && validateEmail() && validateRoll() && validatePhoneNo() && validatePassword()
-                &&validateBatch() && validateDept() &&validateTSize())
+        if(validateName() && validateEmail()  && validatePhoneNo() && validateTSize()  && validatePassword()
+                && validateBatch() && validateDept() && validateRoll())
             return true;
         return false;
     }
 
     private boolean validateTSize() {
         tsize = spTsize.getSelectedItem().toString();
-        if(!tsize.equals("T-size")){
+        if(tsize.equals("T-size")){
             Toast tos = Toast.makeText(context,"Enter Your T-shirt size!",Toast.LENGTH_LONG);
             tos.setGravity(Gravity.TOP,0,0);
             tos.show();
@@ -276,7 +259,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
 
     private boolean validateDept() {
         dept = spDept.getSelectedItem().toString();
-        if(!dept.equals("Dept")){
+        if(dept.equals("Dept")){
             Toast tos = Toast.makeText(context,"Select Your department!",Toast.LENGTH_LONG);
             tos.setGravity(Gravity.TOP,0,0);
             tos.show();
@@ -288,7 +271,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
 
     private boolean validateBatch() {
         batch = spBatch.getSelectedItem().toString();
-        if(!batch.equals("Batch")){
+        if(batch.equals("Batch")){
             Toast tos = Toast.makeText(context,"Select Your batch!",Toast.LENGTH_LONG);
             tos.setGravity(Gravity.TOP,0,0);
             tos.show();
@@ -308,7 +291,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
             email = null;
             return false;
         }
-        else if(email.contains("@") && email.contains(".com") && email.length()<10)
+        else if(email.contains("@") && email.contains(".com") && email.length()>9)
             return true;
         Toast tos = Toast.makeText(context,"Email-ID is not valid!",Toast.LENGTH_LONG);
         tos.setGravity(Gravity.TOP,0,0);
@@ -322,7 +305,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
         roll = tvRoll.getText().toString();
         roll.trim();
         if(roll.length()==0 || roll.equals("0") || roll.equals("00") || roll.equals("000")){
-            Toast tos = Toast.makeText(context,"",Toast.LENGTH_LONG);
+            Toast tos = Toast.makeText(context,"Enter Your Class Roll no!",Toast.LENGTH_LONG);
             tos.setGravity(Gravity.TOP,0,0);
             tos.show();
             roll = null;
@@ -342,7 +325,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
         name = tvName.getText().toString();
         name.trim();
         if(name.length() == 0){
-            Toast tos = Toast.makeText(context,"Enter Your Awesome Name please!",Toast.LENGTH_LONG);
+            Toast tos = Toast.makeText(context,"Enter Your \"Awesome\" Name please!",Toast.LENGTH_LONG);
             tos.setGravity(Gravity.CENTER,0,0);
             tos.show();
             return false;
