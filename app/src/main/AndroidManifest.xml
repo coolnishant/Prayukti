@@ -4,8 +4,9 @@
     android:versionCode="1"
     android:versionName="1.0">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.CALL_PHONE" />-->
     <!-- <uses-permission android:name="android.permission.RECORD_AUDIO"/> -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -18,21 +19,21 @@
 
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="mytwistedidea.wordpress.com.prayukti.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".WebViewing"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".EventData"
+            android:name="mytwistedidea.wordpress.com.prayukti.EventData"
             android:label="@string/title_activity_event_data"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <!-- <activity android:name=".EventDescription" /> -->
-        <activity android:name=".SendJasonRegister" />
+        <activity android:name="mytwistedidea.wordpress.com.prayukti.SendJasonRegister" />
         <activity
-            android:name=".Splash"
+            android:name="mytwistedidea.wordpress.com.prayukti.Splash"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

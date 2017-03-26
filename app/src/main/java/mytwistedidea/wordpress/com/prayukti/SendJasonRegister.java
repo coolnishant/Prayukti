@@ -35,6 +35,7 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.InetAddress;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -45,11 +46,12 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
     JSONObject jsonObject;
     boolean status = false;
     String response;
-    String name, email,phone,gender,rollno,finalData,tsize,uniqid,password;
+    String name, email, phone, gender, rollno, finalData, tsize, uniqid, password;
     Button bSend, bCancel;
     final String REGISTER_URL = "http://prayuktihith.net/2017/androidnish/testingJSONAgain.php";
     RequestQueue requestQueue;
     DatabaseHelper helpers;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,9 +68,9 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
         gender = gotBox.getString("gender");
         tsize = gotBox.getString("tsize");
         password = gotBox.getString("password");
-        rollno = gotBox.getString("batch")+"-"+ gotBox.getString("dept")+"-"+ gotBox.getString("roll");
-        finalData = "Name: "+name+"\nEmail: "+email+"\nPhone: "+phone+
-                "\nGender: "+gender+"\nRoll No.: "+rollno+"\nT-Shirt Size: "+tsize+"\n";
+        rollno = gotBox.getString("batch") + "-" + gotBox.getString("dept") + "-" + gotBox.getString("roll");
+        finalData = "Name: " + name + "\nEmail: " + email + "\nPhone: " + phone +
+                "\nGender: " + gender + "\nRoll No.: " + rollno + "\nT-Shirt Size: " + tsize + "\n";
         tvData.setText(finalData);
 
         bSend.setOnClickListener(this);
@@ -81,7 +83,7 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
 
     private String reversePhone() {
         String str = "";
-        for(int i=phone.length()-1;i>=0;i--){
+        for (int i = phone.length() - 1; i >= 0; i--) {
             str += phone.charAt(i);
         }
         return str;
@@ -95,7 +97,7 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
     }
 
 
-    private String  jsonBuilderIsHere() {
+    private String jsonBuilderIsHere() {
         jsonObject = new JSONObject();
         try {
 
@@ -107,12 +109,12 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
             jsonObject.accumulate("gender", gender);
             jsonObject.accumulate("tsize", tsize);
             jsonObject.accumulate("password", password);
-            jsonObject.accumulate("rollno",rollno);
+            jsonObject.accumulate("rollno", rollno);
             return jsonObject.toString();
         } catch (JSONException e) {
-            Log.e("Nish","Can't format JSON!");
+            Log.e("Nish", "Can't format JSON!");
         }
-        Log.e("a",jsonObject.toString());
+        Log.e("a", jsonObject.toString());
         return null;
     }
 
@@ -120,19 +122,21 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         int id = v.getId();
         Toast tos;
-        switch (id){
+        switch (id) {
             case R.id.bCancel:
                 finish();
 
-                tos = Toast.makeText(this,"Correct it!!!!",Toast.LENGTH_SHORT);
-                tos.setGravity(Gravity.CENTER,0,0);
+                tos = Toast.makeText(this, "Correct it!!!!", Toast.LENGTH_SHORT);
+                tos.setGravity(Gravity.CENTER, 0, 0);
                 tos.show();
                 break;
 
             case R.id.bSendFinal:
                 //Todo Send JSON
-                register(uniqid,name,email,phone,gender,tsize,password,rollno);
-                checkForNext();
+
+                    register(uniqid, name, email, phone, gender, tsize, password, rollno);
+                    checkForNext();
+
                 break;
         }
         checkForNext();
@@ -144,14 +148,14 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
 
     private void register(String uniqid, final String name, String email, String phone, String gender, String tsize,
                           String password, String rollno) {
-        class RegisterUser extends AsyncTask<String, Void, String>{
+        class RegisterUser extends AsyncTask<String, Void, String> {
             ProgressDialog loading = null;
             RegisterUserClass ruc = new RegisterUserClass();
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(SendJasonRegister.this, "Please Wait",null, true, true);
+                loading = ProgressDialog.show(SendJasonRegister.this, "Please Wait", null, true, true);
             }
 
             @Override
@@ -159,25 +163,24 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
                 super.onPostExecute(s);
 //                loading.dismiss();
 //                if(loading != null && loading.isShowing()){ loading.dismiss();}
-                response = new  String(s);
+                response = new String(s);
                 s.trim();
-                Log.e("response",response);
+                Log.e("response", response);
 
-                if(s.equals("Successfully Registered. :)")) {
+                if (s.equals("Successfully Registered. :)")) {
                     status = true;
-                }
-                else{
+                } else {
                     status = false;
                 }
-                Toast  tos = Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG);
-                tos.setGravity(Gravity.CENTER|Gravity.FILL_HORIZONTAL,0,0);
+                Toast tos = Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG);
+                tos.setGravity(Gravity.CENTER | Gravity.FILL_HORIZONTAL, 0, 0);
                 View v1 = tos.getView();
                 LinearLayout toastLayout = (LinearLayout) tos.getView();
                 TextView toastTV = (TextView) toastLayout.getChildAt(0);
-                if(status){
+                if (status) {
                     v1.setBackgroundColor(Color.BLUE);
                     toastTV.setTextSize(30);
-                    tos.setText(name+"\n"+response+"\nID Saved Drawer/Registration");
+                    tos.setText(name + "\n" + response + "\nID Saved Drawer/Registration");
                     toastTV.setGravity(Gravity.CENTER);
                     tos.setView(v1);
                     tos.show();
@@ -188,12 +191,20 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
 //                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
 
-                }
-                else{
+                } else if (response.contains("already")){
                     v1.setBackgroundColor(Color.RED);
                     toastTV.setGravity(Gravity.CENTER);
                     tos.setText(response);
                     toastTV.setTextSize(20);
+                    tos.setView(v1);
+                    tos.show();
+                    finish();
+                }
+                else{
+                    v1.setBackgroundColor(Color.MAGENTA);
+                    toastTV.setTextSize(20);
+                    tos.setText(name +"!\nPlease Connect to INTERNET!");
+                    toastTV.setGravity(Gravity.CENTER);
                     tos.setView(v1);
                     tos.show();
                     finish();
@@ -204,14 +215,14 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
             protected String doInBackground(String... params) {
 
                 jsonBuilderIsHere();
-                String result = ruc.sendPostRequest(REGISTER_URL,jsonObject);
-                return  result;
+                String result = ruc.sendPostRequest(REGISTER_URL, jsonObject);
+                return result;
             }
 
         }
 
         RegisterUser ru = new RegisterUser();
-        ru.execute(uniqid,name,email,phone,gender,tsize,password,rollno);
+        ru.execute(uniqid, name, email, phone, gender, tsize, password, rollno);
 
 
     }
@@ -219,9 +230,24 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(status == true){
+        if (status == true) {
             savingData();
         }
+//        else if(response == null){
+//            if (isNetworkConnected() && isInternetAvailable()){
+//                Toast tos = Toast.makeText(getApplicationContext(), "No InternetConnection\nPlease Connect TO ACTIVE Internet!", Toast.LENGTH_LONG);
+//                tos.setGravity(Gravity.CENTER | Gravity.FILL_HORIZONTAL, 0, 0);
+//                View v1 = tos.getView();
+//                LinearLayout toastLayout = (LinearLayout) tos.getView();
+//                TextView toastTV = (TextView) toastLayout.getChildAt(0);
+//                v1.setBackgroundColor(Color.MAGENTA);
+//                toastTV.setGravity(Gravity.CENTER);
+//                toastTV.setTextSize(20);
+//                toastTV.setTextColor(Color.GRAY);
+//                tos.setView(v1);
+//                tos.show();
+//            }
+//        }
     }
 
     private void savingData() {
@@ -231,8 +257,8 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onBackPressed() {
-        Toast  tos = Toast.makeText(getApplicationContext(), "Correct it!", Toast.LENGTH_LONG);
-        tos.setGravity(Gravity.CENTER|Gravity.FILL_HORIZONTAL,0,0);
+        Toast tos = Toast.makeText(getApplicationContext(), "Correct it!", Toast.LENGTH_LONG);
+        tos.setGravity(Gravity.CENTER | Gravity.FILL_HORIZONTAL, 0, 0);
         View v1 = tos.getView();
         LinearLayout toastLayout = (LinearLayout) tos.getView();
         TextView toastTV = (TextView) toastLayout.getChildAt(0);
@@ -244,6 +270,20 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
         finish();
         super.onBackPressed();
     }
+
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null;
+    }
+
+    public boolean isInternetAvailable() {
+        try {
+            InetAddress ipAddr = InetAddress.getByName("google.com"); //You can replace it with your name
+            return !ipAddr.equals("");
+
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
-
-
