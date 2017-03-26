@@ -15,10 +15,25 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".WebViewing"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".EventData"
+            android:label="@string/title_activity_event_data"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!-- <activity android:name=".EventDescription" /> -->
+        <activity android:name=".SendJasonRegister" />
+        <activity
+            android:name=".Splash"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,13 +41,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WebViewing" />
-        <activity
-            android:name=".EventData"
-            android:label="@string/title_activity_event_data"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EventDescription" />
-        <activity android:name=".SendJasonRegister"></activity>
     </application>
 
 </manifest>

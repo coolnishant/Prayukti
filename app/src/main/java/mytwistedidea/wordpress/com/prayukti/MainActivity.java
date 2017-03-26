@@ -1,23 +1,9 @@
 package mytwistedidea.wordpress.com.prayukti;
 
-import android.Manifest;
-import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -26,14 +12,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Context context;
+    final int TIME_BACK = 2;
+    int k = TIME_BACK;
+    int presentfrag = R.layout.activity_frag_home;
 //    Button bper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +51,19 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }
+        else if(presentfrag != R.layout.activity_frag_home){
+            Fragment fragment = new Home();
+            presentfrag = R.layout.activity_frag_home;
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_mainis,fragment);
+            ft.commit();
+            k = TIME_BACK;
+        }
+        else if(k!=0 && presentfrag == R.layout.activity_frag_home) {
+            Toast.makeText(getApplicationContext(), "Press again to Exit!!", Toast.LENGTH_SHORT).show();
+            k--;
+        }else {
             super.onBackPressed();
         }
     }
@@ -113,27 +112,40 @@ public class MainActivity extends AppCompatActivity
         switch(id) {
             case R.id.nav_home:
                 fragment = new Home();
+                presentfrag = R.layout.activity_frag_home;
                 break;
             case R.id.nav_stream:
                 fragment = new LiveStream();
+                presentfrag = R.layout.activity_frag_live_stream;
                 break;
             case R.id.nav_events:
                 fragment = new Events();
+                presentfrag = R.layout.activity_frag_events;
                 break;
             case R.id.nav_schedule:
                 fragment = new Schedule();
+                presentfrag = R.layout.activity_frag_schedule;
                 break;
             case R.id.nav_register:
                 fragment = new Registration();
+                presentfrag = R.layout.activity_frag_registration;
                 break;
             case R.id.nav_contact:
                 fragment = new ContactUs();
+                presentfrag = R.layout.activity_frag_contact_us;
                 break;
             case R.id.nav_about:
                 fragment = new About();
+                presentfrag = R.layout.activity_frag_about;
+                break;
+            case R.id.nav_registered:
+                fragment = new IamRegistered();
+                presentfrag = R.layout.activity_frag_iam_registered;
                 break;
         }
-
+        if(presentfrag != R.layout.activity_frag_home){
+            k=TIME_BACK;
+        }
         if(fragment != null){
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_mainis,fragment);
@@ -144,5 +156,4 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
     }
-
 }

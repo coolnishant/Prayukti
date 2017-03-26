@@ -38,8 +38,8 @@ import static android.R.attr.reversible;
 
 public class Registration extends Fragment implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     TextView tvName, tvEmail, tvPhone,tvPass,tvPasschk,tvRoll;
-    String name = "nishant", email = "nis@gmdafd.com", phone = "4563623478",pass = "hellohai",passchk = "hellohai",
-            roll = "32",batch = "14", tsize = "L", dept="CSE",uniqid=null,gender="Male";
+    String name = null, email = null, phone = null,pass = null,passchk = null,
+            roll = null,batch = null, tsize = null, dept=null,uniqid=null,gender=null;
     Button bSubmit;
     RadioGroup radioSexGroup;
     RadioButton radioSexButton;
@@ -214,10 +214,8 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
         switch (id){
             case R.id.btSubmit:
                 //TODO send data function
-                //boolean flag = validateInputedData();
-                boolean flag = true;
+                boolean flag = validateInputedData();
                 if(flag){
-
                     int selectedId=radioSexGroup.getCheckedRadioButtonId();
                     radioSexButton= (RadioButton)viewof.findViewById(selectedId);
                     gender=radioSexButton.getText().toString();
@@ -246,8 +244,8 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
     }
 
     private boolean validateTSize() {
-        tsize = spTsize.getSelectedItem().toString();
-        if(tsize.equals("T-size")){
+        tsize = spTsize.getSelectedItem().toString().trim();
+        if(tsize.contains("Size")){
             Toast tos = Toast.makeText(context,"Enter Your T-shirt size!",Toast.LENGTH_LONG);
             tos.setGravity(Gravity.TOP,0,0);
             tos.show();
@@ -326,7 +324,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
         name.trim();
         if(name.length() == 0){
             Toast tos = Toast.makeText(context,"Enter Your \"Awesome\" Name please!",Toast.LENGTH_LONG);
-            tos.setGravity(Gravity.CENTER,0,0);
+            tos.setGravity(Gravity.CENTER|Gravity.FILL_HORIZONTAL,0,0);
             tos.show();
             return false;
         }
@@ -340,13 +338,13 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
 //        passchk.trim();
         if(pass.length() <5){
             Toast tos = Toast.makeText(context,"Password must Be aleast 5 character long!",Toast.LENGTH_LONG);
-            tos.setGravity(Gravity.TOP,0,0);
+            tos.setGravity(Gravity.TOP|Gravity.FILL_HORIZONTAL,0,0);
             tos.show();
             return false;
         }
         else if (!pass.equals(passchk)){
             Toast tos = Toast.makeText(context,"Password didn't Matched, Retype Password!",Toast.LENGTH_LONG);
-            tos.setGravity(Gravity.TOP,0,0);
+            tos.setGravity(Gravity.TOP|Gravity.FILL_HORIZONTAL,0,0);
             tos.show();
             return false;
         }
@@ -361,7 +359,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
         }
         else {
             Toast tos = Toast.makeText(context,"Enter a Valid Phone no.!",Toast.LENGTH_LONG);
-            tos.setGravity(Gravity.TOP,0,0);
+            tos.setGravity(Gravity.TOP|Gravity.FILL_HORIZONTAL,0,0);
             tos.show();
             phone = null;
             return false;

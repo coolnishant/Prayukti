@@ -8,7 +8,7 @@ import android.support.design.widget.TabLayout;
 import android.util.Log;
 import android.widget.Toast;
 
-import org.apache.http.HttpException;
+//import org.apache.http.HttpException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;

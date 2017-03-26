@@ -35,7 +35,8 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        fab:srcCompat="@drawable/prayuktilogoback"
+        fab:srcCompat="@mipmap/ic_prayukti"
+            android:background="@color/colorPrayuktiLight"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2" />

@@ -2,16 +2,21 @@ package mytwistedidea.wordpress.com.prayukti;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.media.audiofx.LoudnessEnhancer;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,16 +44,17 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
     TextView tvData;
     JSONObject jsonObject;
     boolean status = false;
+    String response;
     String name, email,phone,gender,rollno,finalData,tsize,uniqid,password;
     Button bSend, bCancel;
     final String REGISTER_URL = "http://prayuktihith.net/2017/androidnish/testingJSONAgain.php";
     RequestQueue requestQueue;
-
+    DatabaseHelper helpers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_jason_register);
-
+        ProgressDialog loading;
         tvData = (TextView) findViewById(R.id.tvLastCheck);
         bCancel = (Button) findViewById(R.id.bCancel);
         bSend = (Button) findViewById(R.id.bSendFinal);
@@ -125,48 +131,21 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
 
             case R.id.bSendFinal:
                 //Todo Send JSON
-//                tos = Toast.makeText(this,"All Set!!",Toast.LENGTH_SHORT);
-//                tos.setGravity(Gravity.TOP,0,0);
-//                tos.show();
-//
-//                StringRequest request = new StringRequest(Request.Method.POST,REGISTER_URL, new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        Log.e("nisha",response);
-//                    }
-//                },new Response.ErrorListener(){
-//
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//
-//                    }
-//                }){
-//                    @Override
-//                    protected Map<String, String> getParams() throws AuthFailureError {
-//                        Map<String ,String > parameters = new HashMap<String ,String>();
-//                        parameters.put("ID", uniqid);
-//                        parameters.put("name", name);
-//                        parameters.put("email", email);
-//                        parameters.put("phone", phone);
-//                        parameters.put("gender", gender);
-//                        parameters.put("tsize", tsize);
-//                        parameters.put("password", password);
-//                        parameters.put("rollno",rollno);
-//
-//                        return parameters;
-//                    }
-//                };
-//
-//                requestQueue.add(request);
-//                jsonBuilderIsHere();
                 register(uniqid,name,email,phone,gender,tsize,password,rollno);
+                checkForNext();
                 break;
         }
+        checkForNext();
     }
-    private void register(String uniqid, String name, String email,String phone,  String gender, String tsize,
+
+    private void checkForNext() {
+
+    }
+
+    private void register(String uniqid, final String name, String email, String phone, String gender, String tsize,
                           String password, String rollno) {
         class RegisterUser extends AsyncTask<String, Void, String>{
-            ProgressDialog loading;
+            ProgressDialog loading = null;
             RegisterUserClass ruc = new RegisterUserClass();
 
             @Override
@@ -178,15 +157,47 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                loading.dismiss();
+//                loading.dismiss();
+//                if(loading != null && loading.isShowing()){ loading.dismiss();}
+                response = new  String(s);
+                s.trim();
+                Log.e("response",response);
 
-                Toast tos = Toast.makeText(getApplicationContext(),s,Toast.LENGTH_LONG);
-                tos.setGravity(Gravity.CENTER,0,0);
-                tos.show();
-                if(s.equals("successfully registered"))
+                if(s.equals("Successfully Registered. :)")) {
                     status = true;
-                else status = false;
-                Log.e("nish",s);
+                }
+                else{
+                    status = false;
+                }
+                Toast  tos = Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG);
+                tos.setGravity(Gravity.CENTER|Gravity.FILL_HORIZONTAL,0,0);
+                View v1 = tos.getView();
+                LinearLayout toastLayout = (LinearLayout) tos.getView();
+                TextView toastTV = (TextView) toastLayout.getChildAt(0);
+                if(status){
+                    v1.setBackgroundColor(Color.BLUE);
+                    toastTV.setTextSize(30);
+                    tos.setText(name+"\n"+response+"\nID Saved Drawer/Registration");
+                    toastTV.setGravity(Gravity.CENTER);
+                    tos.setView(v1);
+                    tos.show();
+                    finish();
+//                    savingData();
+                    Intent i = new Intent(SendJasonRegister.this, MainActivity.class);
+                    // set the new task and clear flags
+//                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(i);
+
+                }
+                else{
+                    v1.setBackgroundColor(Color.RED);
+                    toastTV.setGravity(Gravity.CENTER);
+                    tos.setText(response);
+                    toastTV.setTextSize(20);
+                    tos.setView(v1);
+                    tos.show();
+                    finish();
+                }
             }
 
             @Override
@@ -194,15 +205,45 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
 
                 jsonBuilderIsHere();
                 String result = ruc.sendPostRequest(REGISTER_URL,jsonObject);
-
                 return  result;
             }
+
         }
 
         RegisterUser ru = new RegisterUser();
         ru.execute(uniqid,name,email,phone,gender,tsize,password,rollno);
+
+
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(status == true){
+            savingData();
+        }
+    }
+
+    private void savingData() {
+        helpers = new DatabaseHelper(this);
+        helpers.insertRegStudent(uniqid, name, phone, email, tsize, rollno);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast  tos = Toast.makeText(getApplicationContext(), "Correct it!", Toast.LENGTH_LONG);
+        tos.setGravity(Gravity.CENTER|Gravity.FILL_HORIZONTAL,0,0);
+        View v1 = tos.getView();
+        LinearLayout toastLayout = (LinearLayout) tos.getView();
+        TextView toastTV = (TextView) toastLayout.getChildAt(0);
+        v1.setBackgroundColor(Color.RED);
+        toastTV.setGravity(Gravity.CENTER);
+        toastTV.setTextSize(20);
+        tos.setView(v1);
+        tos.show();
+        finish();
+        super.onBackPressed();
+    }
 }
 
 
