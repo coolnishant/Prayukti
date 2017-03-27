@@ -32,6 +32,7 @@ public class Home extends Fragment {
 //                        .setAction("Action", null).show();
                 Intent intent = new Intent(getActivity(),WebViewing.class);
                 intent.putExtra("url", fbURL);
+                intent.putExtra("website","Prayukti @fb");
                 startActivity(intent);
             }
         });
@@ -44,6 +45,7 @@ public class Home extends Fragment {
 //                        .setAction("Action", null).show();
                 Intent intent = new Intent(getActivity(),WebViewing.class);
                 intent.putExtra("url", ytURL);
+                intent.putExtra("website","Prayukti @youtube");
                 startActivity(intent);
             }
         });

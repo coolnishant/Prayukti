@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#0B1926</color>
     <color name="colorAccent">#0B1926</color>
     <color name="colorPrayuktiDark">#0B1926</color>
+    <color name="colorPrayuktiMid">#3585FE</color>
     <color name="colorPrayuktiLight">#EAF7FC</color>
-    <color name="colorPrayuktiMid">#6CABFF</color>
 </resources>

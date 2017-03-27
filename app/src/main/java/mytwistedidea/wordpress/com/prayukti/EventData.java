@@ -55,6 +55,7 @@ public class EventData extends AppCompatActivity {
         eventname = gotBox.getString("eventclicked");
 //        sendEventName();
 //        sendEventPosotion();
+        setTitle(eventname);
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);

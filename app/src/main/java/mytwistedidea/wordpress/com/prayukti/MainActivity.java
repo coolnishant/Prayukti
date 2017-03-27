@@ -1,15 +1,26 @@
 package mytwistedidea.wordpress.com.prayukti;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,7 +30,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Context context;
     final int TIME_BACK = 2;
     int k = TIME_BACK;
     int presentfrag = R.layout.activity_frag_home;
@@ -41,9 +51,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Permissions permissions = new Permissions(MainActivity.this);
-        permissions.checkPermission();
-
+        checkPermission();
         displaySelectedScreenFragment(R.id.nav_home);
     }
 
@@ -52,6 +60,12 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+        }
+        else if(k!=0 && presentfrag == R.layout.activity_frag_registration) {
+            Toast tos = Toast.makeText(getApplicationContext(), "On Back will Lose DATA!", Toast.LENGTH_SHORT);
+            tos.setGravity(Gravity.BOTTOM|Gravity.FILL_HORIZONTAL,0,0);
+            tos.show();
+            k--;
         }
         else if(presentfrag != R.layout.activity_frag_home){
             Fragment fragment = new Home();
@@ -62,11 +76,24 @@ public class MainActivity extends AppCompatActivity
             k = TIME_BACK;
         }
         else if(k!=0 && presentfrag == R.layout.activity_frag_home) {
-            Toast.makeText(getApplicationContext(), "Press again to Exit!!", Toast.LENGTH_SHORT).show();
+            Toast tos = Toast.makeText(getApplicationContext(), "Press again to Exit!!", Toast.LENGTH_SHORT);
+            tos.setGravity(Gravity.BOTTOM|Gravity.FILL_HORIZONTAL,0,0);
+            tos.show();
             k--;
-        }else {
+        }
+        else {
             super.onBackPressed();
         }
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Do something after 5s = 5000ms
+                k=TIME_BACK;
+                Log.e("reset",k+"");
+            }
+        }, 3100);
+
     }
 
     @Override
@@ -143,6 +170,14 @@ public class MainActivity extends AppCompatActivity
                 fragment = new IamRegistered();
                 presentfrag = R.layout.activity_frag_iam_registered;
                 break;
+            case R.id.nav_sponsers:
+                fragment = new Sponsers();
+                presentfrag = R.layout.activity_frag_sponsers;
+                break;
+            case R.id.nav_eventby:
+                fragment = new EventManagementBy();
+                presentfrag = R.layout.activity_frag_event_management_by;
+                break;
         }
         if(presentfrag != R.layout.activity_frag_home){
             k=TIME_BACK;
@@ -156,6 +191,56 @@ public class MainActivity extends AppCompatActivity
         //Close the drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private static final int REQUEST_CALL = 200;
+    private static final int REQUEST_AUDIO = 100;
+    Context context = MainActivity.this;
+    //FOR PERMISSIONS
+    public boolean checkPermission()
+    {
+        int currentAPIVersion = Build.VERSION.SDK_INT;
+        if(currentAPIVersion>=android.os.Build.VERSION_CODES.M)
+        {
+            if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED )
+            {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.CALL_PHONE)) {
+                    AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
+                    alertBuilder.setCancelable(true);
+                    alertBuilder.setTitle("Permission necessary");
+                    alertBuilder.setMessage("Permission is necessary to do event!!!!");
+                    alertBuilder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        //                        @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
+                        }
+                    });
+                    AlertDialog alert = alertBuilder.create();
+                    alert.show();
+                } else {
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CALL);
+                }
+                return false;
+            } else {
+                return true;
+            }
+        } else {
+            return true;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_CALL:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this,"Permission granted!!!!",Toast.LENGTH_SHORT).show();
+                    Log.e("a","granted");
+                } else {
+                    Toast.makeText(this,"Permission Required Call!!!!",Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
     }
 
 }

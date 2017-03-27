@@ -73,7 +73,7 @@ public class IamRegistered extends Fragment {
         int j;
         int i=0;
         Log.e("aa",l+"");
-        if(l == 5) {
+        if(l == 1) {
             tvRegStudentHeader.setText("No one is Registered From Your Phone!");
             return;
         }
