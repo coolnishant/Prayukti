@@ -20,6 +20,7 @@
         android:layout_height="5dp"
         android:background="@color/colorPrayuktiMid"
         android:layout_marginTop="5dp"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,6 +30,17 @@
         android:textSize="20sp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Haldia Institute of Technology"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrayuktiDark"
+        android:layout_marginTop="5dp"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:padding="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/haldia_4pillars"/>
 
     <View
         android:layout_width="match_parent"
@@ -125,7 +137,7 @@
         fab:menu_colorRipple="#99FFFFFF"
         fab:menu_fab_label="More About Us"
         fab:menu_fab_size="normal"
-        fab:menu_icon="@drawable/ic_more_about_us"
+        fab:menu_icon="@drawable/fab_add_user_button"
         fab:menu_labels_colorNormal="#333333"
         fab:menu_labels_colorPressed="#444444"
         fab:menu_labels_colorRipple="#66FFFFFF"

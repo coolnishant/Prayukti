@@ -22,41 +22,50 @@
         <item>Pradarshan</item>
     </string-array>
 
-
-    <string-array name="tete_a_tete">
-        <item>Motivation is what drives us and words are there to inspire.<p>You won\'t get very far using what you know but using what you learn. Knowing is not enough neither are the life hacks that get us through our moments. Experience is what matters, not just your own but also what you see, hear and learn. Let the words move you, inspire and make you want to be more that what you are.</p></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-    </string-array>
-
-
     <string-array name="ranbhoomi">
-        <item>When the reality gets mundane, the daydreamers shine. Virtual reality takes overules and playgrounds morph into battlefields. Designed for the warriors of virtual reality who thrive under pressure and live for the adrenaline rush, finding their fix in speed, sport and combat.</item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>NFS MW</item>
+        <item>Counter Strike</item>
+        <item>FIFA 11</item>
+        <item>Mini Militia</item>
     </string-array>
 
-
-    <string-array name="r_u_sherlocked">
-        <item>There is story behind everything, a mystery in those stories and a clue in each word. Watson and Sherlock worked hand in hand and so can you and your half. In a pair of perfect twos, unearth each clue, uncover each mystery and tell the untold tale like Dr Watson and the ingenious Sherlock.</item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+    <string-array name="saudagar">
+        <item>B Plan</item>
+        <item>D-Constructor</item>
     </string-array>
+
+    <string-array name="yantriki">
+        <item>Vinashak</item>
+        <item>Aqua Soccer</item>
+        <item>Junk Bot War</item>
+        <item>Track-O-Bot</item>
+    </string-array>
+
+    <string-array name="innovacion">
+        <item>Paper Presentation</item>
+        <item>Poster Presentaion</item>
+    </string-array>
+
+    <string-array name="fra">
+        <item>De-Movier</item>
+        <item>La Photographer</item>
+    </string-array>
+
+    <string name="tete_a_tete">Motivation is what drives us and words are there to inspire.<p>You won\'t get very far using what you know but using what you learn. Knowing is not enough neither are the life hacks that get us through our moments. Experience is what matters, not just your own but also what you see, hear and learn. Let the words move you, inspire and make you want to be more that what you are.</p></string>
+    <string name="ranbhoomi">When the reality gets mundane, the daydreamers shine. Virtual reality takes overules and playgrounds morph into battlefields. Designed for the warriors of virtual reality who thrive under pressure and live for the adrenaline rush, finding their fix in speed, sport and combat.</string>
+    <string name="r_u_sherlocked">There is story behind everything, a mystery in those stories and a clue in each word. Watson and Sherlock worked hand in hand and so can you and your half. In a pair of perfect twos, unearth each clue, uncover each mystery and tell the untold tale like Dr Watson and the ingenious Sherlock.</string>
+    <string name="requizzit">We are neither going to scale you down nor judge you in a verdict. As there is no limit in the advection of knowledge, the bargain is always done with remembrance. Be inquisitive and thrust your limit to a higher potential where your brain will be sublimed with an insight of that same knowledge.</string>
+    <string name="mania_c">Are you a coder? Can you survive the Mania of C? Rate yourself as a C Coder on a scale of 10 and verify yourself in the heat of ManiaC.</string>
+    <string name="jugaad_technology"><p>In a world, where our resources are limited and the consumption is ever-increasing ….</p> The only way for a sustainable development is to repair, recycle and reuse the existing resources without losing the ingenuity of a desired purpose. Dedicated to the service of Mankind,the shaping up should be done considering the commercial viability of the design.</string>
+    <string name="circuitrix">Ever wondered the magic of a simple circuit? Design and implement your idea of a practically feasible circuit and show the magic.</string>
+    <string name="pradarshan">A design or a model is a gestured prototype of an idealistic imagination. In a cordial manner, a successful working model always follow a charismatic design… Thus, we are humbly inviting you to join an extraordinary league of creation, where a legendary design can transform dreams into perceptions.</string>
 
     <string name="home_content1">PRAYUKTI 2K17 = "Art of Technology" <p>The annual techno management festival of Haldia Institute of Technology. Scheduled from 24th to 26th of April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</p></string>
     <string name="home_content">PRAYUKTI 2K17 = "Art of Technology" <p>The annual techno management festival of Haldia Institute of Technology. Celebrating its 7th anniversary, it is getting bigger and better. It boasts of various events ranging from robotics to movie making and from junkyard arts to business strategies. Scheduled from 24th to 26th of April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</p></string>
     <string name="about_us_prayukti_2k17">The annual techno management festival of Haldia Institute of Technology. Celebrating its 7th anniversary, it is getting bigger and better. It boasts of various events ranging from robotics to movie making and from junkyard arts to business strategies. Scheduled from 24th to 26th of April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</string>
     <string name="about_us_hit">began its journey in the year 1996. It is the first private and accredited academic institution catering technical education in West Bengal. The Institute is situated at Haldia - an industrial hub in Eastern India.<p>Since inception, Haldia Institute of Technology is dedicated to the objectives of creating highly trained professional manpower in various disciplines of Engineering, Technology and Social Science. The Institute is also dedicated to the contribution of higher scientific research in Technology as well as in Applied Science and Social Science.</p></string>
-    <string name="about_us_prayukti_2k16">Prayukti 2016 held from 9th to 11th of february 2016 was crafted in such a way so that the students get to learn through enjoying while preparing for the fest. There were 15 events with some of them being quite unique.</string>
-
-
-
+    <string name="about_us_prayukti_2k16">Prayukti 2016 held from 24th to 26th of february 2016 was crafted in such a way so that the students get to learn through enjoying while preparing for the fest. There were 15 events with some of them being quite unique.</string>
+    <string name="event_data">Prayukti boasts of various events ranging from robotics to movie making and from junkyard arts to discussing world politics. Scheduled from 24th to 26th February, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</string>
 
     <string name="title_activity_event_data">EventData</string>
     <string name="section_format">Hello World from section: %1$d</string>

@@ -11,27 +11,33 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_prayukti"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         android:theme="@style/AppTheme">
         <activity
             android:name="mytwistedidea.wordpress.com.prayukti.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-        <activity android:name="mytwistedidea.wordpress.com.prayukti.WebViewing"
-            android:screenOrientation="portrait"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="mytwistedidea.wordpress.com.prayukti.WebViewing"
+            android:screenOrientation="portrait" />
         <activity
             android:name="mytwistedidea.wordpress.com.prayukti.EventData"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name="mytwistedidea.wordpress.com.prayukti.SendJasonRegister"
-            android:screenOrientation="portrait"/>
-        <activity android:name="mytwistedidea.wordpress.com.prayukti.NewRegister"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name="mytwistedidea.wordpress.com.prayukti.SendJasonRegister"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="mytwistedidea.wordpress.com.prayukti.EventsAll"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="mytwistedidea.wordpress.com.prayukti.EventsMultiple"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="mytwistedidea.wordpress.com.prayukti.NewRegister"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="mytwistedidea.wordpress.com.prayukti.Splash"
             android:screenOrientation="portrait"

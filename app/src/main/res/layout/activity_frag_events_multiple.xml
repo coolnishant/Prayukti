@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrayuktiLight"
     android:orientation="vertical"
-    android:id="@+id/ll"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
     <TextView
         android:layout_width="368dp"

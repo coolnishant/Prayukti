@@ -3,6 +3,7 @@ package mytwistedidea.wordpress.com.prayukti;
 import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
@@ -124,6 +125,11 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+//        if(id == R.id.nav_events){
+//            Intent intent = new Intent(MainActivity.this,EventsAll.class);
+//            startActivity(intent);
+//            return  true;
+//        }
 
 //        if(id == R.id.nav_register){
 //            Intent intent = new Intent(MainActivity.this, NewRegister.class);

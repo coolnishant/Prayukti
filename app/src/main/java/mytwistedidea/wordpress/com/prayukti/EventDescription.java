@@ -41,11 +41,11 @@ public class EventDescription extends Fragment {
     private void assignData() {
         switch (position) {
             case 0:
-                String des[] = getActivity().getResources().getStringArray(R.array.tete_a_tete);
-                iveventicon.setImageResource(R.drawable.pic_tete_a_tete);
+                String des = getActivity().getString(R.string.tete_a_tete);
+                iveventicon.setImageResource(R.drawable.pic_tete_a_tete_large);
                 tveventname.setText(eventname);
                 tveventname.setTextColor(Color.RED);
-                tveventdescription.setText(des[0]);
+                tveventdescription.setText(des);
                 break;
            }
     }

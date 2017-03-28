@@ -29,14 +29,14 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    //    compile 'com.jaredrummler:material-spinner:1.1.0'
+    //    compile 'com.weiwangcn.betterspinner:library-material:1.1.0'
     compile 'com.android.volley:volley:1.0.0'
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support:design:25.3.0'
     compile 'com.rom4ek:arcnavigationview:1.0.2'
     compile 'net.bohush.geometricprogressview:geometricprogressview:1.1.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
-//    compile 'com.jaredrummler:material-spinner:1.1.0'
     compile 'com.github.clans:fab:1.6.4'
-//    compile 'com.weiwangcn.betterspinner:library-material:1.1.0'
     testCompile 'junit:junit:4.12'
 }
