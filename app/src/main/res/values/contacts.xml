@@ -422,7 +422,7 @@
         <item>9830564354</item>
     </string-array>
     <!--requizzit-->
-    <string-array name="requizzit">
+    <string-array name="requizzit_name">
         <item>Niranjan</item>
         <item>Aditya Vijay Singh</item>
         <item>Ayush Shome</item>
@@ -447,7 +447,7 @@
         <item>7098706279</item>
     </string-array>
     <!--jugaartechnology-->
-    <string-array name="jugaartechnology_name">
+    <string-array name="jugaadtechnology_name">
         <item>Shubham Sinha</item>
         <item>Debopriya Chowdhary</item>
         <item>Shashank Kumar</item>
@@ -455,7 +455,7 @@
         <item>Ritika Sinha</item>
         <item>Ajit Jaykar</item>
     </string-array>
-    <string-array name="jugaartechnology_post">
+    <string-array name="jugaadtechnology_post">
         <item>Co-Ordinator</item>
         <item>Co-Ordinator</item>
         <item>Volunteer</item>
@@ -463,7 +463,7 @@
         <item>Volunteer</item>
         <item>Volunteer</item>
     </string-array>
-    <string-array name="juggartechnology_phone">
+    <string-array name="jugaadtechnology_phone">
         <item>7501029583</item>
         <item>7098906495</item>
         <item>8906915573</item>
@@ -517,6 +517,14 @@
         <item>8001632751</item>
         <item>7098037984</item>
         <item>9038536515</item>
+    </string-array>
+
+    <string-array name="my_data">
+        <item>Nishant Raj</item>
+        <item>3rd Year</item>
+        <item>CSE</item>
+        <item>8972258387</item>
+        <item>https://www.facebook.com/imnishantraj</item>
     </string-array>
 
 </resources>

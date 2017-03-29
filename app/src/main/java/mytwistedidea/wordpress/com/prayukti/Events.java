@@ -25,6 +25,8 @@ import android.widget.Toast;
 public class Events extends Fragment {
     String events[] = new String[15];
     Integer imageevent[] = new Integer[15];
+    String websiteIs = null;
+    int fileURL = -1;
     View view;
     @Nullable
     @Override
@@ -122,9 +124,25 @@ public class Events extends Fragment {
                         popup.setElevation(5.0f);
                     }
 
+                    com.github.clans.fab.FloatingActionButton fab = (com.github.clans.fab.FloatingActionButton) popupView.
+                            findViewById(R.id.fab_coordinators);
+
                     if(events[+position].trim().contains("Tete-A-Tete")) {
                         TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                         tvEventShow.setText("Tete-A-Tete");
+
+
+                        fab.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                                Toast tos = Toast.makeText(getActivity(), "No Contact\nContact Event Managers :)", Toast.LENGTH_SHORT);
+                                tos.setGravity(Gravity.CENTER | Gravity.FILL_HORIZONTAL, 0, 0);
+                                tos.show();
+                            }
+                        });
+
 
                         ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_tete_a_tete_large);
@@ -135,6 +153,21 @@ public class Events extends Fragment {
                     else if(events[+position].trim().contains("Sherlocked")) {
                         TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                         tvEventShow.setText("R U Sherlocked");
+
+                        websiteIs = "R U Sherlocked Info";
+                        fileURL = R.string.rusherlocked_file;
+
+                        fab.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                                Intent intent = new Intent(getActivity(),EventCoordinator.class);
+                                intent.putExtra("event","R U Sherlocked");
+//                            intent.putExtra("website", "Prayukti '17");
+                                startActivity(intent);
+                            }
+                        });
 
                         ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_r_u_sherlocked_large);
@@ -147,6 +180,21 @@ public class Events extends Fragment {
                         TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                         tvEventShow.setText("Requizzit");
 
+                        websiteIs = "Requizzit Info";
+                        fileURL = R.string.requizzit_file;
+
+                        fab.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                                Intent intent = new Intent(getActivity(),EventCoordinator.class);
+                                intent.putExtra("event","Requizzit");
+//                            intent.putExtra("website", "Prayukti '17");
+                                startActivity(intent);
+                            }
+                        });
+
                         ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_requizzit_large);
 
@@ -157,6 +205,18 @@ public class Events extends Fragment {
                     else if(events[+position].trim().contains("Mania")) {
                         TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                         tvEventShow.setText("Mania C");
+
+                        fab.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//
+                                Toast tos = Toast.makeText(getActivity(), "No Contact\nContact Event Managers :)", Toast.LENGTH_SHORT);
+                                tos.setGravity(Gravity.CENTER | Gravity.FILL_HORIZONTAL, 0, 0);
+                                tos.show();
+                            }
+                        });
 
                         ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_manic_c_large);
@@ -169,6 +229,21 @@ public class Events extends Fragment {
                         TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                         tvEventShow.setText("Jugaad Technology");
 
+                        fab.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                                Intent intent = new Intent(getActivity(),EventCoordinator.class);
+                                intent.putExtra("event","Jugaad Technology");
+//                            intent.putExtra("website", "Prayukti '17");
+                                startActivity(intent);
+                            }
+                        });
+
+                        websiteIs = "Jugaad Technology Info";
+                        fileURL = R.string.jugaad_file;
+
                         ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_jugaadtechnology_large);
 
@@ -179,6 +254,21 @@ public class Events extends Fragment {
                     else if(events[+position].trim().contains("Circuit")) {
                         TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                         tvEventShow.setText("Circuitrix");
+
+                        fab.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                                Intent intent = new Intent(getActivity(),EventCoordinator.class);
+                                intent.putExtra("event","Circuitrix");
+//                            intent.putExtra("website", "Prayukti '17");
+                                startActivity(intent);
+                            }
+                        });
+
+                        websiteIs = "Circuitrix Info";
+                        fileURL = R.string.circuitrix_file;
 
                         ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_circuitrix_large);
@@ -191,12 +281,46 @@ public class Events extends Fragment {
                         TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                         tvEventShow.setText("Pradarshan");
 
+                        websiteIs = "Pradarshan Info";
+                        fileURL = R.string.pradarshan_file;
+
+                        fab.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                                Intent intent = new Intent(getActivity(),EventCoordinator.class);
+                                intent.putExtra("event","Pradarshan");
+//                            intent.putExtra("website", "Prayukti '17");
+                                startActivity(intent);
+                            }
+                        });
+
                         ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_pradarshan_large);
 
                         TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
                         tvEventInfo.setText(R.string.pradarshan);
                     }
+
+                    ImageButton ibfileshow = (ImageButton) popupView.findViewById(R.id.ibfileShow);
+
+                    ibfileshow.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            if (fileURL == -1) {
+                                Toast tos = Toast.makeText(getActivity(), "No File Event!\nContact Coordinators :)", Toast.LENGTH_SHORT);
+                                tos.setGravity(Gravity.CENTER | Gravity.FILL_HORIZONTAL, 0, 0);
+                                tos.show();
+                            } else {
+                                Intent intent = new Intent(getActivity(), WebViewing.class);
+                                intent.putExtra("url", getResources().getString(fileURL));
+                                intent.putExtra("website", websiteIs);
+                                startActivity(intent);
+                            }
+                        }
+                    });
 
                     ImageButton imageButton = (ImageButton) popupView.findViewById(R.id.ibbackpopup);
 

@@ -3,10 +3,8 @@ package mytwistedidea.wordpress.com.prayukti;
 import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,8 +23,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -45,13 +41,13 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         context = MainActivity.this;
 
-        if(!checkingNoContactDatabaseFull()){
-            fillDatabase();
-            SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
-            editor.putBoolean("commited", true);
-//            editor.putInt("phone1", );
-            editor.commit();
-        }
+//        if(!checkingNoContactDatabaseFull()){
+//            fillDatabase();
+//            SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+//            editor.putBoolean("commited", true);
+////            editor.putInt("phone1", );
+//            editor.commit();
+//        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -65,11 +61,11 @@ public class MainActivity extends AppCompatActivity
         displaySelectedScreenFragment(R.id.nav_home);
     }
 
-    private void fillDatabase() {
-        String name[] = new String[100];
-        String phone[] = new String[100];
-
-    }
+//    private void fillDatabase() {
+//        String name[] = new String[100];
+//        String phone[] = new String[100];
+//
+//    }
 
     private boolean checkingNoContactDatabaseFull() {
         SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
@@ -192,8 +188,8 @@ public class MainActivity extends AppCompatActivity
                 presentfrag = R.layout.activity_frag_registration;
                 break;
             case R.id.nav_contact:
-                fragment = new ContactUs();
-                presentfrag = R.layout.activity_frag_contact_us;
+                fragment = new AboutDeveloper();
+                presentfrag = R.layout.activity_frag_about_developer;
                 break;
             case R.id.nav_about:
                 fragment = new About();

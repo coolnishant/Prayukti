@@ -11,12 +11,12 @@ import android.view.ViewGroup;
  */
 
 public class LocationFragment extends Fragment {
-//    GoogleMap googleMap;
+//     googleMap;
 //
 //    @Override
 //    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 //    {
-//        View v          = inflater.inflate(R.layout.fragment_location, container, false);
+//        View v          = inflater.inflate(R.layout.activity_frag_about, container, false);
 //
 //        googleMap       = ((SupportMapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 //

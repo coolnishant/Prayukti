@@ -23,6 +23,7 @@ public class EventCoordinator extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         eventname = bundle.getString("event");
+        setTitle(eventname+" Co-Ordinator");
         choosingData();
         populateListViewEventCoordinators();
     }
@@ -150,8 +151,54 @@ public class EventCoordinator extends AppCompatActivity {
             post = getResources().getStringArray(R.array
                     .poster_post);
         }
-
-
+        else if(eventname.contains("Sherlocked")){
+            name = getResources().getStringArray(R.array
+                    .rusherlocked_name);
+            phone = getResources().getStringArray(R.array
+                    .rusherlocked_phone);
+            post = getResources().getStringArray(R.array
+                    .rusherlocked_post);
+        }
+        else if(eventname.contains("Requizzit")){
+            name = getResources().getStringArray(R.array
+                    .requizzit_name);
+            phone = getResources().getStringArray(R.array
+                    .requizzit_phone);
+            post = getResources().getStringArray(R.array
+                    .requizzit_post);
+        }
+        else if(eventname.contains("Technology")){
+            name = getResources().getStringArray(R.array
+                    .jugaadtechnology_name);
+            phone = getResources().getStringArray(R.array
+                    .jugaadtechnology_phone);
+            post = getResources().getStringArray(R.array
+                    .jugaadtechnology_post);
+        }
+        else if(eventname.contains("Circuitrix")){
+            name = getResources().getStringArray(R.array
+                    .circuitrix_name);
+            phone = getResources().getStringArray(R.array
+                    .circuitrix_phone);
+            post = getResources().getStringArray(R.array
+                    .circuitrix_post);
+        }
+        else if(eventname.contains("Pradarshan")){
+            name = getResources().getStringArray(R.array
+                    .pradarshan_name);
+            phone = getResources().getStringArray(R.array
+                    .pradarshan_phone);
+            post = getResources().getStringArray(R.array
+                    .pradarshan_post);
+        }
+        else{
+            name = getResources().getStringArray(R.array
+                    .circuitrix_name);
+            phone = getResources().getStringArray(R.array
+                    .circuitrix_phone);
+            post = getResources().getStringArray(R.array
+                    .circuitrix_post);
+        }
     }
 
     private void populateListViewEventCoordinators() {

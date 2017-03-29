@@ -82,7 +82,7 @@
     <string name="circuitrix">Ever wondered the magic of a simple circuit? Design and implement your idea of a practically feasible circuit and show the magic.</string>
     <string name="pradarshan">A design or a model is a gestured prototype of an idealistic imagination. In a cordial manner, a successful working model always follow a charismatic design… Thus, we are humbly inviting you to join an extraordinary league of creation, where a legendary design can transform dreams into perceptions.</string>
 
-    <string name="home_content1">PRAYUKTI 2K17 = "Art of Technology" <p>The annual techno management festival of Haldia Institute of Technology. Scheduled from 24th to 26th of April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</p></string>
+    <string name="home_content1"><i>"Art of Technology"\n</i><p>The annual techno management festival of Haldia Institute of Technology. Scheduled from 24th to 26th of April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</p></string>
     <string name="home_content">PRAYUKTI 2K17 = "Art of Technology" <p>The annual techno management festival of Haldia Institute of Technology. Celebrating its 7th anniversary, it is getting bigger and better. It boasts of various events ranging from robotics to movie making and from junkyard arts to business strategies. Scheduled from 24th to 26th of April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</p></string>
     <string name="about_us_prayukti_2k17">The annual techno management festival of Haldia Institute of Technology. Celebrating its 7th anniversary, it is getting bigger and better. It boasts of various events ranging from robotics to movie making and from junkyard arts to business strategies. Scheduled from 24th to 26th of April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</string>
     <string name="about_us_hit">began its journey in the year 1996. It is the first private and accredited academic institution catering technical education in West Bengal. The Institute is situated at Haldia - an industrial hub in Eastern India.<p>Since inception, Haldia Institute of Technology is dedicated to the objectives of creating highly trained professional manpower in various disciplines of Engineering, Technology and Social Science. The Institute is also dedicated to the contribution of higher scientific research in Technology as well as in Applied Science and Social Science.</p></string>
@@ -93,6 +93,32 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_iam_registered">IamRegistered</string>
 
+    <string name="nfs_file">https://drive.google.com/file/d/0ByFm75_EmCMEMXhGMWl5TmthZ0E/view</string>
+    <string name="cs_file">https://drive.google.com/open?id=0ByFm75_EmCMEaWk2TDNhNmhjNjQ</string>
+    <string name="fifa_file">https://drive.google.com/open?id=0ByFm75_EmCMEaXFfdE0ya0hZX0k</string>
+    <string name="mini_file">https://drive.google.com/open?id=0ByFm75_EmCMESGVCMlFVdXpGajA</string>
+
+    <string name="rusherlocked_file">https://drive.google.com/open?id=0ByFm75_EmCMEdVpoaHplTFN1X00</string>
+
+    <string name="bplan_file">https://drive.google.com/open?id=0ByFm75_EmCMEZnExZ3lzQ1FnRjg</string>
+    <string name="dconstructeur_file">https://drive.google.com/open?id=0ByFm75_EmCMEWXJiMHNTVDJaSVk</string>
+    
+    <string name="vinashak_file">https://drive.google.com/open?id=0ByFm75_EmCMEcmRDNlFwWU9jalE</string>
+    <string name="aqua_file">https://drive.google.com/open?id=0ByFm75_EmCMEM0pELW5WTmlQZHM</string>
+    <string name="junkbot_file">https://drive.google.com/open?id=0ByFm75_EmCMEemp2eVlTZlRLeVk</string>
+    <string name="track_file">https://drive.google.com/open?id=0ByFm75_EmCMELXpacTVvOVpydjQ</string>
+
+    <string name="paper_file">https://drive.google.com/open?id=0ByFm75_EmCMER1ZmR25GOTYyZzg</string>
+    <string name="poster_file">https://drive.google.com/open?id=0ByFm75_EmCMEOU5nblFZY0ZIb0k</string>
+    <string name="movier_file">https://drive.google.com/open?id=0ByFm75_EmCMETng1Z2lNMkJ5M1U</string>
+    <string name="photographe_file">https://drive.google.com/open?id=0ByFm75_EmCMEcndsT0syMEFFNWM</string>
+
+    <string name="requizzit_file">https://drive.google.com/open?id=0ByFm75_EmCMEUWhaaVRXX0N5OGM</string>
+
+    <string name="jugaad_file">https://drive.google.com/open?id=0ByFm75_EmCMEb2I4ZTR0LUNlTTg</string>
+
+    <string name="circuitrix_file">https://drive.google.com/open?id=0ByFm75_EmCMERDluQUQwa0gwVjg</string>
+    <string name="pradarshan_file">https://drive.google.com/open?id=0ByFm75_EmCMEbmRkcVMzZ2R2UnM</string>
 
 </resources>
 

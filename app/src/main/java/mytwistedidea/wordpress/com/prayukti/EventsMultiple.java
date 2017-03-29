@@ -27,6 +27,8 @@ public class EventsMultiple extends AppCompatActivity {
     String subevents[] = new String[10];
     Integer imageevent[] = new Integer[10];
     TextView tvsubeventstext;
+    String websiteIs = null;
+    int fileURL = -1;
 
     String from;
     @Override
@@ -78,10 +80,10 @@ public class EventsMultiple extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                //TODO intent to other
-                Toast.makeText(EventsMultiple.this, "You Clicked at " +subevents[+ position], Toast.LENGTH_SHORT).show();
+                //done intent to other
+//                Toast.makeText(EventsMultiple.this, "You Clicked at " +subevents[+ position], Toast.LENGTH_SHORT).show();
 
-                //TODO POPUP window
+                //Done POPUP window
                 LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 //                    RelativeLayout viewGroup = (RelativeLayout) getActivity().findViewById(R.id.popup);
                 View popupView = inflater.inflate(R.layout.events_popup_each, null);
@@ -101,9 +103,13 @@ public class EventsMultiple extends AppCompatActivity {
                 com.github.clans.fab.FloatingActionButton fab = (com.github.clans.fab.FloatingActionButton) popupView.
                         findViewById(R.id.fab_coordinators);
 
+                websiteIs = subevents[+position]+" Info :)";
+
                 if(subevents[+position].trim().contains("NFS")) {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("NFS-MW");
+
+                    fileURL = R.string.nfs_file;
 
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -117,18 +123,18 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-
                     ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_ranbhomi_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
                     tvEventInfo.setText(R.string.nfs_mw);
 
-
                 }
                 else if(subevents[+position].trim().contains("Counter")) {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("Counter-Strike 1.6");
+
+                    fileURL = R.string.cs_file;
 
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -152,6 +158,8 @@ public class EventsMultiple extends AppCompatActivity {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("Mini-Militia");
 
+                    fileURL = R.string.mini_file;
+
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -173,6 +181,8 @@ public class EventsMultiple extends AppCompatActivity {
                 else if(subevents[+position].trim().contains("FIFA")) {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("FIFA 11");
+
+                    fileURL = R.string.fifa_file;
 
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -197,6 +207,8 @@ public class EventsMultiple extends AppCompatActivity {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("B Plan");
 
+                    fileURL = R.string.bplan_file;
+
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -218,6 +230,8 @@ public class EventsMultiple extends AppCompatActivity {
                 else if(subevents[+position].trim().contains("Constructeur")) {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("D-Constructeur");
+
+                    fileURL = R.string.dconstructeur_file;
 
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -242,6 +256,8 @@ public class EventsMultiple extends AppCompatActivity {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("Vinashak");
 
+                    fileURL = R.string.vinashak_file;
+
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -263,6 +279,8 @@ public class EventsMultiple extends AppCompatActivity {
                 else if(subevents[+position].trim().contains("Aqua")) {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("Aqua Soccer");
+
+                    fileURL = R.string.aqua_file;
 
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -286,6 +304,8 @@ public class EventsMultiple extends AppCompatActivity {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("JunkBot War");
 
+                    fileURL = R.string.junkbot_file;
+
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -307,6 +327,8 @@ public class EventsMultiple extends AppCompatActivity {
                 else if(subevents[+position].trim().contains("Track")) {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("Track-O-Bot");
+
+                    fileURL = R.string.track_file;
 
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -331,6 +353,8 @@ public class EventsMultiple extends AppCompatActivity {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("Paper Presentation");
 
+                    fileURL = R.string.paper_file;
+
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -352,6 +376,8 @@ public class EventsMultiple extends AppCompatActivity {
                 else if(subevents[+position].trim().contains("Poster")) {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("Poster Presentation");
+
+                    fileURL = R.string.poster_file;
 
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -376,6 +402,8 @@ public class EventsMultiple extends AppCompatActivity {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("De-Movier");
 
+                    fileURL = R.string.movier_file;
+
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -397,6 +425,8 @@ public class EventsMultiple extends AppCompatActivity {
                 else if(subevents[+position].trim().contains("Photographer")) {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("La Photographer");
+
+                    fileURL = R.string.photographe_file;
 
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -420,6 +450,8 @@ public class EventsMultiple extends AppCompatActivity {
                     TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                     tvEventShow.setText("Paper Presentation");
 
+                    fileURL = R.string.paper_file;
+
                     fab.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -439,6 +471,24 @@ public class EventsMultiple extends AppCompatActivity {
                     tvEventInfo.setText(R.string.paper_presenation);
                 }
 
+                ImageButton ibfileshow = (ImageButton) popupView.findViewById(R.id.ibfileShow);
+
+                ibfileshow.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        if (fileURL == -1) {
+                            Toast tos = Toast.makeText(EventsMultiple.this, "No File Event!\nContact Coordinators :)", Toast.LENGTH_SHORT);
+                            tos.setGravity(Gravity.CENTER | Gravity.FILL_HORIZONTAL, 0, 0);
+                            tos.show();
+                        } else {
+                            Intent intent = new Intent(EventsMultiple.this, WebViewing.class);
+                            intent.putExtra("url", getResources().getString(fileURL));
+                            intent.putExtra("website", websiteIs);
+                            startActivity(intent);
+                        }
+                    }
+                });
 
                 ImageButton imageButton = (ImageButton) popupView.findViewById(R.id.ibbackpopup);
 
