@@ -8,17 +8,6 @@
     android:orientation="vertical"
     android:id="@+id/ll"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
-    <TextView
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:text="Events"
-        android:textStyle="bold"
-        android:fontFamily="sans-serif-smallcaps"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="@color/colorPrayuktiDark"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp" />
 
     <View
         android:layout_width="match_parent"
@@ -27,17 +16,16 @@
         android:layout_marginTop="5dp"/>
 
     <TextView
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/event_data"
         android:textStyle="normal"
         android:fontFamily="sans-serif-smallcaps"
-        android:textSize="15sp"
+        android:textSize="18sp"
         android:textColor="@color/colorPrayuktiDark"
         android:gravity="center"
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="8dp" />
-
 
 
     <View
@@ -58,7 +46,12 @@
         android:id="@+id/lv_eventsview"
         android:layout_alignParentStart="true"
         android:layout_margin="4dp"/>
-
+    <!--<mytwistedidea.wordpress.com.prayukti.UnscrollableListView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/lv_assignments"-->
+        <!--android:layout_below="@+id/lv_eventsview"-->
+        <!--android:layout_alignParentStart="true" />-->
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"

@@ -8,9 +8,20 @@
     android:background="@color/colorPrayuktiLight"
     android:orientation="vertical"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrayuktiDark"
+        android:textStyle="bold"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Haldia Institute of Technology"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="65dp">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,15 +32,7 @@
         android:background="@color/colorPrayuktiMid"
         android:layout_marginTop="5dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrayuktiDark"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Haldia Institute of Technology"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
@@ -52,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/about_us_hit"
-        android:textSize="18sp"
+        android:textSize="20dp"
         android:textAlignment="center"
         android:fontFamily="sans-serif"
         android:textColor="@color/colorPrayuktiMid"/>
@@ -67,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Prayukti 2k17"
-        android:textSize="22sp"
+        android:textSize="25sp"
         android:textAlignment="center"
         android:textStyle="italic"
         android:fontFamily="sans-serif-smallcaps"
@@ -82,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/about_us_prayukti_2k17"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textAlignment="center"
         android:fontFamily="sans-serif"
         android:textColor="@color/colorPrayuktiMid"/>
@@ -97,7 +100,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Prayukti 2k16"
-        android:textSize="22sp"
+        android:textSize="25sp"
         android:textStyle="italic"
         android:textAlignment="center"
         android:fontFamily="sans-serif-smallcaps"
@@ -113,7 +116,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/about_us_prayukti_2k16"
-        android:textSize="18sp"
+        android:textSize="20sp"
         android:textAlignment="center"
         android:fontFamily="sans-serif"
         android:textColor="@color/colorPrayuktiMid"/>

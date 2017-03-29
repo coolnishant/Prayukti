@@ -22,34 +22,56 @@
         <item>Pradarshan</item>
     </string-array>
 
+    <string name="no_info_available">Contact Co-Odinators for Details</string>
+
     <string-array name="ranbhoomi">
         <item>NFS MW</item>
         <item>Counter Strike</item>
         <item>FIFA 11</item>
         <item>Mini Militia</item>
     </string-array>
+    <string name="ranbhoomi_main">People say "Playing Game" is wastage of "Time". Now you can show how Good you are at wasting TIME></string>
+    <string name="nfs_mw">Contact Co-Odinators for Details</string>
+    <string name="counter_strike">Contact Co-Odinators for Details</string>
+    <string name="fifa_11">Contact Co-Odinators for Details</string>
+    <string name="mini_militia">Contact Co-Odinators for Deatails</string>
 
     <string-array name="saudagar">
         <item>B Plan</item>
-        <item>D-Constructor</item>
+        <item>D-Constructeur</item>
     </string-array>
+    <string name="saudagar_main">It is not about what you Sell. It is about how you are dealing with your Sale. Because in the business world, the rear-view mirror is always clearer than the windshield .</string>
+    <string name="b_plan">Know your brand like the back of your hand and draft your policy with the astuteness of a true entrepreneur ‘coz in the end the best brand with the highest profit wins.</string>
+    <string name="d_contructeur">A true engineer is resourceful, efficient and shrewd. Bigger limitations, tougher situations and a world full of endless possibilities drive them. Can you make it with resources that are limited, time that is running out and ideas that keep on piling?</string>
 
     <string-array name="yantriki">
         <item>Vinashak</item>
         <item>Aqua Soccer</item>
-        <item>Junk Bot War</item>
+        <item>JunkBot War</item>
         <item>Track-O-Bot</item>
     </string-array>
+    <string name="yantriki_main">Interested in the capabilities of machines? Design your own bot. Make them run through the barriers, drift through the sand, get dizzy on the rotors, follow a path, destruct each other and score the goal. If you can get through the hurdles, you are THE YANTRIKIST.</string>
+    <string name="vinashak">Know your brand like the back of your hand and draft your policy with the astuteness of a true entrepreneur ‘coz in the end the best brand with the highest profit wins.</string>
+    <string name="aqua_soccer">A true engineer is resourceful, efficient and shrewd. Bigger limitations, tougher situations and a world full of endless possibilities drive them. Can you make it with resources that are limited, time that is running out and ideas that keep on piling?</string>
+    <string name="junkbot_war">In a street fight between the best and the baddest machines in all shapes and sizes, materials and design, how long can you make it? Do you have what it takes to win a ’Junkbot War’?</string>
+    <string name="track_o_bot">Autonomous bots require to perform many interesting and complex things and in places where normal human exploration is limited or impossible. However the most basic requirement for any autonomous robot is to navigate properly and reach its destination. In this event your bot will be tested to do just that, to navigate through a city plan containing crossings, dead end at walls and barriers.</string>
 
     <string-array name="innovacion">
         <item>Paper Presentation</item>
         <item>Poster Presentaion</item>
     </string-array>
 
-    <string-array name="fra">
+    <string name="innovacion_main">It is the revelation of a believed-system that drives your inner soul for something that is yet to be discovered. Thus, an invention is the only key to win this challenge in Discovery. It’s time to break the threshold and touch lives with your imagination.</string>
+    <string name="paper_presenation">Contact Co-Odinators for Details</string>
+    <string name="poster_presentaion">Contact Co-Odinators for Details</string>
+
+    <string-array name="frame_to_frame">
         <item>De-Movier</item>
         <item>La Photographer</item>
     </string-array>
+    <string name="frame_to_frame_main">An Artist, A Director: Lights!!!! Camera!!!! Action!!!!</string>
+    <string name="de_movier">‘There are no rules in filmmaking, only sins. And the cardinal sin is dullness. – Frank Capra’. <p> Silver screens and spotlights, motions and words, actions and pictures all coming together to tell a tale. No art passes our conscience in the way film does. Let the motions and the screen tell the untold stories.</p></string>
+    <string name="la_photographe">‘In photography there is a reality so subtle that it becomes more real than reality. - Alfred Stieglitz’<p> One picture can say a thousand words, can convey a million emotions. The perfect photograph depicts words, emotions and reality all rolled into one. Unedited and uncut, describe your series of photographs, your words for your work.</p></string>
 
     <string name="tete_a_tete">Motivation is what drives us and words are there to inspire.<p>You won\'t get very far using what you know but using what you learn. Knowing is not enough neither are the life hacks that get us through our moments. Experience is what matters, not just your own but also what you see, hear and learn. Let the words move you, inspire and make you want to be more that what you are.</p></string>
     <string name="ranbhoomi">When the reality gets mundane, the daydreamers shine. Virtual reality takes overules and playgrounds morph into battlefields. Designed for the warriors of virtual reality who thrive under pressure and live for the adrenaline rush, finding their fix in speed, sport and combat.</string>
@@ -65,7 +87,7 @@
     <string name="about_us_prayukti_2k17">The annual techno management festival of Haldia Institute of Technology. Celebrating its 7th anniversary, it is getting bigger and better. It boasts of various events ranging from robotics to movie making and from junkyard arts to business strategies. Scheduled from 24th to 26th of April, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</string>
     <string name="about_us_hit">began its journey in the year 1996. It is the first private and accredited academic institution catering technical education in West Bengal. The Institute is situated at Haldia - an industrial hub in Eastern India.<p>Since inception, Haldia Institute of Technology is dedicated to the objectives of creating highly trained professional manpower in various disciplines of Engineering, Technology and Social Science. The Institute is also dedicated to the contribution of higher scientific research in Technology as well as in Applied Science and Social Science.</p></string>
     <string name="about_us_prayukti_2k16">Prayukti 2016 held from 24th to 26th of february 2016 was crafted in such a way so that the students get to learn through enjoying while preparing for the fest. There were 15 events with some of them being quite unique.</string>
-    <string name="event_data">Prayukti boasts of various events ranging from robotics to movie making and from junkyard arts to discussing world politics. Scheduled from 24th to 26th February, the stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</string>
+    <string name="event_data">The stage will be set for innovations and competitions. Bring your ideas forward, create, compete and win!</string>
 
     <string name="title_activity_event_data">EventData</string>
     <string name="section_format">Hello World from section: %1$d</string>

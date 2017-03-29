@@ -113,8 +113,8 @@ public class Events extends Fragment {
 
 //                    final PopupWindow popup = new PopupWindow(getActivity());
                     popup.setContentView(popupView);
-                    popup.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
-                    popup.setHeight(LinearLayout.LayoutParams.MATCH_PARENT);
+                    popup.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
+                    popup.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
                     popup.setFocusable(true);
 
 
@@ -154,7 +154,7 @@ public class Events extends Fragment {
                         tvEventInfo.setText(R.string.requizzit);
                     }
 
-                    else if(events[+position].trim().contains("mania")) {
+                    else if(events[+position].trim().contains("Mania")) {
                         TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                         tvEventShow.setText("Mania C");
 
@@ -176,7 +176,7 @@ public class Events extends Fragment {
                         tvEventInfo.setText(R.string.jugaad_technology);
                     }
 
-                    else if(events[+position].trim().contains("Circuitrix")) {
+                    else if(events[+position].trim().contains("Circuit")) {
                         TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                         tvEventShow.setText("Circuitrix");
 

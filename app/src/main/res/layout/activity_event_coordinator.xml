@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/llevman"
-    android:background="@color/colorPrayuktiLight"
-    android:orientation="vertical"
-    tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
+    tools:context="mytwistedidea.wordpress.com.prayukti.EventCoordinator">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/lv_eventmanagement">
+        android:id="@+id/lv_eventcoordinators">
     </ListView>
+
 </LinearLayout>

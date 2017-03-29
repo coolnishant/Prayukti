@@ -5,7 +5,7 @@ import android.util.AttributeSet;
 import android.widget.ListView;
 
 /**
- * Created by imCyrus on 08-02-2017.
+ * Created by Nishant on 08-02-2017.
  */
 
 public class UnscrollableListView extends ListView {

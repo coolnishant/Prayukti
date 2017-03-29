@@ -30,7 +30,6 @@ public class About extends Fragment {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
                 Intent intent = new Intent(getActivity(),WebViewing.class);
-
                 intent.putExtra("url", prayuktiURL);
                 intent.putExtra("website", "Prayukti '17");
                 startActivity(intent);

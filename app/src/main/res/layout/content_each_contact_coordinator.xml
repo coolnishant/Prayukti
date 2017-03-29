@@ -41,14 +41,6 @@
         android:layout_margin="12dp"
         android:src="@drawable/phone_call_button"/>
 
-    <ImageButton
-        android:id="@+id/ibEmail"
-        android:layout_weight="1"
-        android:layout_margin="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/fab_email"
-        android:background="@color/colorPrayuktiLight"/>
 </LinearLayout>
 
     <View

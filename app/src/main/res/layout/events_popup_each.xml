@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:text="Testing Text"
         android:textStyle="normal"
-        android:textSize="22sp"
+        android:textSize="25sp"
         android:textAlignment="center"
         android:fontFamily="sans-serif-smallcaps"
         android:id="@+id/tv_event_name_show"
@@ -21,7 +21,7 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:background="@color/colorPrayuktiDark"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="27dp"/>
     <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -46,13 +46,14 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:background="@color/colorPrayuktiMid"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
-            android:text="testing text"
+            android:text="@string/about_us_hit"
             android:textStyle="normal"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textAlignment="center"
             android:fontFamily="serif-monospace"
             android:id="@+id/tv_event_info"
@@ -69,9 +70,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/ibbackpopup"
             android:background="#fff"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="2dp"
             android:src="@drawable/image_button_arrow1"/>
     </LinearLayout>
 </ScrollView>
+
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu2"
         android:layout_width="wrap_content"

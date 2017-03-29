@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/lly2"
     android:background="@color/colorPrayuktiLight"
     android:orientation="vertical"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
@@ -26,10 +27,11 @@
         android:layout_marginTop="5dp"/>
 
     <TextView
-        android:layout_width="368dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/event_data"
         android:textStyle="normal"
+        android:id="@+id/tv_subeventstext"
         android:fontFamily="sans-serif-smallcaps"
         android:textSize="15sp"
         android:textColor="@color/colorPrayuktiDark"

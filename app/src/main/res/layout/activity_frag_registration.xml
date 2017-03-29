@@ -161,7 +161,6 @@
         android:maxLength="3"
         android:background="@color/colorPrayuktiLight"/>
 </LinearLayout>
-
     <Button
         android:id="@+id/btSubmit"
         android:layout_width="match_parent"

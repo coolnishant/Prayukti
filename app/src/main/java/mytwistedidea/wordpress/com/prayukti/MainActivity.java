@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
@@ -31,6 +32,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    final String MY_PREFS_NAME = "contactdatabasecheck";
     final int TIME_BACK = 2;
     int k = TIME_BACK;
     int presentfrag = R.layout.activity_frag_home;
@@ -43,6 +45,13 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
         context = MainActivity.this;
 
+        if(!checkingNoContactDatabaseFull()){
+            fillDatabase();
+            SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+            editor.putBoolean("commited", true);
+//            editor.putInt("phone1", );
+            editor.commit();
+        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -56,6 +65,24 @@ public class MainActivity extends AppCompatActivity
         displaySelectedScreenFragment(R.id.nav_home);
     }
 
+    private void fillDatabase() {
+        String name[] = new String[100];
+        String phone[] = new String[100];
+
+    }
+
+    private boolean checkingNoContactDatabaseFull() {
+        SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+        String restoredText = prefs.getString("text", null);
+        if (restoredText != null) {
+            boolean testData = prefs.getBoolean("commited", false);//"No name defined" is the default value.
+            if(testData){
+               return true;
+            }
+            return false;
+        }
+        return false;
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -142,7 +169,7 @@ public class MainActivity extends AppCompatActivity
 
     private void displaySelectedScreenFragment(int id){
         Fragment fragment = null;
-
+        checkPermission();
         switch(id) {
             case R.id.nav_home:
                 fragment = new Home();
@@ -213,8 +240,8 @@ public class MainActivity extends AppCompatActivity
                 if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.CALL_PHONE)) {
                     AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
                     alertBuilder.setCancelable(true);
-                    alertBuilder.setTitle("Permission necessary");
-                    alertBuilder.setMessage("Permission is necessary to do event!!!!");
+                    alertBuilder.setTitle("Permission Necessary :)");
+                    alertBuilder.setMessage("Permission is Necessary to Call for Details!!!!");
                     alertBuilder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                         //                        @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
                         public void onClick(DialogInterface dialog, int which) {

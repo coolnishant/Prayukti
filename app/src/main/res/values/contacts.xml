@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="nulll">
+        <item>null</item>
+        <item>null</item>
+        <item>null</item>
+        <item>null</item>
+        <item>null</item>
+        <item>null</item>
+        <item>null</item>
+        <item>null</item>
+        <item>null</item>
+        <item>null</item>
+        <item>null</item>
+    </string-array>
+
+    <string-array name="main_name">
+        <item>Arkadipta Banyopadhyay</item>
+        <item>Avinash Kumar</item>
+        <item>Sucharit Ghosh</item>
+        <item>Krishna Keshav</item>
+        <item>Chayan Dutta</item>
+        <item>Ashik Acharya</item>
+        <item>Daram Deo Kumar</item>
+    </string-array>
+    <string-array name="main_post">
+        <item>Joint Secretary</item>
+        <item>Joint Secretary</item>
+        <item>Treasurer</item>
+        <item>Cashier</item>
+        <item>Cashier</item>
+        <item>Incharge-Events</item>
+        <item>Incharge-Events</item>
+    </string-array>
+    <string-array name="main_phone">
+        <item>8900162933</item>
+        <item>8350041693</item>
+        <item>8900663074</item>
+        <item>9093141539</item>
+        <item>7501262033</item>
+        <item>9654469389</item>
+        <item>7699707207</item>
+    </string-array>
+    <string-array name="main_email">
+        <item>arkadipta@prayuktihith.net</item>
+        <item>avinash@prayuktihith.net</item>
+        <item>sucharit@prayuktihith.net</item>
+        <item>krishna@prayuktihith.net</item>
+        <item>chayan@prayuktihith.net</item>
+        <item>aishik@prayuktihith.net</item>
+        <item>dharam@prayuktihith.net</item>
+    </string-array>
+
+    <!--nfs-->
+    <string-array name="nfs_name">
+        <item>Anubhav Maiti</item>
+        <item>Sankhabrata Bairagi</item>
+        <item>Rivi Adhikary</item>
+        <item>Saurabh Kumar</item>
+    </string-array>
+    <string-array name="nfs_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="nfs_phone">
+        <item>8653139304</item>
+        <item>9748319917</item>
+        <item>8017143637</item>
+        <item>9641518191</item>
+    </string-array>
+
+    <!--counter strike-->
+    <string-array name="cs_name">
+        <item>Abhirup Chaklader</item>
+        <item>Himanshu Kumar</item>
+        <item>Ayush Dutta</item>
+        <item>Roshan Pariyar</item>
+    </string-array>
+    <string-array name="cs_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="cs_phone">
+        <item>7044284890</item>
+        <item>7866928805</item>
+        <item>8972257298</item>
+        <item>9635202829</item>
+    </string-array>
+    <!--Fifa11-->
+    <string-array name="fifa_name">
+        <item>Somnath Roy</item>
+        <item>Pathikrit Roy</item>
+        <item>Rohit Mittal</item>
+        <item>Sourav Das</item>
+    </string-array>
+    <string-array name="fifa_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="fifa_phone">
+        <item>8759193283</item>
+        <item>8016173517</item>
+        <item>7501748795</item>
+        <item>7501569188</item>
+    </string-array>
+    <!--minimilitia-->
+    <string-array name="mini_name">
+        <item>Debashis Das</item>
+        <item>Abhinav Gupta</item>
+        <item>Rahul Mukherjee</item>
+        <item>Rahul Kumar</item>
+    </string-array>
+    <string-array name="mini_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="mini_phone">
+        <item>8972313569</item>
+        <item>8961848214</item>
+        <item>7501686821</item>
+        <item>7063744656</item>
+    </string-array>
+    <!--rusherlocked-->
+    <string-array name="rusherlocked_name">
+        <item>Mitrajit Das</item>
+        <item>Sandipan Saha</item>
+        <item>Zeesan Ali</item>
+        <item>Subhajit Das</item>
+        <item>Rupam Kumar Das</item>
+        <item>Sohum Sen</item>
+    </string-array>
+    <string-array name="rusherlocked_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="rusherlocked_phone">
+        <item>7687923864</item>
+        <item>7278200903</item>
+        <item>8972258542</item>
+        <item>9088866993</item>
+        <item>9932869155</item>
+        <item>9477310358</item>
+    </string-array>
+    <!--b_plan-->
+    <string-array name="bplan_name">
+        <item>Arpan Konar</item>
+        <item>Sonali Dasgupta</item>
+        <item>Bipin Biharee Singh</item>
+        <item>Prosenjit Dubey</item>
+        <item>Asad Mateen</item>
+        <item>Ankur Chandra</item>
+        <item>Mayank Pratik</item>
+    </string-array>
+    <string-array name="bplan_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="bplan_phone">
+        <item>8981353293</item>
+        <item>7890039449</item>
+        <item>9614204020</item>
+        <item>9062715478</item>
+        <item>9038910154</item>
+        <item>9641174840</item>
+        <item>7063744689</item>
+    </string-array>
+    <!--dconstructeur-->
+    <string-array name="dconstructeur_name">
+        <item>Brahmanand Mahato</item>
+        <item>Poulami Das</item>
+        <item>Saurav Gupta</item>
+        <item>Amul Kumar Singh</item>
+        <item>Kumari Puja</item>
+        <item>Aman Raj</item>
+        <item>Rohit Prakash Singh</item>
+    </string-array>
+    <string-array name="dconstructeur_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="dconstructeur_phone">
+        <item>8345994415</item>
+        <item>8759679337</item>
+        <item>9038320348</item>
+        <item>8101101939</item>
+        <item>9641919043</item>
+        <item>7063767412</item>
+        <item>8906909254</item>
+    </string-array>
+    <!--vinashak-->
+    <string-array name="vinashak_name">
+        <item>Mitesh Bhai Patel</item>
+        <item>Vivek Kumar</item>
+        <item>Himanshu Shukla</item>
+        <item>Rahuhl Kumar</item>
+        <item>Mobarshir Alam</item>
+        <item>Runa Rani Ghosh</item>
+        <item>Sweety Kumari</item>
+        <item>Vikash Kumar Labh</item>
+    </string-array>
+    <string-array name="vinashak_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="vinashak_phone">
+        <item>9933136976</item>
+        <item>7501404470</item>
+        <item>8388079244</item>
+        <item>7501149093</item>
+        <item>9475586510</item>
+        <item>8769812715</item>
+        <item>7501763952</item>
+        <item>7098953550</item>
+    </string-array>
+    <!--aquasoccer-->
+    <string-array name="aquasoccer_name">
+        <item>Jyotirmoy Dasgupta</item>
+        <item>Sanjana Kumar</item>
+        <item>Mukesh Kumar</item>
+        <item>Rajarshi Ghosh</item>
+        <item>Diksha</item>
+        <item>Arthi Dutta</item>
+        <item>Soumya Deyroy</item>
+    </string-array>
+    <string-array name="aquasoccer_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="aquasoccer_phone">
+        <item>7365943950</item>
+        <item>8759217202</item>
+        <item>8145718292</item>
+        <item>8967186893</item>
+        <item>8350174582</item>
+        <item>7278417674</item>
+        <item>9932203963</item>
+    </string-array>
+    <!--junkbotwar-->
+    <string-array name="junkbotwar_name">
+        <item>Mitesh Kumar</item>
+        <item>Chandan Kumar Sah</item>
+        <item>Nihar Sawar</item>
+        <item>Rishabh Raj</item>
+        <item>Sabir Kumar</item>
+        <item>Avinash Kumar</item>
+        <item>Mayanak Pratap Singh</item>
+    </string-array>
+    <string-array name="junkbotwar_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="junkbotwar_phone">
+        <item>9163048164</item>
+        <item>7699709017</item>
+        <item>8420794885</item>
+        <item>9641862246</item>
+        <item>9635272260</item>
+        <item>9163207636</item>
+        <item>7501750703</item>
+    </string-array>
+    <!--trackobot-->
+    <string-array name="trackobot_name">
+        <item>Chandan Kumar</item>
+        <item>Suraj Dutta</item>
+        <item>Aditya Anshul</item>
+        <item>Sushant Karmakar</item>
+        <item>Varsha Sinha</item>
+        <item>Aditya Kumar</item>
+    </string-array>
+    <string-array name="trackobot_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="trackobot_phone">
+        <item>8350041762</item>
+        <item>8759421951</item>
+        <item>8759256100</item>
+        <item>8001644327</item>
+        <item>7063767705</item>
+        <item>9614893436</item>
+    </string-array>
+    <!--paper-->
+    <string-array name="paper_name">
+        <item>Ashutosh Singh</item>
+        <item>Vivek Kumar</item>
+        <item>Suvasree Biswas</item>
+        <item>Anisha Dutta</item>
+        <item>Abhijit Bhattacharjee</item>
+        <item>Debasmita Banerjee</item>
+        <item>Varnika Kumar</item>
+        <item>David Kumar</item>
+    </string-array>
+    <string-array name="paper_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="paper_phone">
+        <item>8170936326</item>
+        <item>8293579771</item>
+        <item>9051119788</item>
+        <item>8013455765</item>
+        <item>7278142138</item>
+        <item>9547173270</item>
+        <item>7098855378</item>
+        <item>7063767413</item>
+    </string-array>
+    <!--poster-->
+    <string-array name="poster_name">
+        <item>Shisha Roy</item>
+        <item>Akhilesh Kumar</item>
+        <item>Pranav Kumar</item>
+        <item>Himanshu Tandasi</item>
+        <item>Sadhna Nandi</item>
+        <item>Mukesh Kumar Sinha</item>
+        <item>Shalini Priya</item>
+    </string-array>
+    <string-array name="poster_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="poster_phone">
+        <item>8906910144</item>
+        <item>7407291150</item>
+        <item>9851958587</item>
+        <item>8013346889</item>
+        <item>9732434004</item>
+        <item>9088866993</item>
+        <item>9430391320</item>
+        <item>9735968769</item>
+    </string-array>
+    <!--demovier-->
+    <string-array name="demovier_name">
+        <item>Md. Atif Nayeem</item>
+        <item>Ujjwal Kumar</item>
+        <item>Amish Karim</item>
+        <item>Sanskriti Rani</item>
+    </string-array>
+    <string-array name="demovier_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="demovier_phone">
+        <item>8101135425</item>
+        <item>9800974602</item>
+        <item>7585919542</item>
+        <item>7063768241</item>
+    </string-array>
+    <!--laphotographe-->
+    <string-array name="laphotographe_name">
+        <item>Suraj Tiwary</item>
+        <item>Ritambhara</item>
+        <item>Sourav Debsharma</item>
+        <item>Zahab Fatima Khan</item>
+    </string-array>
+    <string-array name="laphotographe_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="laphotographe_phone">
+        <item>9732566590</item>
+        <item>7699709059</item>
+        <item>7384311088</item>
+        <item>9830564354</item>
+    </string-array>
+    <!--requizzit-->
+    <string-array name="requizzit">
+        <item>Niranjan</item>
+        <item>Aditya Vijay Singh</item>
+        <item>Ayush Shome</item>
+        <item>Arushi Sinha</item>
+        <item>Anand Bharti</item>
+        <item>Shalini Karmakar</item>
+    </string-array>
+    <string-array name="requizzit_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="requizzit_phone">
+        <item>7864999685</item>
+        <item>9093524137</item>
+        <item>7063744654</item>
+        <item>8001622507</item>
+        <item>7063744697</item>
+        <item>7098706279</item>
+    </string-array>
+    <!--jugaartechnology-->
+    <string-array name="jugaartechnology_name">
+        <item>Shubham Sinha</item>
+        <item>Debopriya Chowdhary</item>
+        <item>Shashank Kumar</item>
+        <item>Aayush Raj</item>
+        <item>Ritika Sinha</item>
+        <item>Ajit Jaykar</item>
+    </string-array>
+    <string-array name="jugaartechnology_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="juggartechnology_phone">
+        <item>7501029583</item>
+        <item>7098906495</item>
+        <item>8906915573</item>
+        <item>7031873058</item>
+        <item>8972256326</item>
+        <item>9641144467</item>
+    </string-array>
+    <!--circuitrix-->
+    <string-array name="circuitrix_name">
+        <item>Shubham Kumar</item>
+        <item>Kamini Kumari</item>
+        <item>Sanjay Kumar Gupta</item>
+        <item>Anup Singh</item>
+    </string-array>
+    <string-array name="circuitrix_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="circuitrix_phone">
+        <item>8906358451</item>
+        <item>9614817609</item>
+        <item>7501124544</item>
+        <item>8296743495</item>
+    </string-array>
+    <!--pradarshan-->
+    <string-array name="pradarshan_name">
+        <item>Soumyaajit Gorai</item>
+        <item>Esita Mandal</item>
+        <item>Sayan Das</item>
+        <item>Ayaz Mahmood</item>
+        <item>Bishwajeet Kumar</item>
+        <item>Akansha Ranjan</item>
+        <item>Arghanil Das</item>
+    </string-array>
+    <string-array name="pradarshan_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="pradarshan_phone">
+        <item>9635031710</item>
+        <item>9800156111</item>
+        <item>9007711957</item>
+        <item>7004048939</item>
+        <item>8001632751</item>
+        <item>7098037984</item>
+        <item>9038536515</item>
+    </string-array>
+
+</resources>

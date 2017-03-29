@@ -43,6 +43,28 @@ public class DatabaseHelper {
         return id;
     }
 
+    public long insertNewContact(String name, String phone,
+                                 String email, String post, String event, String subevent){
+
+        Log.e("s","here insertP");
+        SQLiteDatabase sqLiteDatabase = helper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+//        contentValues.put(MyHelper.PERIOD,periodNo);
+        contentValues.put(MyHelper.NAME,name);
+        contentValues.put(MyHelper.PHONE,phone);
+        contentValues.put(MyHelper.EMAIL,email);
+        contentValues.put(MyHelper.POST,post);
+        contentValues.put(MyHelper.EVENT,event);
+        contentValues.put(MyHelper.SUBEVENT,subevent);
+//        contentValues.put(MyHelper,);
+        long id = sqLiteDatabase.insert(MyHelper.TABLE_NAME_CONTACT,null,contentValues);
+        Log.d("ih"," Here it is inINsert end");
+        sqLiteDatabase.close();
+        return id;
+    }
+
+
     public ArrayList<String> getAllRegStudent(){
 
         SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
@@ -76,6 +98,101 @@ public class DatabaseHelper {
         return arrayList;
     }
 
+
+    public ArrayList<String> getContactByPost(String post){
+
+        SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
+        ArrayList<String> arrayList = new ArrayList<String>();
+        String columns[] = {
+                MyHelper.NAME,
+                MyHelper.PHONE,
+                MyHelper.EMAIL,
+                MyHelper.EVENT,
+                MyHelper.SUBEVENT,
+        };
+
+        String TABLE_NAME = MyHelper.TABLE_NAME_CONTACT;
+
+        Cursor cursor = sqLiteDatabase.query(TABLE_NAME,columns,null,null,null,null, null);
+        if(cursor.moveToFirst()){
+            do{
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.NAME)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.PHONE)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.EMAIL)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.EVENT)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.SUBEVENT)));
+//                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper)));
+            }while (cursor.moveToNext());
+        }if(arrayList.size() == 0){
+            arrayList.add(0," ");
+            return arrayList;
+        }
+        return arrayList;
+    }
+
+    public ArrayList<String> getContactByEvent(String event){
+
+        SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
+        ArrayList<String> arrayList = new ArrayList<String>();
+        String columns[] = {
+                MyHelper.NAME,
+                MyHelper.PHONE,
+                MyHelper.EMAIL,
+                MyHelper.POST,
+                MyHelper.SUBEVENT,
+        };
+
+        String TABLE_NAME = MyHelper.TABLE_NAME_CONTACT;
+
+        Cursor cursor = sqLiteDatabase.query(TABLE_NAME,columns,null,null,null,null, null);
+        if(cursor.moveToFirst()){
+            do{
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.NAME)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.PHONE)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.EMAIL)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.POST)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.SUBEVENT)));
+//                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper)));
+            }while (cursor.moveToNext());
+        }if(arrayList.size() == 0){
+            arrayList.add(0," ");
+            return arrayList;
+        }
+        return arrayList;
+    }
+
+
+    public ArrayList<String> getContactBySubEvent(String subevent){
+
+        SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
+        ArrayList<String> arrayList = new ArrayList<String>();
+        String columns[] = {
+                MyHelper.NAME,
+                MyHelper.PHONE,
+                MyHelper.EMAIL,
+                MyHelper.POST,
+                MyHelper.EVENT,
+        };
+
+        String TABLE_NAME = MyHelper.TABLE_NAME_CONTACT;
+
+        Cursor cursor = sqLiteDatabase.query(TABLE_NAME,columns,null,null,null,null, null);
+        if(cursor.moveToFirst()){
+            do{
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.NAME)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.PHONE)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.EMAIL)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.POST)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.EVENT)));
+//                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper)));
+            }while (cursor.moveToNext());
+        }if(arrayList.size() == 0){
+            arrayList.add(0," ");
+            return arrayList;
+        }
+        return arrayList;
+    }
+
     class MyHelper extends SQLiteOpenHelper{
 
         private static final String DATABASE_NAME="RegisteredData.db";
@@ -83,6 +200,7 @@ public class DatabaseHelper {
         /*table definitions for storing user information*/
 
         private static final String TABLE_NAME_REGISTERED="registered_table";
+        private static final String TABLE_NAME_CONTACT="contact_table";
 
         private static final int DATABASE_VERSION=1;
 
@@ -93,6 +211,12 @@ public class DatabaseHelper {
         private static final String EMAIL="email";
         private static final String TSIZE="tsize";
         private static final String ROLLNO="rollno";
+
+        private static final String POST="post";
+        private static final String EVENT="event";
+        private static final String SUBEVENT="subevent";
+
+
 //        private static final String ="";
 //
 //       private static final String CREATE_TABLE_REGISTERED = " CREATE TABLE IF NOT EXISTS "+TABLE_NAME_REGISTERED+" ( "+
@@ -113,10 +237,21 @@ public class DatabaseHelper {
                 EMAIL+" VARCHAR(255),"+
                 TSIZE+" VARCHAR(255),"+
                 ROLLNO+" VARCHAR(255) NOT NULL);";
+
+        private static final String CREATE_TABLE_CONTACT= "CREATE TABLE "+TABLE_NAME_CONTACT+"("+
+                TID+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                NAME+" VARCHAR(255) NOT NULL,"+
+                PHONE+" VARCHAR(255) NOT NULL,"+
+                EMAIL+" VARCHAR(255) NOT NULL,"+
+                POST+" VARCHAR(255) NOT NULL,"+
+                EVENT+" VARCHAR(255) NOT NULL,"+
+                SUBEVENT+" VARCHAR(255) NULL);";
+
 //                DEADLINE_ASSINGMENT+" VARCHAR(255));";
 
 
         private static final String DROP_TABLE_NAME_REGISTERED="DROP TABLE IF EXISTS " +TABLE_NAME_REGISTERED;
+        private static final String DROP_TABLE_NAME_CONTACT="DROP TABLE IF EXISTS " +TABLE_NAME_CONTACT;
 
 
         public MyHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -137,6 +272,7 @@ public class DatabaseHelper {
                 try {
                     Log.e("e","Table cretae");
                     db.execSQL(CREATE_TABLE_REGISTERED);
+                    db.execSQL(CREATE_TABLE_CONTACT);
                 } catch(SQLException e){
 //                    Message.message(context ,"" +e);
                     e.printStackTrace();
@@ -149,6 +285,7 @@ public class DatabaseHelper {
             try{
 //                Message.message(context,"onDowngrade() called");
                 db.execSQL(DROP_TABLE_NAME_REGISTERED);
+                db.execSQL(DROP_TABLE_NAME_CONTACT);
                 onCreate(db);
             } catch(SQLException e){
 //                Message.message(context , "" +e);
@@ -160,6 +297,7 @@ public class DatabaseHelper {
             try{
 //                Message.message(context,"onDowngrade() called");
                 db.execSQL(DROP_TABLE_NAME_REGISTERED);
+                db.execSQL(DROP_TABLE_NAME_CONTACT);
                 onCreate(db);
             } catch(SQLException e){
 //                Message.message(context , "" +e);
