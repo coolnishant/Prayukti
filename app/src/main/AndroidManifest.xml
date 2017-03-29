@@ -22,10 +22,6 @@
             android:name="mytwistedidea.wordpress.com.prayukti.WebViewing"
             android:screenOrientation="portrait" />
         <activity
-            android:name="mytwistedidea.wordpress.com.prayukti.EventData"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name="mytwistedidea.wordpress.com.prayukti.SendJasonRegister"
             android:screenOrientation="portrait" />
         <activity

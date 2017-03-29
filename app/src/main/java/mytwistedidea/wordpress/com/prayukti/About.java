@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 public class About extends Fragment {
 
@@ -23,6 +26,13 @@ public class About extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("About Us");
+
+        ImageView ivtobeanim = (ImageView) view.findViewById(R.id.ivHitPhotoAbout);
+
+        Animation hyperspaceJump = AnimationUtils.loadAnimation(getActivity(), R.anim.animation_zoom_out);
+        ivtobeanim.startAnimation(hyperspaceJump);
+
+
         com.github.clans.fab.FloatingActionButton fab = (com.github.clans.fab.FloatingActionButton) view.findViewById(R.id.fab_p2k17);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

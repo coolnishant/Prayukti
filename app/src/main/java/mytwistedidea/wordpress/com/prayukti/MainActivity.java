@@ -23,6 +23,9 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.SlidingDrawer;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
@@ -49,6 +52,7 @@ public class MainActivity extends AppCompatActivity
 //            editor.commit();
 //        }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -135,19 +139,33 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-
+        if (id == R.id.action_aboutdeveloper) {
+            Fragment fragment = new AboutDeveloper();
+            presentfrag = R.layout.activity_frag_about_developer;
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_mainis,fragment);
+            ft.commit();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    public void hideKeybord() {
+        View view = this.getCurrentFocus();
+        if (view != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        hideKeybord();
 //        if(id == R.id.nav_events){
 //            Intent intent = new Intent(MainActivity.this,EventsAll.class);
 //            startActivity(intent);
@@ -187,14 +205,14 @@ public class MainActivity extends AppCompatActivity
                 fragment = new Registration();
                 presentfrag = R.layout.activity_frag_registration;
                 break;
-            case R.id.nav_contact:
-                fragment = new AboutDeveloper();
-                presentfrag = R.layout.activity_frag_about_developer;
-                break;
-            case R.id.nav_about:
-                fragment = new About();
-                presentfrag = R.layout.activity_frag_about;
-                break;
+//            case R.id.nav_contact:
+//                fragment = new AboutDeveloper();
+//                presentfrag = R.layout.activity_frag_about_developer;
+//                break;
+//            case R.id.nav_about:
+//                fragment = new About();
+//                presentfrag = R.layout.activity_frag_about;
+//                break;
             case R.id.nav_registered:
                 fragment = new IamRegistered();
                 presentfrag = R.layout.activity_frag_iam_registered;
@@ -206,6 +224,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_eventby:
                 fragment = new EventManagementBy();
                 presentfrag = R.layout.activity_frag_event_management_by;
+                break;
+            case R.id.nav_about_developer:
+                fragment = new AboutDeveloper();
+                presentfrag = R.layout.activity_frag_about_developer;
                 break;
         }
         if(presentfrag != R.layout.activity_frag_home){

@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -103,6 +105,13 @@ public class EventsMultiple extends AppCompatActivity {
                 com.github.clans.fab.FloatingActionButton fab = (com.github.clans.fab.FloatingActionButton) popupView.
                         findViewById(R.id.fab_coordinators);
 
+                ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
+
+                Animation hyperspaceJump = AnimationUtils.loadAnimation(EventsMultiple.this, R.anim.animation_zoom_out);
+                iv_event_icon_large.startAnimation(hyperspaceJump);
+
+
+
                 websiteIs = subevents[+position]+" Info :)";
 
                 if(subevents[+position].trim().contains("NFS")) {
@@ -123,7 +132,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_ranbhomi_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -148,7 +156,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_ranbhomi_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -172,7 +179,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_ranbhomi_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -196,7 +202,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_ranbhomi_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -221,7 +226,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_saudagar_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -245,7 +249,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_saudagar_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -270,7 +273,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_yantriki_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -294,7 +296,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_yantriki_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -318,7 +319,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_yantriki_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -342,7 +342,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_yantriki_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -367,7 +366,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_innvacion_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -391,7 +389,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_innvacion_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -416,7 +413,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_frametoframe_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -440,7 +436,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_frametoframe_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -464,7 +459,6 @@ public class EventsMultiple extends AppCompatActivity {
                         }
                     });
 
-                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                     iv_event_icon_large.setImageResource(R.drawable.pic_innvacion_large);
 
                     TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);

@@ -20,6 +20,7 @@
     android:layout_height="match_parent"
     android:layout_centerInParent="true"
     android:src="@mipmap/ic_prayukti"
+        android:id="@+id/ivPrayukriLogoSplash"
     tools:layout_editor_absoluteY="8dp"
     tools:layout_editor_absoluteX="8dp" />
 

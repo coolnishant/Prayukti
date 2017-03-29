@@ -120,5 +120,14 @@
     <string name="circuitrix_file">https://drive.google.com/open?id=0ByFm75_EmCMERDluQUQwa0gwVjg</string>
     <string name="pradarshan_file">https://drive.google.com/open?id=0ByFm75_EmCMEbmRkcVMzZ2R2UnM</string>
 
+
+    <string-array name="my_data">
+        <item>Nishant Raj</item>
+        <item>3rd Year</item>
+        <item>CSE</item>
+        <item>8972258387</item>
+        <item>https://www.facebook.com/imnishantraj</item>
+    </string-array>
+
 </resources>
 

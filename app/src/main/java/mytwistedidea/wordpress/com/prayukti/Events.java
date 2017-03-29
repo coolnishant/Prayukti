@@ -11,6 +11,8 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -124,6 +126,12 @@ public class Events extends Fragment {
                         popup.setElevation(5.0f);
                     }
 
+                    ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
+
+                    Animation hyperspaceJump = AnimationUtils.loadAnimation(getActivity(), R.anim.animation_zoom_out);
+                    iv_event_icon_large.startAnimation(hyperspaceJump);
+
+
                     com.github.clans.fab.FloatingActionButton fab = (com.github.clans.fab.FloatingActionButton) popupView.
                             findViewById(R.id.fab_coordinators);
 
@@ -144,7 +152,6 @@ public class Events extends Fragment {
                         });
 
 
-                        ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_tete_a_tete_large);
 
                         TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -169,7 +176,6 @@ public class Events extends Fragment {
                             }
                         });
 
-                        ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_r_u_sherlocked_large);
 
                         TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -195,7 +201,6 @@ public class Events extends Fragment {
                             }
                         });
 
-                        ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_requizzit_large);
 
                         TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -218,7 +223,6 @@ public class Events extends Fragment {
                             }
                         });
 
-                        ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_manic_c_large);
 
                         TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -244,7 +248,6 @@ public class Events extends Fragment {
                         websiteIs = "Jugaad Technology Info";
                         fileURL = R.string.jugaad_file;
 
-                        ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_jugaadtechnology_large);
 
                         TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -270,7 +273,6 @@ public class Events extends Fragment {
                         websiteIs = "Circuitrix Info";
                         fileURL = R.string.circuitrix_file;
 
-                        ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_circuitrix_large);
 
                         TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);
@@ -296,7 +298,6 @@ public class Events extends Fragment {
                             }
                         });
 
-                        ImageView iv_event_icon_large = (ImageView) popupView.findViewById(R.id.iv_event_icon_large);
                         iv_event_icon_large.setImageResource(R.drawable.pic_pradarshan_large);
 
                         TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tv_event_info);

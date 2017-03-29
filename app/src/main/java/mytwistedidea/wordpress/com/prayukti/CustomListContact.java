@@ -53,7 +53,7 @@ public class CustomListContact extends ArrayAdapter<String>{
         ibCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO Call
+                //DOne Call
                 Log.e("Call ",phone[+position]);
                 Intent intent = new Intent(Intent.ACTION_CALL);
 
@@ -68,7 +68,7 @@ public class CustomListContact extends ArrayAdapter<String>{
             ibEmail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //TODO Email
+                    //done Email
                     Log.e("Email: ", email[+position]);
                     Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
