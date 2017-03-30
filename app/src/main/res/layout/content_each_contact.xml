@@ -4,14 +4,27 @@
     android:layout_height="match_parent"
     android:layout_marginBottom="3dp"
     android:background="@color/colorPrayuktiDark">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="10">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:weightSum="5"
+        android:layout_gravity="center"
+        android:orientation="vertical">
     <TextView
         android:id="@+id/tv_contactname"
         android:textAlignment="center"
         android:textStyle="bold"
         android:fontFamily="sans-serif-smallcaps"
         android:layout_width="match_parent"
-        android:textSize="27sp"
+        android:textSize="24sp"
+        android:layout_weight="3"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrayuktiLight"
         android:background="@color/colorPrayuktiDark"
@@ -20,40 +33,44 @@
     <TextView
         android:id="@+id/tv_contactpost"
         android:textStyle="italic"
+        android:layout_weight="2"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:fontFamily="sans-serif-smallcaps"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@color/colorPrayuktiDark"
         android:textColor="@color/colorPrayuktiLight"
         android:text="TextView" />
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <ImageButton
-        android:id="@+id/ibCall"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/colorPrayuktiLight"
-        android:layout_margin="12dp"
-        android:src="@drawable/phone_call_button"/>
-
-    <ImageButton
-        android:id="@+id/ibEmail"
-        android:layout_weight="1"
-        android:layout_margin="12dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/fab_email"
-        android:background="@color/colorPrayuktiLight"/>
 </LinearLayout>
+        <ImageButton
+            android:id="@+id/ibCall"
+            android:layout_weight="4"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrayuktiMid"
+            android:layout_margin="4dp"
+            android:src="@drawable/phone_call_button"/>
 
+        <ImageButton
+            android:id="@+id/ibEmail"
+            android:layout_margin="4dp"
+            android:layout_weight="4"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_email"
+            android:background="@color/colorPrayuktiMid"/>
+
+
+
+</LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="@color/colorPrayuktiMid"
         android:layout_marginTop="4dp"/>
+
 </LinearLayout>

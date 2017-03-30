@@ -5,9 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/llevman"
-    android:background="@color/colorPrayuktiLight"
+    android:background="@color/colorPrayuktiDark"
     android:orientation="vertical"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Prayukti '17"
+        android:textSize="40sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold|italic"
+        android:background="@color/colorPrayuktiDark"
+        android:textColor="@color/colorPrayuktiMid"
+        android:layout_marginBottom="3sp"
+        android:gravity="center"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:id="@+id/textView2" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrayuktiLight"
+        android:layout_marginTop="5dp"/>
 
     <ListView
         android:layout_width="match_parent"

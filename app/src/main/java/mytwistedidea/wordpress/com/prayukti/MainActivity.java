@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     final String MY_PREFS_NAME = "contactdatabasecheck";
-    final int TIME_BACK = 2;
+    final int TIME_BACK = 1;
     int k = TIME_BACK;
     int presentfrag = R.layout.activity_frag_home;
 //    Button bper;

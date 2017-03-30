@@ -1,15 +1,24 @@
 package mytwistedidea.wordpress.com.prayukti;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +26,8 @@ public class AboutDeveloper extends Fragment implements View.OnClickListener {
 
     ImageButton ibCall, ibFacebook;
     TextView tvMailMe;
+    ImageView ivMe;
+    LinearLayout lly;
 
     @Nullable
     @Override
@@ -31,11 +42,13 @@ public class AboutDeveloper extends Fragment implements View.OnClickListener {
         ibCall = (ImageButton) view.findViewById(R.id.ibCallDev);
         ibFacebook = (ImageButton) view.findViewById(R.id.ibFacebookDev);
         tvMailMe = (TextView) view.findViewById(R.id.tvMailMe);
+        ivMe = (ImageView) view.findViewById(R.id.riv_mypic);
+        lly = (LinearLayout) view.findViewById(R.id.llaboutme);
 
         ibCall.setOnClickListener(this);
         ibFacebook.setOnClickListener(this);
         tvMailMe.setOnClickListener(this);
-
+        ivMe.setOnClickListener(this);
     }
 
 
@@ -73,6 +86,28 @@ public class AboutDeveloper extends Fragment implements View.OnClickListener {
                 } catch (android.content.ActivityNotFoundException ex) {
                     Toast.makeText(getActivity(), "There is no email client installed.", Toast.LENGTH_SHORT).show();
                 }
+                break;
+            case R.id.riv_mypic:
+                Log.e("me:","here");
+                LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//                    RelativeLayout viewGroup = (RelativeLayout) getActivity().findViewById(R.id.popup);
+                View popupView = inflater.inflate(R.layout.popup_mypic, null);
+                final PopupWindow popup = new PopupWindow(inflater.inflate(
+                        R.layout.popup_mypic, null, false), 200, 265, true);
+                popup.setContentView(popupView);
+                popup.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
+                popup.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+                popup.setFocusable(true);
+
+                if(Build.VERSION.SDK_INT>=21){
+                    popup.setElevation(5.0f);
+                }
+                ImageView ivMeLarge = (ImageView) popupView.findViewById(R.id.ivMeLarge);
+
+                Animation hyperspaceJump = AnimationUtils.loadAnimation(getActivity(), R.anim.animation_zoom_out);
+                ivMeLarge.startAnimation(hyperspaceJump);
+
+                popup.showAtLocation(lly, Gravity.CENTER,0,0);
                 break;
         }
 

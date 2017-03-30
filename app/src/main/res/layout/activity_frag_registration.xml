@@ -15,7 +15,7 @@
         android:id="@+id/eTname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:maxLength="26"
+        android:maxLength="30"
         android:hint="Full Name"
         android:textSize="20sp"
         android:textAlignment="center"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorPrayuktiLight"
+    android:background="@color/colorPrayuktiDark"
     android:id="@+id/popup"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -14,13 +14,13 @@
         android:textAlignment="center"
         android:fontFamily="sans-serif-smallcaps"
         android:id="@+id/tv_event_name_show"
-        android:textColor="@color/colorPrayuktiDark"/>
+        android:textColor="@color/colorPrayuktiLight"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
-        android:background="@color/colorPrayuktiDark"
+        android:background="@color/colorPrayuktiMid"
         android:layout_marginTop="27dp"/>
     <ScrollView
     android:layout_width="match_parent"
@@ -57,20 +57,20 @@
             android:textAlignment="center"
             android:fontFamily="serif-monospace"
             android:id="@+id/tv_event_info"
-            android:textColor="@color/colorPrayuktiDark"/>
+            android:textColor="@color/colorPrayuktiLight"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
-            android:background="@color/colorPrayuktiDark"/>
+            android:background="@color/colorPrayuktiMid"/>
 
         <!--done image file -->
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:weightSum="3">
+    android:weightSum="2">
     <ImageButton
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -79,13 +79,13 @@
         android:background="@color/colorPrayuktiLight"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="2dp"
-        android:src="@drawable/image_button_arrow1"/>
+        android:src="@drawable/ic_backspace_arrow"/>
         <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/file_icon"
-            android:background="@color/colorPrayuktiMid"
-            android:layout_weight="2"
+            android:background="@color/colorPrayuktiLight"
+            android:layout_weight="1"
             android:id="@+id/ibfileShow"/>
 
     </LinearLayout>

@@ -73,7 +73,7 @@ public class Events extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                //TODO intent to other
+                //Done intent to other
 //                Toast.makeText(getActivity(), "You Clicked at " +events[+ position], Toast.LENGTH_SHORT).show();
 
                 if(events[+position].trim().contains("Ranbhoomi")){
@@ -108,7 +108,7 @@ public class Events extends Fragment {
 //                    getActivity().startActivity(intent);
 //                }
                 else {
-                    //TODO POPUP window
+                    //Done POPUP window
                     LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 //                    RelativeLayout viewGroup = (RelativeLayout) getActivity().findViewById(R.id.popup);
                     View popupView = inflater.inflate(R.layout.events_popup_each, null);

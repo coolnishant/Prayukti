@@ -55,7 +55,7 @@
         fab:menu_colorRipple="#99FFFFFF"
         fab:menu_fab_label="Register"
         fab:menu_fab_size="normal"
-        fab:menu_icon="@drawable/chat_ic"
+        fab:menu_icon="@drawable/fab_add_user_button"
         fab:menu_labels_colorNormal="#333333"
         fab:menu_labels_colorPressed="#444444"
         fab:menu_labels_colorRipple="#66FFFFFF"

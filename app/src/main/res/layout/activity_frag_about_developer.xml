@@ -3,16 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/llaboutme"
     android:layout_height="match_parent"
-    android:background="@color/colorPrayuktiLight"
+    android:background="@color/colorPrayuktiDark"
     android:orientation="vertical"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
 
-    <ImageView
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/colorPrayuktiDark"-->
+        <!--android:src="@drawable/prayuti_name_small"/>-->
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Prayukti '17"
+        android:textSize="40sp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textStyle="bold|italic"
         android:background="@color/colorPrayuktiDark"
-        android:src="@drawable/prayuti_name_small"/>
+        android:textColor="@color/colorPrayuktiMid"
+        android:layout_marginBottom="3sp"
+        android:gravity="center"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="8dp"
+        android:id="@+id/textView2" />
+
+
 
     <View
         android:layout_width="match_parent"
@@ -26,7 +44,7 @@
         android:layout_height="wrap_content"
         android:text="Developed BY"
         android:textSize="18sp"
-        android:textColor="@color/colorPrayuktiDark"
+        android:textColor="@color/colorPrayuktiLight"
         android:fontFamily="sans-serif-condensed"
         android:layout_gravity="center"/>
 
@@ -42,7 +60,7 @@
         android:background="#D4AEE7"
         android:weightSum="11"
     android:layout_height="wrap_content">
-    <mytwistedidea.wordpress.com.prayukti.RoundedImageView
+    <ImageView
         android:id="@+id/riv_mypic"
         android:layout_width="82dp"
         android:layout_marginLeft="2sp"
