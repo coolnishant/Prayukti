@@ -59,7 +59,7 @@
         android:text="@string/about_us_hit"
         android:textSize="20dp"
         android:textAlignment="center"
-        android:fontFamily="sans-serif"
+        android:fontFamily="cursive"
         android:textColor="@color/colorPrayuktiMid"/>
 
     <View
@@ -89,7 +89,7 @@
         android:text="@string/about_us_prayukti_2k17"
         android:textSize="20sp"
         android:textAlignment="center"
-        android:fontFamily="sans-serif"
+        android:fontFamily="cursive"
         android:textColor="@color/colorPrayuktiMid"/>
 
     <View
@@ -120,7 +120,7 @@
         android:text="@string/about_us_prayukti_2k16"
         android:textSize="20sp"
         android:textAlignment="center"
-        android:fontFamily="sans-serif"
+        android:fontFamily="cursive"
         android:textColor="@color/colorPrayuktiMid"/>
 
     <!--<fragment-->

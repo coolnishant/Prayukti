@@ -5,5 +5,13 @@
         android:id="@+id/action_aboutdeveloper"
         android:orderInCategory="100"
         android:title="About Developer"
+        android:icon="@drawable/ic_more_about_us"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_item_share"
+        app:showAsAction= "ifRoom"
+        android:title="Share App"
+        android:icon="@drawable/ic_sharethis"
+        android:actionProviderClass=
+            "android.widget.ShareActionProvider" />
 </menu>

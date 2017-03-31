@@ -7,7 +7,7 @@
     android:weightSum="10"
     android:orientation="vertical"
     android:padding="4dp"
-    android:background="@color/colorPrayuktiLight"
+    android:background="@drawable/light_blue_background"
     tools:context="mytwistedidea.wordpress.com.prayukti.SendJasonRegister">
 
     <TextView

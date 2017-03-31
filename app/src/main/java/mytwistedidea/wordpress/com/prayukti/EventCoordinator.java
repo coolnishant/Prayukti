@@ -23,7 +23,7 @@ public class EventCoordinator extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         eventname = bundle.getString("event");
-        setTitle(eventname+" Co-Ordinator");
+        setTitle(eventname+" Co-Ordinators");
         choosingData();
         populateListViewEventCoordinators();
     }
@@ -158,6 +158,14 @@ public class EventCoordinator extends AppCompatActivity {
                     .rusherlocked_phone);
             post = getResources().getStringArray(R.array
                     .rusherlocked_post);
+        }
+        else if(eventname.contains("Mania")){
+            name = getResources().getStringArray(R.array
+                    .maniac_name);
+            phone = getResources().getStringArray(R.array
+                    .maniac_phone);
+            post = getResources().getStringArray(R.array
+                    .maniac_post);
         }
         else if(eventname.contains("Requizzit")){
             name = getResources().getStringArray(R.array

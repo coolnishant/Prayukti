@@ -210,7 +210,7 @@ public class Events extends Fragment {
                     else if(events[+position].trim().contains("Mania")) {
                         TextView tvEventShow = (TextView) popupView.findViewById(R.id.tv_event_name_show);
                         tvEventShow.setText("Mania C");
-
+                        fileURL = R.string.maniac_file;
                         fab.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {

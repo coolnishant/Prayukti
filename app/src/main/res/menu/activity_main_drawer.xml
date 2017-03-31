@@ -19,11 +19,17 @@
             android:id="@+id/nav_register"
             android:title="Register" />
         <item
+            android:id="@+id/nav_login"
+            android:title="Login" />
+        <item
             android:id="@+id/nav_sponsers"
             android:title="Sponsored BY" />
         <item
             android:id="@+id/nav_eventby"
             android:title="Event Management" />
+        <item
+            android:id="@+id/nav_about"
+            android:title="About" />
         <item
             android:id="@+id/nav_registered"
             android:title="Registered" />

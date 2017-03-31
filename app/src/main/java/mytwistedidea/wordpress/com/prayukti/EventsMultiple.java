@@ -243,7 +243,7 @@ public class EventsMultiple extends AppCompatActivity {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
                             Intent intent = new Intent(EventsMultiple.this,EventCoordinator.class);
-                            intent.putExtra("event","D-Construcueur");
+                            intent.putExtra("event","D-Constructeur");
 //                            intent.putExtra("website", "Prayukti '17");
                             startActivity(intent);
                         }

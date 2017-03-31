@@ -446,6 +446,31 @@
         <item>7063744697</item>
         <item>7098706279</item>
     </string-array>
+    <!--mania_c-->
+    <string-array name="maniac_name">
+        <item>Priyanka Kumari</item>
+        <item>Indrajeet Kumar</item>
+        <item>Pallab Banerjee</item>
+        <item>Sherya Sinha</item>
+        <item>Deepika</item>
+        <item>Prabhat Kumar</item>
+    </string-array>
+    <string-array name="maniac_post">
+        <item>Co-Ordinator</item>
+        <item>Co-Ordinator</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+        <item>Volunteer</item>
+    </string-array>
+    <string-array name="maniac_phone">
+        <item>9775668136</item>
+        <item>8293340308</item>
+        <item>9735966137</item>
+        <item>7501748804</item>
+        <item>9083487294</item>
+        <item>7501882611</item>
+    </string-array>
     <!--jugaartechnology-->
     <string-array name="jugaadtechnology_name">
         <item>Shubham Sinha</item>

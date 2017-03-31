@@ -3,6 +3,7 @@ package mytwistedidea.wordpress.com.prayukti;
 import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -18,6 +19,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
@@ -31,6 +33,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private ShareActionProvider mShareActionProvider;
     final String MY_PREFS_NAME = "contactdatabasecheck";
     final int TIME_BACK = 1;
     int k = TIME_BACK;
@@ -143,10 +146,18 @@ public class MainActivity extends AppCompatActivity
             Fragment fragment = new AboutDeveloper();
             presentfrag = R.layout.activity_frag_about_developer;
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_mainis,fragment);
+            ft.replace(R.id.content_mainis, fragment);
             ft.commit();
             return true;
         }
+            if(id == R.id.action_item_share){
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, "Download Prayukti '17 App");
+                i.putExtra(Intent.EXTRA_TEXT, "Please Download\nPrayukti '17 From\n https://drive.google.com/file/d/0BwKuFWuV41ZUb3VqUHFIUFJyalk/view?usp=sharing");
+                startActivity(Intent.createChooser(i, "Share URL"));
+                return true;
+            }
 
         return super.onOptionsItemSelected(item);
     }
@@ -209,10 +220,10 @@ public class MainActivity extends AppCompatActivity
 //                fragment = new AboutDeveloper();
 //                presentfrag = R.layout.activity_frag_about_developer;
 //                break;
-//            case R.id.nav_about:
-//                fragment = new About();
-//                presentfrag = R.layout.activity_frag_about;
-//                break;
+            case R.id.nav_about:
+                fragment = new About();
+                presentfrag = R.layout.activity_frag_about;
+                break;
             case R.id.nav_registered:
                 fragment = new IamRegistered();
                 presentfrag = R.layout.activity_frag_iam_registered;
@@ -228,6 +239,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_about_developer:
                 fragment = new AboutDeveloper();
                 presentfrag = R.layout.activity_frag_about_developer;
+                break;
+            case R.id.nav_login:
+                fragment = new LoginId();
+                presentfrag = R.layout.activity_frag_login_id;
                 break;
         }
         if(presentfrag != R.layout.activity_frag_home){

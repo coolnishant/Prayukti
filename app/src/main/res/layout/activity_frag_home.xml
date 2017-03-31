@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    android:background="@color/colorPrayuktiLight"
+    android:background="@drawable/light_blue_background"
     android:orientation="vertical"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
 <ScrollView
@@ -90,7 +90,7 @@
             android:textColor="@color/colorPrayuktiDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-smallcaps"
+            android:fontFamily="cursive"
             android:text="@string/home_content1"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"

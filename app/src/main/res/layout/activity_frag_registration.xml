@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrayuktiLight"
+    android:background="@drawable/light_blue_background"
     tools:context="mytwistedidea.wordpress.com.prayukti.Registration">
 <LinearLayout
     android:layout_width="match_parent"

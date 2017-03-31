@@ -7,6 +7,31 @@
     <string name="radio_female">Female</string>
     <string name="action_settings">Settings</string>
 
+    <string-array name="eventselection">
+        <item>R U Sherlocked</item>
+        <item>NFS MW</item>
+        <item>Counter Strike</item>
+        <item>FIFA 11</item>
+        <item>Mini Militia</item>
+        <item>B Plan</item>
+        <item>D-Constructeur</item>
+        <item>Vinashak</item>
+        <item>Aqua Soccer</item>
+        <item>JunkBot War</item>
+        <item>Track-O-Bot</item>
+        <item>Frame To Frame</item>
+        <item>Paper Presentation</item>
+        <item>Poster Presentaion</item>
+        <item>De-Movier</item>
+        <item>La Photographer</item>
+        <item>Requizzit</item>
+        <item>Mania C</item>
+        <item>Jugaad Technology</item>
+        <item>Circuitrix</item>
+        <item>Pradarshan</item>
+    </string-array>
+
+
     <string-array name="eventnames">
         <item>Tete-A-Tete</item>
         <item>Ranbhoomi</item>
@@ -14,7 +39,6 @@
         <item>Saudagar</item>
         <item>Yantriki</item>
         <item>Innovacion</item>
-        <item>Frame To Frame</item>
         <item>Requizzit</item>
         <item>Mania C</item>
         <item>Jugaad Technology</item>
@@ -102,7 +126,7 @@
 
     <string name="bplan_file">https://drive.google.com/open?id=0ByFm75_EmCMEZnExZ3lzQ1FnRjg</string>
     <string name="dconstructeur_file">https://drive.google.com/open?id=0ByFm75_EmCMEWXJiMHNTVDJaSVk</string>
-    
+
     <string name="vinashak_file">https://drive.google.com/open?id=0ByFm75_EmCMEcmRDNlFwWU9jalE</string>
     <string name="aqua_file">https://drive.google.com/open?id=0ByFm75_EmCMEM0pELW5WTmlQZHM</string>
     <string name="junkbot_file">https://drive.google.com/open?id=0ByFm75_EmCMEemp2eVlTZlRLeVk</string>
@@ -114,6 +138,7 @@
     <string name="photographe_file">https://drive.google.com/open?id=0ByFm75_EmCMEcndsT0syMEFFNWM</string>
 
     <string name="requizzit_file">https://drive.google.com/open?id=0ByFm75_EmCMEUWhaaVRXX0N5OGM</string>
+    <string name="maniac_file">https://drive.google.com/file/d/0ByFm75_EmCMEVW5qcGw1eW9ZOHc</string>
 
     <string name="jugaad_file">https://drive.google.com/open?id=0ByFm75_EmCMEb2I4ZTR0LUNlTTg</string>
 

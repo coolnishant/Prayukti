@@ -8,15 +8,6 @@
     android:orientation="vertical"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
 
-    <TextView
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:text="Live stream Here"
-        android:textSize="20sp"
-        android:gravity="center"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp" />
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

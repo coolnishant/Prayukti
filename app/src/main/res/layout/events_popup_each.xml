@@ -55,7 +55,7 @@
             android:textStyle="normal"
             android:textSize="20sp"
             android:textAlignment="center"
-            android:fontFamily="serif-monospace"
+            android:fontFamily="casual"
             android:id="@+id/tv_event_info"
             android:textColor="@color/colorPrayuktiLight"/>
         <View

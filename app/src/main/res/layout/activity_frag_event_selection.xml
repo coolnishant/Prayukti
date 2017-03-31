@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/llEventSelection"
+    android:background="@drawable/light_blue_background"
+    android:orientation="vertical"
+    tools:context="mytwistedidea.wordpress.com.prayukti.MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="5">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Submit"
+        android:layout_weight="1"
+        android:textSize="20sp"
+        android:id="@+id/btSubmitEvent"
+        android:background="@color/colorPrayuktiLight"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrayuktiDark"/>
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:layout_marginRight="2dp"
+        android:layout_marginLeft="2dp"
+        android:id="@+id/ibUserEventSelection"
+        android:background="@color/colorPrayuktiLight"
+        android:src="@drawable/user_ic"/>
+</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrayuktiLight"
+        android:layout_marginTop="5dp"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrayuktiLight"
+        android:layout_marginTop="5dp"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lv_eventselection">
+    </ListView>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrayuktiMid"
+        android:layout_marginTop="5dp"/>
+</LinearLayout>

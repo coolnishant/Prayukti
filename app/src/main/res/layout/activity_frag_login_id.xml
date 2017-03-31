@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/light_blue_background"
+    android:orientation="vertical"
+    android:weightSum="9"
+    tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:src="@mipmap/ic_prayukti"/>
+
+    <EditText
+        android:id="@+id/etStudentId"
+        android:layout_weight="1"
+        android:maxLength="10"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:background="@color/colorPrayuktiDark"
+        android:textSize="25sp"
+        android:hint="Enter Your Id"
+        android:layout_marginBottom="5dp"
+        android:textColorHint="@color/colorPrayuktiMid"
+        android:textColor="@color/colorPrayuktiLight"
+        android:inputType="phone" />
+
+
+    <EditText
+        android:layout_weight="1"
+        android:id="@+id/etStudentPassword"
+        android:fontFamily="sans-serif-smallcaps"
+        android:textAlignment="center"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:maxLength="15"
+        android:textSize="25sp"
+        android:hint="Password"
+        android:textColorHint="@color/colorPrayuktiMid"
+        android:textColor="@color/colorPrayuktiDark"
+        android:inputType="textPassword" />
+
+    <Button
+        android:layout_weight="1"
+        android:id="@+id/bStudentLogin"
+        android:layout_width="match_parent"
+        android:textSize="30sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="center"
+        android:background="@color/colorPrayuktiDark"
+        android:textColor="@color/colorPrayuktiLight"
+        android:layout_height="wrap_content"
+        android:text="Login" />
+
+    <TextView
+        android:id="@+id/tvForgottenPassword"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:layout_marginTop="10dp"
+        android:text="Forgotten Password?"
+        android:textColor="@color/colorPrayuktiDark"
+        android:textAlignment="center"
+        android:textSize="20sp"/>
+    <Button
+        android:layout_weight="1"
+        android:id="@+id/bnewReg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Registration!"
+        android:background="@color/colorPrayuktiDark"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/colorPrayuktiLight"
+        android:textAlignment="center"/>
+
+</LinearLayout>
