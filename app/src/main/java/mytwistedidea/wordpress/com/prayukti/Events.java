@@ -217,9 +217,10 @@ public class Events extends Fragment {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
 //
-                                Toast tos = Toast.makeText(getActivity(), "No Contact\nContact Event Managers :)", Toast.LENGTH_SHORT);
-                                tos.setGravity(Gravity.CENTER | Gravity.FILL_HORIZONTAL, 0, 0);
-                                tos.show();
+                                Intent intent = new Intent(getActivity(),EventCoordinator.class);
+                                intent.putExtra("event","Mania C");
+//                            intent.putExtra("website", "Prayukti '17");
+                                startActivity(intent);
                             }
                         });
 

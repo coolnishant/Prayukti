@@ -129,11 +129,11 @@ public class EventCoordinator extends AppCompatActivity {
         }
         else if(eventname.contains("Movier")){
             name = getResources().getStringArray(R.array
-                    .poster_name);
+                    .demovier_name);
             phone = getResources().getStringArray(R.array
-                    .poster_phone);
+                    .demovier_phone);
             post = getResources().getStringArray(R.array
-                    .poster_post);
+                    .demovier_post);
         }
         else if(eventname.contains("Photographer")){
             name = getResources().getStringArray(R.array
@@ -159,7 +159,7 @@ public class EventCoordinator extends AppCompatActivity {
             post = getResources().getStringArray(R.array
                     .rusherlocked_post);
         }
-        else if(eventname.contains("Mania")){
+        else if(eventname.contains("ania")){
             name = getResources().getStringArray(R.array
                     .maniac_name);
             phone = getResources().getStringArray(R.array

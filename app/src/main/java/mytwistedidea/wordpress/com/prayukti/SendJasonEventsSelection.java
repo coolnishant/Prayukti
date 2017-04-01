@@ -153,17 +153,17 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
                 if (status) {
                     v1.setBackgroundColor(Color.BLUE);
                     toastTV.setTextSize(30);
-                    tos.setText(name + "\n" + response);
+                    tos.setText(response);
                     toastTV.setGravity(Gravity.CENTER);
                     tos.setView(v1);
                     tos.show();
-//                    finish();
+                    finish();
 //                    savingData();
                     Intent i = new Intent(SendJasonEventsSelection.this, MainActivity.class);
                     // set the new task and clear flags
-//                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    finish();
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
-
                 } else if (response.contains("already")){
                     v1.setBackgroundColor(Color.RED);
                     toastTV.setGravity(Gravity.CENTER);
@@ -198,7 +198,7 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
         ru.execute(uniqid, name, event1, event2, event3, event4, fees);
     }
 
-//    @Override TODO Save Event Selection
+//    @Override NOTRequired Save Event Selection
 //    protected void onDestroy() {
 //        super.onDestroy();
 //        if (status == true) {

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrayuktiLight"
+    android:background="@drawable/light_blue_background"
     android:orientation="vertical"
     android:id="@+id/ll"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">

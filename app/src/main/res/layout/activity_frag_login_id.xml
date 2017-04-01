@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/light_blue_background"
-    android:orientation="vertical"
-    android:weightSum="9"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="9">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,25 +20,24 @@
     <EditText
         android:id="@+id/etStudentId"
         android:layout_weight="1"
-        android:maxLength="10"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="cursive"
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:background="@color/colorPrayuktiDark"
         android:textSize="25sp"
-        android:hint="Enter Your Id"
+        android:hint="Enter Your Email Id"
         android:layout_marginBottom="5dp"
         android:textColorHint="@color/colorPrayuktiMid"
         android:textColor="@color/colorPrayuktiLight"
-        android:inputType="phone" />
+        android:inputType="textEmailAddress" />
 
 
     <EditText
         android:layout_weight="1"
         android:id="@+id/etStudentPassword"
-        android:fontFamily="sans-serif-smallcaps"
+        android:fontFamily="cursive"
         android:textAlignment="center"
         android:layout_marginBottom="5dp"
         android:layout_width="match_parent"
@@ -57,10 +58,11 @@
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
         android:layout_gravity="center"
+        android:fontFamily="cursive"
         android:background="@color/colorPrayuktiDark"
         android:textColor="@color/colorPrayuktiLight"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:text="login" />
 
     <TextView
         android:id="@+id/tvForgottenPassword"
@@ -77,6 +79,7 @@
         android:layout_weight="1"
         android:id="@+id/bnewReg"
         android:layout_width="match_parent"
+        android:fontFamily="casual"
         android:layout_height="wrap_content"
         android:text="New Registration!"
         android:background="@color/colorPrayuktiDark"
@@ -84,5 +87,5 @@
         android:textSize="20dp"
         android:textColor="@color/colorPrayuktiLight"
         android:textAlignment="center"/>
-
 </LinearLayout>
+</ScrollView>

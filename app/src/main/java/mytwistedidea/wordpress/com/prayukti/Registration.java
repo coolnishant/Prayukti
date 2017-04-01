@@ -213,7 +213,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
         int id = v.getId();
         switch (id){
             case R.id.btSubmit:
-                //TODO send data function
+                //Done send data function
                 boolean flag = validateInputedData();
                 if(flag){
                     int selectedId=radioSexGroup.getCheckedRadioButtonId();

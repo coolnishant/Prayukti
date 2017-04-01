@@ -15,86 +15,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Prayukti '17"
-        android:textSize="40sp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:textStyle="bold|italic"
-        android:background="@color/colorPrayuktiDark"
-        android:textColor="@color/colorPrayuktiLight"
-        android:layout_marginBottom="3sp"
-        android:gravity="center"
-        tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="8dp"
-        android:id="@+id/textView2" />
-
 
         <ImageView
         android:id="@+id/ivPrayukriLogoHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         fab:srcCompat="@mipmap/ic_prayukti"
+            android:layout_marginTop="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView2" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorPrayuktiMid"
-            android:layout_marginTop="5dp"/>
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Welcomes You"
-            android:fontFamily="sans-serif-smallcaps"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrayuktiDark"
-            android:layout_marginTop="11dp"
-            android:textSize="25sp"
-            android:textAlignment="center"
-            android:layout_below="@+id/imageView"
-            android:layout_alignParentStart="true" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@color/colorPrayuktiMid"
-            android:layout_marginTop="5dp"/>
         <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="24th to 26th April"
-        android:fontFamily="sans-serif-smallcaps"
+        android:text="24th to 26th April '17"
+        android:fontFamily="casual"
         android:textStyle="bold"
-        android:textColor="@color/colorPrayuktiMid"
-        android:layout_marginTop="11dp"
-        android:textSize="22sp"
+        android:textColor="@color/colorPrayuktiDark"
+        android:layout_marginTop="50dp"
+        android:textSize="25sp"
         android:textAlignment="center"
         android:layout_below="@+id/imageView"
         android:layout_alignParentStart="true" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="4dp"
-            android:background="@color/colorPrayuktiMid"
-            android:layout_marginTop="5dp"/>
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_marginTop="10sp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textColor="@color/colorPrayuktiDark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="cursive"
-            android:text="@string/home_content1"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_alignEnd="@+id/menu2" />
+        <!--<TextView-->
+            <!--android:id="@+id/textView4"-->
+            <!--android:layout_marginTop="10sp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textColor="@color/colorPrayuktiDark"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:fontFamily="cursive"-->
+            <!--android:text="@string/home_content1"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignEnd="@+id/menu2" />-->
 
 </LinearLayout>
 </ScrollView>
@@ -102,7 +60,7 @@
         android:id="@+id/menu2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"

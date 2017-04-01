@@ -77,10 +77,10 @@ public class LoginId extends Fragment implements View.OnClickListener {
             case R.id.bStudentLogin:
                 //Done Login
                 Log.e("Here","login press");
-                ID = etStudentId.getText().toString();
+                email = etStudentId.getText().toString();
                 password = etStudentPassword.getText().toString();
-                if (ID.length() == 10 && password.length() >= 5){
-                    loginStudent(ID, password);
+                if (email.contains("@") && email.contains(".com") && password.length() >= 5){
+                    loginStudent(email, password);
                     Log.e("Status",""+status);
                 }
                 else{
@@ -90,14 +90,14 @@ public class LoginId extends Fragment implements View.OnClickListener {
                 }
                 break;
             case R.id.bnewReg:
-                //TODO NewReg
+                //Done NewReg
                 Fragment fragment = new Registration();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.content_mainis,fragment);
                 ft.commit();
                 break;
             case R.id.tvForgottenPassword:
-                //TODO Forgotten Password
+                //Done Forgotten Password
                 Intent intent = new Intent(getActivity(),ForgottenPassword.class);
                 getActivity().startActivity(intent);
                 break;
@@ -105,7 +105,7 @@ public class LoginId extends Fragment implements View.OnClickListener {
     }
 
 
-    private void loginStudent(String uniqid, String password) {
+    private void loginStudent(String email, String password) {
         class RegisterUser extends AsyncTask<String, Void, String> {
             ProgressDialog loading = null;
             RegisterUserClass ruc = new RegisterUserClass();
@@ -158,7 +158,7 @@ public class LoginId extends Fragment implements View.OnClickListener {
         }
 
         RegisterUser ru = new RegisterUser();
-        ru.execute(uniqid, password);
+        ru.execute(email, password);
 
     }
 
@@ -166,7 +166,7 @@ public class LoginId extends Fragment implements View.OnClickListener {
         JSONObject jsonObject = null;
         jsonObject = new JSONObject();
         try {
-            jsonObject.accumulate("ID", etStudentId.getText().toString());
+            jsonObject.accumulate("email", etStudentId.getText().toString());
             jsonObject.accumulate("password", etStudentPassword.getText().toString());
             return jsonObject;
         } catch (JSONException e) {
@@ -207,7 +207,7 @@ public class LoginId extends Fragment implements View.OnClickListener {
 
     private void startEventSelection(){
         if(status){
-            //TODO on LoginEvent Selection
+            //Done on LoginEvent Selection
             Intent intent = new Intent(getActivity(),EventSelection.class);
             intent.putExtra("ID",ID);
             intent.putExtra("name",name);

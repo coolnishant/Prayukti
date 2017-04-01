@@ -8,22 +8,25 @@
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="mytwistedidea.wordpress.com.prayukti.IamRegistered">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="Hello"
+        android:background="@color/colorPrayuktiDark"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrayuktiLight"
+        android:id="@+id/tv_regstudentheader"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="25sp"
+        android:layout_marginBottom="100dp">
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textAlignment="center"
-    android:text="Hello"
-    android:background="@color/colorPrayuktiDark"
-    android:textSize="20sp"
-    android:textColor="@color/colorPrayuktiLight"
-    android:id="@+id/tv_regstudentheader"/>
+
 
     <mytwistedidea.wordpress.com.prayukti.UnscrollableListView
         android:layout_width="match_parent"

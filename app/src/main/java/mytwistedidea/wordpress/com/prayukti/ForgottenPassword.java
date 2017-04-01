@@ -69,9 +69,12 @@ public class ForgottenPassword extends AppCompatActivity implements View.OnClick
                 s.trim();
                 Log.e("response", s);
 
-                if (!s.contains("for this Email")) {
+                if (s.contains("Password is")) {
                     status = true;
-                } else {
+                } else if(s.contains("No Data for this Email ID")) {
+                    status = false;
+                }
+                else{
                     status = false;
                 }
                 if (status) {
@@ -81,8 +84,11 @@ public class ForgottenPassword extends AppCompatActivity implements View.OnClick
                     builder.setTitle(json);
 //                    builder.setMessage(json);
                     builder.create().show();
-                } else {
-                    Toast.makeText(ForgottenPassword.this,"Wrong Credential! :(",Toast.LENGTH_SHORT).show();
+                } else if(s.contains("No Data for this Email ID")){
+                    Toast.makeText(ForgottenPassword.this,"No Data for this Email ID :(",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(ForgottenPassword.this,"Please Enable INTERNET!",Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -111,28 +117,4 @@ public class ForgottenPassword extends AppCompatActivity implements View.OnClick
         }
         return null;
     }
-//
-//    protected void parseJSON(){
-//        JSONObject jsonObject=null;
-//        try {
-//            jsonObject = new JSONObject(json);
-//            ID = jsonObject.getString("ID");
-//            name = jsonObject.getString("name");
-//            email = jsonObject.getString("email");
-//            phone = jsonObject.getString("phone");
-//            gender = jsonObject.getString("gender");
-//            tsize = jsonObject.getString("tsize");
-//            password = jsonObject.getString("password");
-//            try {
-//                rollno = jsonObject.getString("rollno");
-//            } catch (JSONException e1) {
-//                e1.printStackTrace();
-//            }
-////                 = jo.getString("");
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
 }

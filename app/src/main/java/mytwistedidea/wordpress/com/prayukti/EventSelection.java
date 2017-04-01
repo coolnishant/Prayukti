@@ -37,6 +37,8 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
     String eventnames[] = new String[25];
     String selItems[];
     Button bSelectedEvents;
+    final int TIME_BACK = 3;
+    int k = 0;
     ImageButton bUserData;
     ArrayList<String> selectedEvents = new ArrayList<>();
     String ID, name, email, phone, gender, tsize, password, rollno, event1, event2, event3, event4, fees;
@@ -142,7 +144,7 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
                 }
                 else{
 
-                    //TODO submit Page selItem have Data
+                    //Done submit Page selItem have Data
                     Toast.makeText(this,count+" Events Selected :)",Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(EventSelection.this,SendJasonEventsSelection.class);
                     intent.putExtra("ID",ID);
@@ -224,5 +226,18 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
 
         final LinearLayout lly = (LinearLayout) findViewById(R.id.llEventSelection);
         popup.showAtLocation(lly, Gravity.CENTER,0,0);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(k==0) {
+            super.onBackPressed();
+        } else if(k == TIME_BACK-1){
+            Toast.makeText(this,"Select Event First!!!!",Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this,"Relogin Required!!",Toast.LENGTH_LONG).show();
+            k--;
+        }
     }
 }

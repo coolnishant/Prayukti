@@ -15,7 +15,7 @@
 
     <com.rom4ek.arcnavigationview.ArcNavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:layout_width="180dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@drawable/back_best"
@@ -23,6 +23,6 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
         app:arc_cropDirection="cropInside"
-        app:arc_width="250dp"
+        app:arc_width="60dp"
         app:itemTextColor="@color/colorPrayuktiLight"/>
 </android.support.v4.widget.DrawerLayout>

@@ -68,7 +68,7 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
         password = gotBox.getString("password");
         rollno = gotBox.getString("batch") + "-" + gotBox.getString("dept") + "-" + gotBox.getString("roll");
         finalData = "Name: " + name + "\nEmail: " + email + "\nPhone: " + phone +
-                "\nGender: " + gender + "\nRoll No.: " + rollno + "\nT-Shirt Size: " + tsize + "\n"+"Free Event: "+"\nTete-A-Tete";
+                "\nGender: " + gender + "\nRoll No.: " + rollno + "\nT-Shirt Size: " + tsize + "\n"+"Free Event: Tete-A-Tete";
         tvData.setText(finalData);
 
         bSend.setOnClickListener(this);
@@ -174,11 +174,12 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
                     toastTV.setGravity(Gravity.CENTER);
                     tos.setView(v1);
                     tos.show();
-                    finish();
+
 //                    savingData();
                     Intent i = new Intent(SendJasonRegister.this, MainActivity.class);
                     // set the new task and clear flags
-//                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    finish();
                     startActivity(i);
 
                 } else if (response.contains("already")){
