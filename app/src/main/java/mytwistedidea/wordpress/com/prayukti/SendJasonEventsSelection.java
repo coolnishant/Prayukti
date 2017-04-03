@@ -29,13 +29,15 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
     boolean status = false;
     String response;
     int feeCal = 0;
-    String name, uniqid,finalData,event1=null,event2=null,event3=null,event4=null,fees;
+    String name, uniqid,finalData,event1=null,event2=null,event3=null,event4=null,fees,locks,event;
     String eventsArray[];
     int count;
     Button bSend, bCancel;
-    final String REGISTER_URL = "http://prayuktihith.net/2017/androidnish/addingEventSelection.php";
+    String REGISTER_URL = "http://prayuktihith.net/2017/androidnish/addingEventSelectionFinalAll.php";
     RequestQueue requestQueue;
     DatabaseHelper helpers;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,30 +52,88 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
         name = gotBox.getString("name");
         eventsArray = gotBox.getStringArray("eventselected");
         count = (int) gotBox.get("count");
+        locks = gotBox.getString("locks");
+        toCommaSeperated();
         feeCal = 400+50*count;
-        fees = Integer.toString(feeCal)+"NotP";
+        fees = Integer.toString(feeCal);
         finalData = "ID: "+uniqid+"\nName: " + name+"\n\nEVENT SELECTED ARE:\n";
-        for(int i=0;i<count;i++){
-            if(i == 0)
-                event1 = eventsArray[i];
-            else if(i == 1)
-                event2 = eventsArray[i];
-            else if(i == 2)
-                event3 = eventsArray[i];
-            else if(i == 3)
-                event4 = eventsArray[i];
+        for(int i=0;i<eventsArray.length;i++){
             finalData += "\n "+eventsArray[i];
         }
-
         tvData.setText(finalData+"\nTotal Fees: "+feeCal);
-
         bSend.setOnClickListener(this);
         bCancel.setOnClickListener(this);
-
-//        requestQueue = Volley.newRequestQueue(getApplicationContext());
-
     }
 
+    private void toCommaSeperated() {
+        event = "";
+        for(int i = 0 ;i<eventsArray.length;i++){
+
+            if(i>0){
+                event+=",";
+            }
+            if(eventsArray[i].contains("Sherlocked")){
+                event += "r_u_sherlocked";
+            }
+            else if(eventsArray[i].contains("FIFA")){
+                event += "fifa";
+            }
+            else if(eventsArray[i].contains("NFS")){
+                event += "nfsmw";
+            }
+            else if(eventsArray[i].contains("Counter")){
+                event += "cs";
+            }
+            else if(eventsArray[i].contains("Mini")){
+                event += "militia";
+            }
+            else if(eventsArray[i].contains("Plan")){
+                event += "b_plan";
+            }
+            else if(eventsArray[i].contains("Construct")){
+                event += "d_plan";
+            }
+            else if(eventsArray[i].contains("Vinashak")){
+                event += "vinashak";
+            }
+            else if(eventsArray[i].contains("Aqua")){
+                event += "aqua_soccer";
+            }
+            else if(eventsArray[i].contains("JunkBot")){
+                event += "junkbot_war";
+            }
+            else if(eventsArray[i].contains("Track")){
+                event += "track_bot";
+            }
+            else if(eventsArray[i].contains("Paper")){
+                event += "paper_prep";
+            }
+            else if(eventsArray[i].contains("Poster")){
+                event += "poster_prep";
+            }
+            else if(eventsArray[i].contains("Movie")){
+                event += "de_movier";
+            }
+            else if(eventsArray[i].contains("Photo")){
+                event += "la_photography";
+            }
+            else if(eventsArray[i].contains("quizz")){
+                event += "requizzit";
+            }
+            else if(eventsArray[i].contains("Mania")){
+                event += "maniac";
+            }
+            else if(eventsArray[i].contains("Jugaad")){
+                event += "jugaad_tech";
+            }
+            else if(eventsArray[i].contains("Circuit")){
+                event += "circuitrix";
+            }
+            else if(eventsArray[i].contains("darshan")){
+                event += "model_prep";
+            }
+        }
+    }
 
     private String getServerResponse(String json) {
         //// TODO: 25-03-2017
@@ -88,11 +148,14 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
 
             jsonObject.accumulate("ID", uniqid);
             jsonObject.accumulate("name", name);
-            jsonObject.accumulate("event1", event1);
-            jsonObject.accumulate("event2", event2);
-            jsonObject.accumulate("event3", event3);
-            jsonObject.accumulate("event4", event4);
+            jsonObject.accumulate("event", event);
+            Log.e("ID",uniqid);
+            Log.e("event",event);
+//            jsonObject.accumulate("event2", event2);
+//            jsonObject.accumulate("event3", event3);
+//            jsonObject.accumulate("event4", event4);
             jsonObject.accumulate("fees", fees);
+//            jsonObject.accumulate("locks", locks);
             return jsonObject.toString();
         } catch (JSONException e) {
             Log.e("Nish", "Can't format JSON!");
@@ -109,18 +172,18 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
             case R.id.bCancel:
                 finish();
                 tos = Toast.makeText(this, "Correct it!!!!", Toast.LENGTH_SHORT);
-                tos.setGravity(Gravity.CENTER, 0, 0);
+                tos.setGravity(Gravity.CENTER|Gravity.FILL_HORIZONTAL, 0, 0);
                 tos.show();
                 break;
             case R.id.bSendFinal:
                 //done Send JSON
-                    eventSelectionDataBase(uniqid, name, event1, event2, event3, event4, fees);
+                    eventSelectionDataBase(uniqid, name, event1, event2, event3, event4, fees, locks);
                 break;
         }
     }
 
     private void eventSelectionDataBase(String uniqid, final String name, String event1, String event2, String event3,
-                                        String event4, String fees) {
+                                        String event4, String fees, String locks) {
         class RegisterUser extends AsyncTask<String, Void, String> {
             ProgressDialog loading = null;
             RegisterUserClass ruc = new RegisterUserClass();
@@ -158,9 +221,7 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
                     tos.setView(v1);
                     tos.show();
                     finish();
-//                    savingData();
                     Intent i = new Intent(SendJasonEventsSelection.this, MainActivity.class);
-                    // set the new task and clear flags
                     finish();
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivity(i);
@@ -171,7 +232,6 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
                     toastTV.setTextSize(20);
                     tos.setView(v1);
                     tos.show();
-//                    finish();
                 }
                 else{
                     v1.setBackgroundColor(Color.MAGENTA);
@@ -180,7 +240,6 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
                     toastTV.setGravity(Gravity.CENTER);
                     tos.setView(v1);
                     tos.show();
-//                    finish();
                 }
             }
 
@@ -195,21 +254,8 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
         }
 
         RegisterUser ru = new RegisterUser();
-        ru.execute(uniqid, name, event1, event2, event3, event4, fees);
+        ru.execute(uniqid, name, event1, event2, event3, event4, fees,locks);
     }
-
-//    @Override NOTRequired Save Event Selection
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        if (status == true) {
-//            savingData();
-//        }
-//    }
-
-//    private void savingData() {
-//        helpers = new DatabaseHelper(this);
-//        helpers.insertRegStudent(uniqid, name, phone, email, tsize, rollno);
-//    }
 
     @Override
     public void onBackPressed() {
@@ -225,21 +271,5 @@ public class SendJasonEventsSelection extends AppCompatActivity implements View.
         tos.show();
         finish();
         super.onBackPressed();
-    }
-
-    private boolean isNetworkConnected() {
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        return cm.getActiveNetworkInfo() != null;
-    }
-
-    public boolean isInternetAvailable() {
-        try {
-            InetAddress ipAddr = InetAddress.getByName("google.com"); //You can replace it with your name
-            return !ipAddr.equals("");
-
-        } catch (Exception e) {
-            return false;
-        }
     }
 }

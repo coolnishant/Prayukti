@@ -46,7 +46,7 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
     String response;
     String name, email, phone, gender, rollno, finalData, tsize, uniqid, password;
     Button bSend, bCancel;
-    final String REGISTER_URL = "http://prayuktihith.net/2017/androidnish/testingJSONAgain.php";
+    final String REGISTER_URL = "http://prayuktihith.net/2017/androidnish/testingJSONAgainFinalAll.php";
     RequestQueue requestQueue;
     DatabaseHelper helpers;
 
@@ -66,7 +66,7 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
         gender = gotBox.getString("gender");
         tsize = gotBox.getString("tsize");
         password = gotBox.getString("password");
-        rollno = gotBox.getString("batch") + "-" + gotBox.getString("dept") + "-" + gotBox.getString("roll");
+        rollno = gotBox.getString("batch") + "/" + gotBox.getString("dept").toLowerCase() + "/" + gotBox.getString("roll");
         finalData = "Name: " + name + "\nEmail: " + email + "\nPhone: " + phone +
                 "\nGender: " + gender + "\nRoll No.: " + rollno + "\nT-Shirt Size: " + tsize + "\n"+"Free Event: Tete-A-Tete";
         tvData.setText(finalData);
@@ -181,7 +181,6 @@ public class SendJasonRegister extends AppCompatActivity implements View.OnClick
                     i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     finish();
                     startActivity(i);
-
                 } else if (response.contains("already")){
                     v1.setBackgroundColor(Color.RED);
                     toastTV.setGravity(Gravity.CENTER);

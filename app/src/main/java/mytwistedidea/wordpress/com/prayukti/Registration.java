@@ -94,6 +94,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
         List<String> categories = new ArrayList<String>();
         categories.add("Batch");
         categories.add("16");
+        categories.add("L16");
         categories.add("15");
         categories.add("L15");
         categories.add("14");
@@ -225,7 +226,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
                     intent.putExtra("phone",phone);
                     intent.putExtra("gender",gender);
                     intent.putExtra("password",pass);
-                    intent.putExtra("roll",roll);
+                    intent.putExtra("roll",roll.toLowerCase());
                     intent.putExtra("batch",batch);
                     intent.putExtra("tsize",tsize);
                     intent.putExtra("dept",dept);
@@ -276,6 +277,7 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
             batch = null;
             return false;
         }
+        batch = batch.toLowerCase();
         return true;
     }
 
@@ -309,12 +311,12 @@ public class Registration extends Fragment implements AdapterView.OnItemSelected
             roll = null;
             return false;
         }
-        if(roll.length()==1){
-            roll = "00"+roll;
-        }
-        if(roll.length()==2){
-            roll = "0"+roll;
-        }
+//        if(roll.length()==1){
+//            roll = "00"+roll;
+//        }
+//        if(roll.length()==2){
+//            roll = "0"+roll;
+//        }
         return true;
 
     }

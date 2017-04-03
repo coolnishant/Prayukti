@@ -14,7 +14,7 @@
             android:title="Register" />
         <item
             android:id="@+id/nav_login"
-            android:title="Login" />
+            android:title="Login/Event Selec." />
         <item
             android:id="@+id/nav_registered"
             android:title="Registered" />

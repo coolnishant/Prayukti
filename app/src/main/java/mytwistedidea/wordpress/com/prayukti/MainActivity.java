@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        checkPermission();
+//        checkPermission();
         displaySelectedScreenFragment(R.id.nav_home);
     }
 
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity
             ft.commit();
             return true;
         }
-            if(id == R.id.action_item_share){
+            else if(id == R.id.action_item_share){
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_SUBJECT, "Download Prayukti '17 App");
@@ -175,6 +175,14 @@ public class MainActivity extends AppCompatActivity
                 startActivity(Intent.createChooser(i, "Share URL"));
                 return true;
             }
+            else if(id == R.id.action_apphelp){
+            Fragment fragment = new Help();
+            presentfrag = R.layout.activity_frag_help;
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_mainis, fragment);
+            ft.commit();
+        }
+
 
         return super.onOptionsItemSelected(item);
     }

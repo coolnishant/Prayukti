@@ -42,8 +42,8 @@ public class LoginId extends Fragment implements View.OnClickListener {
     boolean status = false;
     String json;
     Context context;
-    final String REGISTER_URL = "http://prayuktihith.net/2017/androidnish/loginuserpasswordverification.php";
-    String ID, name, email, phone, gender, tsize, password, rollno, event1, event2, event3, event4, fees;
+    final String REGISTER_URL = "http://prayuktihith.net/2017/androidnish/loginuserpasswordverificationFinalAll.php";
+    String ID, name, email, phone, gender, tsize, password, rollno, event1, event2, event3, event4, fees,locks,events;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,7 +63,7 @@ public class LoginId extends Fragment implements View.OnClickListener {
     }
 
     private void initialize() {
-        etStudentId = (EditText) view.findViewById(R.id.etStudentId);
+        etStudentId = (EditText) view.findViewById(R.id.etStudentEmailId);
         etStudentPassword = (EditText) view.findViewById(R.id.etStudentPassword);
         tvForgottenPassword =(TextView) view.findViewById(R.id.tvForgottenPassword);
         bStudentLogin = (Button) view.findViewById(R.id.bStudentLogin);
@@ -127,7 +127,7 @@ public class LoginId extends Fragment implements View.OnClickListener {
 
                 if (s.contains("@")) {
                     status = true;
-                } else if(s.contains("none")){
+                } else if(s.contains("nodata")){
                     status = false;
                 }
                 else {
@@ -142,7 +142,7 @@ public class LoginId extends Fragment implements View.OnClickListener {
                     FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
                     ft.replace(R.id.content_mainis,fragment);
                     ft.commit();
-                } else if(s.contains("none")){
+                } else if(s.contains("nodata")){
                     Toast.makeText(getActivity(),"Wrong Credential! :(",Toast.LENGTH_SHORT).show();
                     }
             }
@@ -185,13 +185,15 @@ public class LoginId extends Fragment implements View.OnClickListener {
                 phone = jsonObject.getString("phone");
                 gender = jsonObject.getString("gender");
                 tsize = jsonObject.getString("tsize");
-                password = jsonObject.getString("password");
+//                password = jsonObject.getString("password");
             rollno = jsonObject.getString("rollno");
-            event1 = jsonObject.getString("event1");
-            event2 = jsonObject.getString("event2");
-            event3 = jsonObject.getString("event3");
-            event4 = jsonObject.getString("event4");
+            events = jsonObject.getString("event");
+//            event2 = jsonObject.getString("event2");
+//            event3 = jsonObject.getString("event3");
+//            event4 = jsonObject.getString("event4");
             fees = jsonObject.getString("fees");
+            locks = jsonObject.getString("locks");
+
                 Log.e("Roll no: ",rollno);
 //                 = jo.getString("");
 
@@ -216,12 +218,10 @@ public class LoginId extends Fragment implements View.OnClickListener {
             intent.putExtra("phone",phone);
             intent.putExtra("gender",gender);
             intent.putExtra("tsize",tsize);
-            intent.putExtra("password",password);
-            intent.putExtra("event1",event1);
-            intent.putExtra("event2",event2);
-            intent.putExtra("event3",event3);
-            intent.putExtra("event4",event4);
+//            intent.putExtra("password",password);
+            intent.putExtra("events",events);
             intent.putExtra("fees",fees);
+            intent.putExtra("locks",locks);
             context.startActivity(intent);
         }
     }

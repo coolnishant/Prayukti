@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/llevman"
-    android:background="@color/colorPrayuktiDark"
     android:orientation="vertical"
+    android:background="@color/colorPrayuktiDark"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
     <TextView
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:textStyle="bold|italic"
         android:background="@color/colorPrayuktiDark"
-        android:textColor="@color/colorPrayuktiMid"
+        android:textColor="@color/colorPrayuktiLight"
         android:layout_marginBottom="3sp"
         android:gravity="center"
         tools:layout_editor_absoluteY="0dp"

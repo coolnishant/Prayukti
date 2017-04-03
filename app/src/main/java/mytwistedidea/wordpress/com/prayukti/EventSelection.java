@@ -1,6 +1,8 @@
 package mytwistedidea.wordpress.com.prayukti;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -29,6 +31,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class EventSelection extends AppCompatActivity implements View.OnClickListener {
 
@@ -36,19 +39,22 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
     int count = 0;
     String eventnames[] = new String[25];
     String selItems[];
-    Button bSelectedEvents;
+    boolean flag = false;
+//    Button bSelectedEvents;
     final int TIME_BACK = 3;
-    int k = 0;
+    int k = 0,incount = 0;
     ImageButton bUserData;
+    Button bLockEvent;
+    String lockedEvents[];
     ArrayList<String> selectedEvents = new ArrayList<>();
-    String ID, name, email, phone, gender, tsize, password, rollno, event1, event2, event3, event4, fees;
+    String ID, name, email, phone, gender, tsize, password, rollno, fees,locks = "no",events;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frag_event_selection);
         initialize();
-        Bundle bundle= getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras();
         ID = bundle.getString("ID");
         name = bundle.getString("name");
         phone = bundle.getString("phone");
@@ -56,13 +62,35 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
         email = bundle.getString("email");
         gender = bundle.getString("gender");
         tsize = bundle.getString("tsize");
-        password = bundle.getString("password");
-        event1 = bundle.getString("event1");
-        event2 = bundle.getString("event2");
-        event3 = bundle.getString("event3");
-        event4 = bundle.getString("event4");
+//        password = bundle.getString("password");
+        events = bundle.getString("events");
+//        event2 = bundle.getString("event2");
+//        event3 = bundle.getString("event3");
+//        event4 = bundle.getString("event4");
+        selItems = lockedEvents;
         fees = bundle.getString("fees");
+        locks = bundle.getString("locks");
+        Log.e("Locks: ",locks);
 
+//        selItems = new String[8];
+//        for(int i= 0;i<5;i++){
+//            selItems [i] = "none";
+//        }
+
+//        if (event1 != "none") {
+//            incount++;
+//            selItems[0] = event1;
+//        } else if (event2 != "none") {
+//            incount++;
+//            selItems[1] = event2;
+//        } else if (event3 != "none") {
+//            incount++;
+//            selItems[2] = event3;
+//        } else if (event4 != "none"){
+//            incount++;
+//            selItems[3] = event4;
+//        }
+        count = incount;
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
@@ -70,13 +98,11 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
                 popUpUser();
             }
         },100);
-        if(!fees.contains("Not")){
-            bSelectedEvents.setText("Paid Can't change");
-            bSelectedEvents.setEnabled(false);
+        if(locks.contains("yes")){
+            bLockEvent.setText("Locked Can't change");
+//            bSelectedEvents.setEnabled(false);
+            bLockEvent.setEnabled(false);
         }
-
-//         = bundle.getString("");
-//         = bundle.getString("");
         setTitle("Events Selection");
 
         context = getApplicationContext();
@@ -84,12 +110,12 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
         lvEvents.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         eventnames = getResources().getStringArray(R.array.eventselection);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.content_each_event_selection,R.id.ctvEventName,eventnames);
-//        ArrayAdapter<String> aa=new ArrayAdapter<String>(this,R.layout.content_each_event_selection,R.id.ctvEventName,eventnames);
         lvEvents.setAdapter(adapter);
         lvEvents.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selectedItem = ((TextView) view).getText().toString();
+//                allNoneSel();
                 Log.e("sel item", selectedItem);
                 if(selectedEvents.contains(selectedItem)) {
 //                    view.setBackgroundColor(Color.RED);
@@ -107,26 +133,31 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
             }
         });
 
-        bSelectedEvents.setOnClickListener(this);
+//        bSelectedEvents.setOnClickListener(this);
         bUserData.setOnClickListener(this);
+        bLockEvent.setOnClickListener(this);
 
     }
 
+    private String hashMapping(String id) {
+        return id;
+    }
+
     private void initialize() {
-        bSelectedEvents = (Button) findViewById(R.id.btSubmitEvent);
+//        bSelectedEvents = (Button) findViewById(R.id.btSubmitEvent);
         bUserData = (ImageButton) findViewById(R.id.ibUserEventSelection);
+        bLockEvent = (Button) findViewById(R.id.ibLockEventSelection);
     }
 
     public void getSelectedEvents(){
         count=0;
-
         for(String item:selectedEvents) {
             count++;
         }
         selItems = new String[count];
         count=0;
         for(String item:selectedEvents){
-                selItems[count++]=item;
+            selItems[count++]=item;
         }
         Arrays.sort(selItems);
     }
@@ -135,7 +166,24 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         int id = v.getId();
         switch (id){
-            case R.id.btSubmitEvent:
+//            case R.id.btSubmitEvent:
+//                getSelectedEvents();
+//                if(count == 0){
+//                    Toast tos = Toast.makeText(context,"No item Selected! :(",Toast.LENGTH_SHORT);
+//                    tos.setGravity(Gravity.CENTER|Gravity.FILL_HORIZONTAL,0,0);
+//                    tos.show();
+//                }
+//                else{
+//                    locks = "no";
+//                    //Done submit Page selItem have Data
+//                    callIntentSubmit();
+//                }
+//                break;
+            case R.id.ibUserEventSelection:
+                popUpUser();
+                break;
+            case R.id.ibLockEventSelection:
+//                popUpUser();
                 getSelectedEvents();
                 if(count == 0){
                     Toast tos = Toast.makeText(context,"No item Selected! :(",Toast.LENGTH_SHORT);
@@ -143,22 +191,22 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
                     tos.show();
                 }
                 else{
-
-                    //Done submit Page selItem have Data
-                    Toast.makeText(this,count+" Events Selected :)",Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(EventSelection.this,SendJasonEventsSelection.class);
-                    intent.putExtra("ID",ID);
-                    intent.putExtra("rollno",rollno);
-                    intent.putExtra("name",name);
-                    intent.putExtra("count",count);
-                    intent.putExtra("eventselected",selItems);
-                    startActivity(intent);
+                    open();
                 }
                 break;
-            case R.id.ibUserEventSelection:
-                popUpUser();
-                break;
         }
+    }
+
+    private void callIntentSubmit() {
+        Toast.makeText(this,count+" Events Selected :) Locked: "+locks,Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(EventSelection.this,SendJasonEventsSelection.class);
+        intent.putExtra("ID",ID);
+        intent.putExtra("rollno",rollno);
+        intent.putExtra("name",name);
+        intent.putExtra("count",count);
+        intent.putExtra("eventselected",selItems);
+        intent.putExtra("locks",locks);
+        startActivity(intent);
     }
 
     private void popUpUser() {
@@ -173,7 +221,7 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
         popup.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
         popup.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
         popup.setFocusable(true);
-
+        lockedEvents = selItems;
 
         if(Build.VERSION.SDK_INT>=21){
             popup.setElevation(5.0f);
@@ -200,30 +248,58 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
         tvEmail.setText("Email: "+email);
         tvTsize.setText("T-Size: "+tsize);
         String canDo = "Can ADD Event!";
-        if(!event1.equals("null")) {
-            tvEvent1.setText(event1);
-            if (fees.contains("Not")){
-                tvFees.setText("Pay: " + fees.charAt(0)+fees.charAt(1)+fees.charAt(2));
-//                tvEvent1.setText(canDo);
-                tvEvent2.setText(canDo);
-                tvEvent3.setText(canDo);
-                tvEvent4.setText(canDo);
+        int i=0;
+
+        if(locks.contains("yes"))
+        {
+            String[] lockedEvents = events.split(",");
+            Log.e("Eis",lockedEvents.length+"is");
+
+
+            HashMap<String, String> map = new HashMap<String, String>();
+            map.put("r_u_sherlocked","R U Sherlocked");
+            map.put("fifa","FIFA 11");
+            map.put("nfsmw","NFS MW");
+            map.put("cs","Counter Strike");
+            map.put("militia","Mini Militia");
+            map.put("b_plan","B Plan");
+            map.put("d_plan","D Constructeur");
+            map.put("vinashak","Vinashak");
+            map.put("aqua_soccer","Aqua Soccer");
+            map.put("junkbot_war","JunkBot War");
+            map.put("track_bot","Track-O-Bot");
+            map.put("paper_prep","Paper Presentation");
+            map.put("poster_prep","Poster Presentation");
+            map.put("de_movier","De Movier");
+            map.put("la_photography","La PhotoGrapher");
+            map.put("requizzit","Requizzit");
+            map.put("maniac","Mania C");
+            map.put("jugaad_tech","Jugaad Technology");
+            map.put("circuitrix","Circuitrix");
+            map.put("model_prep","Pradarshan");
+
+            if (i < lockedEvents.length) {
+                tvEvent1.setText(map.get(lockedEvents[i++]));
             }
-        else {
-                tvFees.setText("Already Paid: "+fees.charAt(0)+fees.charAt(1)+fees.charAt(2));
+            if (i < lockedEvents.length) {
+                tvEvent2.setText(map.get(lockedEvents[i++]));
             }
-            if(!event2.equals("null")){
-                tvEvent2.setText(event2);
-                if(!event3.equals("null")){
-                    tvEvent3.setText(event3);
-                    if(!event4.equals("null")){
-                        tvEvent4.setText(event4);
-                    }
-                }
+            if (i < lockedEvents.length) {
+                tvEvent3.setText(map.get(lockedEvents[i++]));
+                Log.e("3:",lockedEvents[i-1]);
             }
+            if (i < lockedEvents.length) {
+                tvEvent4.setText(map.get(lockedEvents[i++]));
+            }
+
         }
-
-
+        fees = Integer.toString(450 +i*50);
+        if(locks == "yes") {
+            tvFees.setText("Paid: " + fees);
+        }
+        else{
+            tvFees.setText("Pay: none");
+        }
         final LinearLayout lly = (LinearLayout) findViewById(R.id.llEventSelection);
         popup.showAtLocation(lly, Gravity.CENTER,0,0);
     }
@@ -240,4 +316,44 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
             k--;
         }
     }
+    public void open(){
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("Are you sure, You wanted to Lock Events.\nOnce Locked it cannot be undone!!");
+                alertDialogBuilder.setPositiveButton("Yes",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+
+                                getSelectedEvents();
+                                if(count == 0){
+                                    Toast tos = Toast.makeText(context,"No item Selected! :(",Toast.LENGTH_SHORT);
+                                    tos.setGravity(Gravity.CENTER|Gravity.FILL_HORIZONTAL,0,0);
+                                    tos.show();
+                                }
+                                else{
+                                    locks = "yes";
+                                    //Done submit Page selItem have Data
+                                    callIntentSubmit();
+                                }
+                            }
+                        });
+
+        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                locks = "no";
+//                finish();
+            }
+        });
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+//        allNoneSel();
+    }
+
+//    private void allNoneSel() {
+//        for(int i =0;i<5;i++){
+//            selItems[i] = "none";
+//        }
+//    }
+
 }

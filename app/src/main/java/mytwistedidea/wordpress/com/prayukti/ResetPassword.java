@@ -1,13 +1,16 @@
 package mytwistedidea.wordpress.com.prayukti;
 
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,42 +19,56 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class ForgottenPassword extends AppCompatActivity implements View.OnClickListener {
+/**
+ * Created by Nishant on 02-04-2017.
+ */
 
-    EditText etEmailForgotten, etIdForgotten;
-    Button bGetPassword;
-//    TextView tvPassword;
-    boolean status = false;
+public class ResetPassword extends AppCompatActivity implements View.OnClickListener {
+
+    EditText etPassword, etRetype;
+    Button bNewPassword;
+    String pass,retypepass,email;
     String json;
-    final String REGISTER_URL = "http://prayuktihith.net/2017/androidnish/forgottenpasswordFinal.php";
+    boolean status = false;
+    final String REGISTER_URL = "http://prayuktihith.net/2017/androidnish/resetingpasswordFinal.php";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_forgotten_password);
+        setContentView(R.layout.activity_reset_password );
         initiallize();
-        setTitle("Verification!");
-        bGetPassword.setOnClickListener(this);
+        setTitle("Reseting Password");
+        Bundle bundle = getIntent().getExtras();
+        email = bundle.getString("email");
+        bNewPassword.setOnClickListener(this);
     }
 
     private void initiallize() {
-        etEmailForgotten = (EditText) findViewById(R.id.eTemailforgotten);
-//        tvPassword = (TextView) findViewById(R.id.tvForgottenPassword);
-        bGetPassword = (Button) findViewById(R.id.bGetMypassword);
-        etIdForgotten = (EditText) findViewById(R.id.eTIdforgotten);
+        etPassword = (EditText) findViewById(R.id.eTresetnewpassword);
+        etRetype = (EditText) findViewById(R.id.eTresetretypepassword);
+        bNewPassword = (Button) findViewById(R.id.bGetMynewpassword);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
         switch (id){
-            case R.id.bGetMypassword:
-                getMyPasswordEmail(etEmailForgotten.getText().toString());
+            case R.id.bGetMynewpassword:
+                pass = etPassword.getText().toString();
+                retypepass = etRetype.getText().toString();
+                if(pass.length()<5){
+                    Toast tos = Toast.makeText(this,"Atleast 5 characters Long!!",Toast.LENGTH_LONG);
+                    tos.setGravity(Gravity.CENTER|Gravity.FILL_HORIZONTAL,0,0);
+                    tos.show();
+                }
+                else{
+                    getMyNewPasswordEmail(email);
+                }
                 break;
         }
     }
 
-    private void getMyPasswordEmail(String email) {
+    private void getMyNewPasswordEmail(String email) {
         class RegisterUser extends AsyncTask<String, Void, String> {
             ProgressDialog loading = null;
             RegisterUserClass ruc = new RegisterUserClass();
@@ -60,7 +77,7 @@ public class ForgottenPassword extends AppCompatActivity implements View.OnClick
             protected void onPreExecute() {
                 super.onPreExecute();
                 textView = (TextView) findViewById(R.id.tvForgottenPassword);
-                loading = ProgressDialog.show(ForgottenPassword.this, "Please Wait", null, true, true);
+                loading = ProgressDialog.show(ResetPassword.this, "Please Wait", null, true, true);
             }
 
             @Override
@@ -71,31 +88,31 @@ public class ForgottenPassword extends AppCompatActivity implements View.OnClick
                 json = new String(s);
                 s.trim();
                 Log.e("response", s);
-
-                if (s.contains("Password is")) {
+                //TODO Data Reset
+                if (s.contains("successfully")) {
                     status = true;
-                } else if(s.contains("Wrong Combination")) {
+                } else if(s.contains("try again")) {
                     status = false;
                 }
                 else{
                     status = false;
                 }
                 if (status) {
-//                    Toast.makeText(ForgottenPassword.this,json,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResetPassword.this,json,Toast.LENGTH_SHORT).show();
 ////                    textView.setText(json);
 //                    AlertDialog.Builder builder = new AlertDialog.Builder(ForgottenPassword.this);
 //                    builder.setTitle(json);
 ////                    builder.setMessage(json);
 //                    builder.create().show();
-                    Intent intent = new Intent(ForgottenPassword.this,ResetPassword.class);
-                    intent.putExtra("email",etEmailForgotten.getText().toString());
-                    startActivity(intent);
+                    InputMethodManager inputMethodManager = (InputMethodManager)
+                            getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
                     finish();
-                } else if(s.contains("Wrong Combination")){
-                    Toast.makeText(ForgottenPassword.this,"Wrong Combination of Email and ID :(",Toast.LENGTH_SHORT).show();
+                } else if(s.contains("try again")){
+                    Toast.makeText(ResetPassword.this,"Something went wrong try again!",Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Toast.makeText(ForgottenPassword.this,"Please Enable INTERNET!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ResetPassword.this,"Please Enable INTERNET!",Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -117,8 +134,8 @@ public class ForgottenPassword extends AppCompatActivity implements View.OnClick
         JSONObject jsonObject = null;
         jsonObject = new JSONObject();
         try {
-            jsonObject.accumulate("email", etEmailForgotten.getText().toString());
-            jsonObject.accumulate("ID", etIdForgotten.getText().toString());
+            jsonObject.accumulate("email", email);
+            jsonObject.accumulate("password", pass);
             return jsonObject;
         } catch (JSONException e) {
             Log.e("Nish", "Can't format JSON!");

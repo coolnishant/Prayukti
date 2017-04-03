@@ -30,9 +30,9 @@ public class CustomList extends ArrayAdapter<String>{
         LayoutInflater inflater = context.getLayoutInflater();
         View rowView= inflater.inflate(R.layout.content_each_event_card, null, true);
         TextView txtTitle = (TextView) rowView.findViewById(R.id.tvEventName);
+        txtTitle.setText(web[position]);
 
         ImageView imageView = (ImageView) rowView.findViewById(R.id.ivEventIcon);
-        txtTitle.setText(web[position]);
 
         imageView.setImageResource(imageId[position]);
         return rowView;

@@ -1,6 +1,7 @@
 package mytwistedidea.wordpress.com.prayukti;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,8 +13,13 @@ import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class Home extends Fragment {
 
+    final int  NO_OF_TIMES = 2;
+    final String MY_PREFS_NAME = "noofhelpcheck";
+    int no = 0;
     final String fbURL = "https://www.facebook.com/prayuktihith/?fref=ts";
     final String ytURL = "https://www.youtube.com/playlist?list=PLaNj9RtluzIjmZvSsC6zQLvKpH4E29yz3";
     @Nullable
@@ -27,6 +33,17 @@ public class Home extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getActivity().setTitle("Home");
+
+//        SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences(MY_PREFS_NAME, 0); // 0 - for private mode
+//        SharedPreferences.Editor editor = pref.edit();
+//        no=pref.getInt("noof",0);
+//        if(no != NO_OF_TIMES){
+//            no++;
+//            popUpHelp();
+//            editor.putInt("noof", no);
+////            editor.putInt("phone1", );
+//            editor.commit();
+//        }
 
         ImageView ivtobeanim = (ImageView) view.findViewById(R.id.ivPrayukriLogoHome);
 
@@ -59,5 +76,9 @@ public class Home extends Fragment {
                 startActivity(intent);
             }
         });
+    }
+
+    private void popUpHelp() {
+
     }
 }

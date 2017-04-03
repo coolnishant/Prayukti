@@ -19,7 +19,6 @@
         <item>Aqua Soccer</item>
         <item>JunkBot War</item>
         <item>Track-O-Bot</item>
-        <item>Frame To Frame</item>
         <item>Paper Presentation</item>
         <item>Poster Presentaion</item>
         <item>De-Movier</item>
@@ -39,6 +38,7 @@
         <item>Saudagar</item>
         <item>Yantriki</item>
         <item>Innovacion</item>
+        <item>Frame To Frame</item>
         <item>Requizzit</item>
         <item>Mania C</item>
         <item>Jugaad Technology</item>
@@ -154,5 +154,26 @@
         <item>https://www.facebook.com/imnishantraj</item>
     </string-array>
 
+    <!--<string>1. Register for Prayukti '17\nSEE: Drawer(Slide Left)\n2. Event Selection\nSEE: Drawer: Login-> Event Selection\n(as many time until Payment)\n3. Registered By this Phone\n\tSEE: Drawer\n4.Live Stream\n\tLive Updates on Events\n5.On Each event</string>-->
+
+    <string-array name="help">
+        <item>1. New Register</item>
+        <item>2. Event Selection</item>
+        <item>3. Live Stream</item>
+        <item>4. Who Registered from this phone</item>
+        <item>5. Event data</item>
+        <item>6. Contact Co-Ordinators</item>
+        <item>Caution</item>
+    </string-array>
+
+    <string-array name="eachhelp">
+        <item>Goto: Drawer(slide left to right) \n-> Register</item>
+        <item>Goto: Drawer(slide left to right) \n-> Login(login using email and password of prayukti)\n->Event Selection\nNote: as many time until paid!</item>
+        <item>Goto: Drawer(slide left to right) \n-> Live stream(on days of Event)</item>
+        <item>Goto: Drawer(slide left to right) \n-> Registered(local data)\nNOTE: Uninstallation Deletes Data</item>
+        <item>Goto: Drawer(slide left to right) \n-> Event -> Tap on any\n->Scroll Down to get File(download) of event\n</item>
+        <item>Goto: Drawer(slide left to right) \n-> Event -> Tap on any\n->Right top Fab icon(Black Bulb)</item>
+        <item>Once Locked in Event Selection\n* No Change Possible</item>
+    </string-array>
 </resources>
 

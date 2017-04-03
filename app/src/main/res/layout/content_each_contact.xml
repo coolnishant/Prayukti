@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="3dp"
-    android:background="@color/colorPrayuktiDark">
+    android:layout_marginBottom="3dp">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -27,7 +26,6 @@
         android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:textColor="@color/colorPrayuktiLight"
-        android:background="@color/colorPrayuktiDark"
         android:text="TextView" />
 
     <TextView
@@ -40,7 +38,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/colorPrayuktiDark"
         android:textColor="@color/colorPrayuktiLight"
         android:text="TextView" />
 </LinearLayout>
@@ -50,27 +47,22 @@
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrayuktiLight"
-            android:layout_margin="4dp"
+            android:layout_margin="2dp"
             android:src="@drawable/phone_call_button"/>
 
         <ImageButton
             android:id="@+id/ibEmail"
-            android:layout_margin="4dp"
+            android:layout_margin="2dp"
             android:layout_weight="4"
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/fab_email"
-            android:background="@color/colorPrayuktiLight"/>
-
-
-
+            android:src="@drawable/fab_email"/>
 </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:background="@color/colorPrayuktiMid"
+        android:background="@color/colorPrayuktiLight"
         android:layout_marginTop="4dp"/>
 
 </LinearLayout>

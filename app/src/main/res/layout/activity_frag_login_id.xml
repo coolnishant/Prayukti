@@ -18,7 +18,7 @@
         android:src="@mipmap/ic_prayukti"/>
 
     <EditText
-        android:id="@+id/etStudentId"
+        android:id="@+id/etStudentEmailId"
         android:layout_weight="1"
         android:fontFamily="cursive"
         android:textAlignment="center"

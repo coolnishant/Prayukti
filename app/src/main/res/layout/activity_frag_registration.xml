@@ -18,6 +18,7 @@
         android:maxLength="30"
         android:hint="Full Name"
         android:textSize="20sp"
+        android:fontFamily="cursive"
         android:textAlignment="center"
         android:textColor="@color/colorPrayuktiDark"
         android:textColorHint="@color/colorPrayuktiMid"
@@ -29,6 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
+        android:fontFamily="casual"
         android:hint="Your Email"
         android:textAlignment="center"
         android:textColor="@color/colorPrayuktiDark"
@@ -38,6 +40,7 @@
 
     <EditText
         android:id="@+id/eTphoneno"
+        android:fontFamily="cursive"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Your Mobile no"
@@ -69,6 +72,7 @@
             android:layout_weight="1"
             android:checked="true"
             android:textSize="20sp"
+            android:fontFamily="cursive"
             android:textColor="@color/colorPrayuktiDark"
             android:text="@string/radio_female" />
 
@@ -78,6 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="20sp"
+            android:fontFamily="cursive"
             android:textColor="@color/colorPrayuktiDark"
             android:text="@string/radio_male" />
     </RadioGroup>
@@ -158,6 +163,7 @@
         android:textColorHint="@color/colorPrayuktiMid"
         android:textSize="20sp"
         android:inputType="phone"
+        android:fontFamily="cursive"
         android:maxLength="3"
         android:background="@color/colorPrayuktiLight"/>
 </LinearLayout>
@@ -166,6 +172,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
+        android:fontFamily="cursive"
         android:textColor="@color/colorPrayuktiLight"
         android:background="@color/colorPrayuktiDark"
         android:text="Submit" />

@@ -57,12 +57,11 @@ public class AboutDeveloper extends Fragment implements View.OnClickListener {
         int id = v.getId();
         Intent intent;
         switch (id){
-            case R.id.ibCall:
+            case R.id.ibCallDev:
                 Log.e("Call ","8972258387");
                 intent = new Intent(Intent.ACTION_CALL);
-
-                intent.setData(Uri.parse("tel:" + "8972258387"));
-                getActivity().startActivity(intent);
+                intent.setData(Uri.parse("tel:" + getResources().getString(R.string.my_phone)));
+                this.startActivity(intent);
                 break;
             case R.id.ibFacebookDev:
                 intent = new Intent(getActivity(),WebViewing.class);
