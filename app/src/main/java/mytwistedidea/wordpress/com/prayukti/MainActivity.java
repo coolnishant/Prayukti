@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
     final String MY_PREFS_NAME = "contactdatabasecheck";
     final int TIME_BACK = 1;
     int k = TIME_BACK;
+    final String myAppLink = "https://drive.google.com/drive/folders/0BwKuFWuV41ZUZktUZzJZS0tzZHc";
     int presentfrag = R.layout.activity_frag_home;
 //    Button bper;
     @Override
@@ -171,16 +172,22 @@ public class MainActivity extends AppCompatActivity
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_SUBJECT, "Download Prayukti '17 App");
-                i.putExtra(Intent.EXTRA_TEXT, "Please Download\nPrayukti '17 From\n https://drive.google.com/file/d/0BwKuFWuV41ZUb3VqUHFIUFJyalk/view?usp=sharing");
+                i.putExtra(Intent.EXTRA_TEXT, "Please Download\nPrayukti '17 From\n"+myAppLink);
                 startActivity(Intent.createChooser(i, "Share URL"));
                 return true;
             }
-            else if(id == R.id.action_apphelp){
+        else if(id == R.id.action_apphelp){
             Fragment fragment = new Help();
             presentfrag = R.layout.activity_frag_help;
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_mainis, fragment);
             ft.commit();
+        }
+        else if(id == R.id.action_rate){
+            Intent intent = new Intent(this,WebViewing.class);
+            intent.putExtra("url", "https://goo.gl/forms/2RzNGTLvyL6T2VKl2");
+            intent.putExtra("website","Prayukti App Survey");
+            startActivity(intent);
         }
 
 

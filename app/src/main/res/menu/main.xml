@@ -14,6 +14,11 @@
         android:icon="@drawable/ic_help_white"
         app:showAsAction="ifRoom" />
     <item
+        android:id="@+id/action_rate"
+        android:orderInCategory="78"
+        android:title="Rate n Problem?"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_item_share"
         app:showAsAction= "ifRoom"
         android:title="Share App"
