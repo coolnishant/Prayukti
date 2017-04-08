@@ -166,19 +166,6 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         int id = v.getId();
         switch (id){
-//            case R.id.btSubmitEvent:
-//                getSelectedEvents();
-//                if(count == 0){
-//                    Toast tos = Toast.makeText(context,"No item Selected! :(",Toast.LENGTH_SHORT);
-//                    tos.setGravity(Gravity.CENTER|Gravity.FILL_HORIZONTAL,0,0);
-//                    tos.show();
-//                }
-//                else{
-//                    locks = "no";
-//                    //Done submit Page selItem have Data
-//                    callIntentSubmit();
-//                }
-//                break;
             case R.id.ibUserEventSelection:
                 popUpUser();
                 break;
@@ -242,7 +229,7 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
 
         tvID.setText("ID: "+ID);
         tvName.setText("Name: "+name);
-        tvRollno.setText("Roll No: "+rollno);
+        tvRollno.setText("Roll No: "+rollno.toUpperCase());
         Log.e("Roll: ",rollno);
         tvPhone.setText("Phone No.: "+phone);
         tvEmail.setText("Email: "+email);
@@ -254,8 +241,6 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
         {
             String[] lockedEvents = events.split(",");
             Log.e("Eis",lockedEvents.length+"is");
-
-
             HashMap<String, String> map = new HashMap<String, String>();
             map.put("r_u_sherlocked","R U Sherlocked");
             map.put("fifa","FIFA 11");
@@ -293,8 +278,7 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
             }
 
         }
-        fees = Integer.toString(450 +i*50);
-        if(locks == "yes") {
+        if(locks.contains("yes")) {
             tvFees.setText("Paid: " + fees);
         }
         else{
@@ -349,11 +333,4 @@ public class EventSelection extends AppCompatActivity implements View.OnClickLis
         alertDialog.show();
 //        allNoneSel();
     }
-
-//    private void allNoneSel() {
-//        for(int i =0;i<5;i++){
-//            selItems[i] = "none";
-//        }
-//    }
-
 }

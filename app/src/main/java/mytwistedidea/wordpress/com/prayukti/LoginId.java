@@ -149,7 +149,6 @@ public class LoginId extends Fragment implements View.OnClickListener {
 
             @Override
             protected String doInBackground(String... params) {
-
                 JSONObject jsonObject = jsonBuilderIsHere();
                 String result = ruc.sendPostRequest(REGISTER_URL, jsonObject);
                 return result;
