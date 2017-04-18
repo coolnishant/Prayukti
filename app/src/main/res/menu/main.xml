@@ -19,6 +19,11 @@
         android:title="Rate n Problem?"
         app:showAsAction="never" />
     <item
+        android:id="@+id/action_reset_local_data"
+        android:orderInCategory="79"
+        android:title="Reset Local Data"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/action_item_share"
         app:showAsAction= "ifRoom"
         android:title="Share App"

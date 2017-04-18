@@ -2,11 +2,13 @@ package mytwistedidea.wordpress.com.prayukti;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,6 +19,7 @@ import java.util.ArrayList;
 public class DatabaseHelper {
 
     MyHelper helper;
+    public static String filename = "MySharedString";
 
     public DatabaseHelper(Context applicationContext) {
         helper = new MyHelper(applicationContext);
@@ -64,6 +67,35 @@ public class DatabaseHelper {
         return id;
     }
 
+    public long insertNotification(String nid, String neventname, String neventcontent,
+                                 String ntime){
+
+        Log.e("s","here insertP");
+        SQLiteDatabase sqLiteDatabase = helper.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MyHelper.NID,nid);
+        contentValues.put(MyHelper.NEVENTNAME,neventname);
+        contentValues.put(MyHelper.NEVENTCONTENT,neventcontent);
+        contentValues.put(MyHelper.NTIME,ntime);
+        long id = sqLiteDatabase.insert(MyHelper.TABLE_NAME_NOTIFICATION,null,contentValues);
+        Log.d("ih"," Here it is insert end");
+        sqLiteDatabase.close();
+        return id;
+    }
+
+    public void resetAllData(Context context) {
+        context.deleteDatabase(MyHelper.DATABASE_NAME);
+        saveNidl(context);
+        Toast.makeText(context,"RESET DONE!",Toast.LENGTH_SHORT).show();
+    }
+    private void saveNidl(Context context) {
+        SharedPreferences someData = context.getSharedPreferences(filename, 0);
+        SharedPreferences.Editor editor = someData.edit();
+        editor.clear();
+        editor.putString("nidl", "0");
+        editor.commit();
+    }
+
 
     public ArrayList<String> getAllRegStudent(){
 
@@ -90,6 +122,37 @@ public class DatabaseHelper {
                 arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.TSIZE)));
                 arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.ROLLNO)));
 //                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper)));
+            }while (cursor.moveToNext());
+        }if(arrayList.size() == 0){
+            arrayList.add(0," ");
+            return arrayList;
+        }
+        return arrayList;
+    }
+
+
+    public ArrayList<String> getAllNOtification(){
+
+        SQLiteDatabase sqLiteDatabase = helper.getReadableDatabase();
+        ArrayList<String> arrayList = new ArrayList<String>();
+        String columns[] = {
+                MyHelper.NIDL,
+                MyHelper.NID,
+                MyHelper.NEVENTNAME,
+                MyHelper.NEVENTCONTENT,
+                MyHelper.NTIME
+        };
+
+        String TABLE_NAME = MyHelper.TABLE_NAME_NOTIFICATION;
+
+        Cursor cursor = sqLiteDatabase.query(TABLE_NAME,columns,null,null,null,null, null);
+        if(cursor.moveToFirst()){
+            do{
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.NIDL)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.NID)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.NEVENTNAME)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.NEVENTCONTENT)));
+                arrayList.add(cursor.getString(cursor.getColumnIndex(MyHelper.NTIME)));
             }while (cursor.moveToNext());
         }if(arrayList.size() == 0){
             arrayList.add(0," ");
@@ -201,6 +264,7 @@ public class DatabaseHelper {
 
         private static final String TABLE_NAME_REGISTERED="registered_table";
         private static final String TABLE_NAME_CONTACT="contact_table";
+        private static final String TABLE_NAME_NOTIFICATION="notification_table";
 
         private static final int DATABASE_VERSION=1;
 
@@ -216,6 +280,11 @@ public class DatabaseHelper {
         private static final String EVENT="event";
         private static final String SUBEVENT="subevent";
 
+        private static final String NID = "nid";
+        private static final String NIDL = "nidl";
+        private static final String NEVENTNAME = "neventname";
+        private static final String NEVENTCONTENT = "neventcontent";
+        private static final String NTIME = "ntime";
 
 //        private static final String ="";
 //
@@ -247,11 +316,21 @@ public class DatabaseHelper {
                 EVENT+" VARCHAR(255) NOT NULL,"+
                 SUBEVENT+" VARCHAR(255) NULL);";
 
+        private static final String CREATE_TABLE_NOTIFICATION= "CREATE TABLE "+TABLE_NAME_NOTIFICATION+"("+
+                NIDL+" INTEGER PRIMARY KEY AUTOINCREMENT,"+
+                NID+" VARCHAR(255) NOT NULL UNIQUE,"+
+                NEVENTNAME+" VARCHAR(255) NOT NULL,"+
+                NEVENTCONTENT+" VARCHAR(500),"+
+//                EMAIL+" VARCHAR(255),"+
+//                TSIZE+" VARCHAR(255),"+
+                NTIME+" VARCHAR(255) NOT NULL);";
+
 //                DEADLINE_ASSINGMENT+" VARCHAR(255));";
 
 
         private static final String DROP_TABLE_NAME_REGISTERED="DROP TABLE IF EXISTS " +TABLE_NAME_REGISTERED;
         private static final String DROP_TABLE_NAME_CONTACT="DROP TABLE IF EXISTS " +TABLE_NAME_CONTACT;
+        private static final String DROP_TABLE_NAME_NOTIFICATION="DROP TABLE IF EXISTS " +TABLE_NAME_NOTIFICATION;
 
 
         public MyHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -270,9 +349,10 @@ public class DatabaseHelper {
         public void onCreate(SQLiteDatabase db) {
             if(db!=null){
                 try {
-                    Log.e("e","Table cretae");
+                    Log.e("e","Table create");
                     db.execSQL(CREATE_TABLE_REGISTERED);
                     db.execSQL(CREATE_TABLE_CONTACT);
+                    db.execSQL(CREATE_TABLE_NOTIFICATION);
                 } catch(SQLException e){
 //                    Message.message(context ,"" +e);
                     e.printStackTrace();
@@ -286,6 +366,7 @@ public class DatabaseHelper {
 //                Message.message(context,"onDowngrade() called");
                 db.execSQL(DROP_TABLE_NAME_REGISTERED);
                 db.execSQL(DROP_TABLE_NAME_CONTACT);
+                db.execSQL(DROP_TABLE_NAME_NOTIFICATION);
                 onCreate(db);
             } catch(SQLException e){
 //                Message.message(context , "" +e);
@@ -298,6 +379,7 @@ public class DatabaseHelper {
 //                Message.message(context,"onDowngrade() called");
                 db.execSQL(DROP_TABLE_NAME_REGISTERED);
                 db.execSQL(DROP_TABLE_NAME_CONTACT);
+                db.execSQL(DROP_TABLE_NAME_NOTIFICATION);
                 onCreate(db);
             } catch(SQLException e){
 //                Message.message(context , "" +e);

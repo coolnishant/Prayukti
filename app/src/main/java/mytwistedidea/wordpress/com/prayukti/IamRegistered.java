@@ -24,7 +24,6 @@ public class IamRegistered extends Fragment {
 
 
     DatabaseHelper MyHelpers;
-
     View view;
     TextView tvRegStudentHeader;
     ArrayList<String> regstudentallAL;
@@ -61,7 +60,12 @@ public class IamRegistered extends Fragment {
                 ft.commit();
             }
         });
+        populateRegStudent();
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
         populateRegStudent();
     }
 

@@ -189,6 +189,15 @@ public class MainActivity extends AppCompatActivity
             intent.putExtra("website","Prayukti App Survey");
             startActivity(intent);
         }
+        else if(id == R.id.action_reset_local_data){
+            DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+            databaseHelper.resetAllData(getApplicationContext());
+            Fragment fragment = new Home();
+            presentfrag = R.layout.activity_frag_home;
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_mainis, fragment);
+            ft.commit();
+        }
 
 
         return super.onOptionsItemSelected(item);

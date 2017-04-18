@@ -4,13 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0A0B0D"
+    android:id="@+id/llnotify"
+    android:background="@drawable/light_blue_background"
     android:orientation="vertical"
     tools:context="mytwistedidea.wordpress.com.prayukti.LiveStream">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/pic_coming_soon"/>
 
+    <Button
+        android:id="@+id/bRefreshNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Refresh"
+        android:textSize="30sp"
+        android:fontFamily="casual"
+        android:textColor="@color/colorPrayuktiLight"
+        android:background="#80000000"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/colorPrayuktiDark"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvNotifyNone"
+        android:textColor="@color/colorPrayuktiDark"
+        android:textSize="20sp"
+        android:fontFamily="cursive"
+        android:textAlignment="center"
+android:text="No Notification Available!"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_eventsnotification"
+        android:layout_alignParentStart="true"
+        android:layout_margin="4dp"/>
 </LinearLayout>
