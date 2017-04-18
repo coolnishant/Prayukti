@@ -20,6 +20,7 @@
         android:layout_height="wrap_content"
         android:text="@string/event_data"
         android:textStyle="normal"
+        android:id="@+id/tvEventValue"
         android:fontFamily="sans-serif-smallcaps"
         android:textSize="18sp"
         android:textColor="@color/colorPrayuktiDark"

@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +41,7 @@ public class LiveStream extends Fragment implements View.OnClickListener {
     DatabaseHelper MyHelpers;
     Button brefreshNotification;
     TextView tvNoNotify;
+    final int MAX_SIZE = 26;
     public static String filename = "MySharedString";
     String nid[] = new String[500], neventname[] = new String[500],
             neventcontent[] = new String[500], ntime[] = new String[500], json;
@@ -49,7 +51,7 @@ public class LiveStream extends Fragment implements View.OnClickListener {
     View view;
     Context context;
     boolean status;
-    final int REFRESH_TIME = 2000;
+    final int REFRESH_TIME = 50;
     DatabaseHelper helpers;
     ArrayList<String> notificationAL;
     //Done url setting
@@ -71,6 +73,18 @@ public class LiveStream extends Fragment implements View.OnClickListener {
         brefreshNotification = (Button) view.findViewById(R.id.bRefreshNotification);
         tvNoNotify = (TextView) view.findViewById(R.id.tvNotifyNone);
         brefreshNotification.setOnClickListener(this);
+        com.github.clans.fab.FloatingActionButton fab = (com.github.clans.fab.FloatingActionButton) view.findViewById(R.id.fab_eventorganisers);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Fragment eventManagementBy = new EventManagementBy();
+                FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_mainis,eventManagementBy);
+                ft.commit();
+            }
+        });
         startPopulatingNotification();
         Handler handler = new Handler();
 
@@ -119,7 +133,7 @@ public class LiveStream extends Fragment implements View.OnClickListener {
                 s.trim();
                 Log.e("response", s);
 
-                if (s.contains("neventname")) {
+                if (s.contains("ntime")) {
                     status = true;
                 } else if(s.contains("none")){
                     status = false;
@@ -191,7 +205,7 @@ public class LiveStream extends Fragment implements View.OnClickListener {
             HashMap<String,String> hashMap = new HashMap<>();
 
             hashMap.put("nid","ID: "+nid[i]);
-            hashMap.put("nname","Event: "+neventname[i]);
+            hashMap.put("nname",neventname[i]);
 //            hashMap.put("ncontent","ID: "+neventcontent[i]);
             hashMap.put("ntime","Time: "+ntime[i]);
             aList.add(hashMap);
@@ -208,8 +222,9 @@ public class LiveStream extends Fragment implements View.OnClickListener {
         final ListView listView = (ListView) view.findViewById(R.id.lv_eventsnotification);
         listView.setAdapter(simpleAdapterPeriod);
 
+        final int as = j;
         registerForContextMenu(listView);
-        final LinearLayout lly = (LinearLayout) view.findViewById(R.id.llnotify);
+        final RelativeLayout lly = (RelativeLayout) view.findViewById(R.id.llnotify);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -225,14 +240,14 @@ public class LiveStream extends Fragment implements View.OnClickListener {
                 popup.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
                 popup.setFocusable(true);
 
-
                 if(Build.VERSION.SDK_INT>=21){
                     popup.setElevation(5.0f);
                 }
                 TextView tvEventShow = (TextView) popupView.findViewById(R.id.tvEachEventNotify);
-                tvEventShow.setText(neventname[+position]);
+                String nameLocal = ntime[as-position-1].trim().replaceAll(" ", "\n");
+                tvEventShow.setText(nameLocal);
                 TextView tvEventInfo = (TextView) popupView.findViewById(R.id.tvEachEventContentNotify);
-                tvEventInfo.setText(neventcontent[+position]);
+                tvEventInfo.setText(neventcontent[as-position-1]);
 
                 popup.showAtLocation(lly, Gravity.CENTER,0,0);
             }
@@ -250,13 +265,19 @@ public class LiveStream extends Fragment implements View.OnClickListener {
             for (int i = 0; i < a.length(); i++) {
                 JSONObject actor = a.getJSONObject(i);
                 nid[i] = actor.getString("nid");
-                neventname[i] = actor.getString("neventname");
+//                neventname[i] = actor.getString("neventname");
+//                neventname[i] = "no data";
                 neventcontent[i] = actor.getString("neventcontent");
+                int l = neventcontent[i].length();
+                if(MAX_SIZE < l){
+                    l = MAX_SIZE;
+                }
+                neventname[i] = neventcontent[i].substring(0,l);
                 ntime[i] = actor.getString("ntime");
-                Log.e("NotificationData: ", actor.getString("nid")+ actor.getString("neventname")+
+                Log.e("NotificationData: ", actor.getString("nid")+
                         actor.getString("ntime")+nid[i]);
                 helpers = new DatabaseHelper(context);
-                helpers.insertNotification(nid[i],neventname[i],neventcontent[i],ntime[i]);
+                helpers.insertNotification(nid[i],neventname[i]+" ....",neventcontent[i],ntime[i]);
             }
             nidl = Integer.toString(addednotification);
             saveNidl();
@@ -294,12 +315,13 @@ public class LiveStream extends Fragment implements View.OnClickListener {
                 new NotificationCompat.Builder(context)
                         .setSmallIcon(R.mipmap.logo_p)
                         .setContentTitle("New Notifications")
-                        .setContentText("Your Event updates Here!");
+                        .setContentText("Your Event updates, Here!");
 
         Intent notificationIntent = new Intent(context, context.getClass());
         PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
+        builder.setAutoCancel(true);
 
         // Add as notification
         NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

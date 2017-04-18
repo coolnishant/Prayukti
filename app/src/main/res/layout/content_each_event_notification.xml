@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:layout_weight="2"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:fontFamily="serif-monospace"
         android:layout_gravity="center"
         android:id="@+id/tvNotifyEventNid"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:layout_weight="4"
-        android:textSize="22sp"
+        android:textSize="18sp"
         android:fontFamily="serif-monospace"
         android:layout_gravity="center"
         android:id="@+id/tvNotifyEventDateTime"
@@ -39,11 +39,17 @@
 
 </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrayuktiDark"
+        android:layout_marginTop="2dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:textSize="23sp"
+        android:textSize="22sp"
         android:fontFamily="casual"
         android:layout_gravity="center"
         android:id="@+id/tvNotifyEventName"
@@ -62,7 +68,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/colorPrayuktiDark"
-        android:layout_marginTop="5dp"/>
+        android:layout_height="3dp"
+        android:background="@color/colorPrayuktiLight"
+        android:layout_marginTop="3dp"/>
 </LinearLayout>
