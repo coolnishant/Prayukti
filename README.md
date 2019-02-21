@@ -16,9 +16,12 @@ in year 2017. The features offered are mentioned later.
 
 # These are some screenshots in working:
 
-<img src="https://github.com/coolnishant/Prayukti/blob/master/Photo%20from%20nisH.jpg" height ="400" width="250">
+<img src="https://github.com/coolnishant/Prayukti/blob/master/Photo%20from%20nisH.jpg" height ="400" width="250" alt="Spash Screen Page">
+
 ### Spash Screen Page
-<img src="https://github.com/coolnishant/Prayukti/blob/master/Photo%20from%20nisH%20(1).jpg" height ="400" width="250">
-### First Screen with part of customized navigation bar
-<img src="https://github.com/coolnishant/Prayukti/blob/master/Photo%20from%20nisH%20(2).jpg" height ="400" width="250">
+<img src="https://github.com/coolnishant/Prayukti/blob/master/Photo%20from%20nisH%20(1).jpg" height ="400" width="250" alt="First Screen with part of customized navigation bar">
+
+### First Screen with part of customized navigation bar 
+<img src="https://github.com/coolnishant/Prayukti/blob/master/Photo%20from%20nisH%20(2).jpg" height ="400" width="250" alt="Students Login Page">
+
 ### Students Login Page
